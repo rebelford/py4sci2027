@@ -1,0 +1,1077 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1 Understanding Your Computer and Operating System &#8212; 2026 Cheminformatics OLCC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/module1-setup/01-01_Understanding_your_Computing_';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1.2 Setting Up Your Computer — WSL/Ubuntu for Windows students; Terminal for Mac students; Unix fundamentals." href="01-02_Setting_Up_Your_Computer.html" />
+    <link rel="prev" title="Module 1: Setting Up Your Computer" href="README.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="2026 Cheminformatics OLCC - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="2026 Cheminformatics OLCC - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction to Scientific Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Core Modules</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Module 1: Setting Up Your Computer</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1 Understanding Your Computer and Operating System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-02_Setting_Up_Your_Computer.html">1.2 Setting Up Your Computer — WSL/Ubuntu for Windows students; Terminal for Mac students; Unix fundamentals.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-03_Installing_Miniconda.html">1.3 Installing Miniconda and Managing Python Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-04_JupyterLab.html">1.4 Installing JupyterLab and Understanding Kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-05_GitHub.html">1.5 Obtaining Course Materials from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-06_Managing_and_Sharing_Projects.html">1.6 Managing and Sharing Scientific Projects</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://nanohub.org/tools/datachemolcc/hub/user-redirect/git-pull?repo=https%3A//github.com/rebelford/2026Cheminformatics&urlpath=lab/tree/2026Cheminformatics/content/modules/module1-setup/01-01_Understanding_your_Computing_.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/rebelford/2026Cheminformatics" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/rebelford/2026Cheminformatics/issues/new?title=Issue%20on%20page%20%2Fcontent/modules/module1-setup/01-01_Understanding_your_Computing_.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/content/modules/module1-setup/01-01_Understanding_your_Computing_.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1 Understanding Your Computer and Operating System</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-operating-system">1. What Is an Operating System?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-functions-of-an-operating-system">1.1 Major Functions of an Operating System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems-and-scientific-computing">1.2 Operating Systems and Scientific Computing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-macos-and-linux">2. Windows, macOS, and Linux</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-windows">2.1 Microsoft Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apple-macos">2.2 Apple macOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">2.3 Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-operating-systems">2.4 Comparing Operating Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-directories-and-file-paths">3. Files, Directories, and File Paths</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-directory-hierarchy">3.1 The Directory Hierarchy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">3.2 Absolute and Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-home-directory-and-working-directory">3.3 The Home Directory and Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-file-paths-matter-in-scientific-computing">3.4 Why File Paths Matter in Scientific Computing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-and-storage">4. Memory and Storage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volatile-memory-ram">4.1 Volatile Memory: RAM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonvolatile-memory-persistent-storage">4.2 Nonvolatile Memory: Persistent Storage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-memory-and-storage-work-together">4.3 How Memory and Storage Work Together</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programs-and-processes">5. Programs and Processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-multiple-processes">5.1 Running Multiple Processes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processes-in-scientific-computing">5.2 Processes in Scientific Computing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-interfaces-terminals-and-shells">6. Graphical Interfaces, Terminals, and Shells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-user-interfaces-guis">6.1 Graphical User Interfaces (GUIs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-shells">6.2 Terminals and Shells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-a-command-line-interface">6.3 Why Use a Command-Line Interface?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-scientists-use-unix-like-environments">7. Why Scientists Use Unix-Like Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-python-and-its-computing-environments">8. Introducing Python and Its Computing Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-python">8.1 What Is Python?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages">8.2 Python Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-installations-and-environments">8.3 Python Installations and Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-and-environment-management">8.4 Conda and Environment Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-notebooks-and-kernels">8.5 JupyterLab, Notebooks, and Kernels</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="understanding-your-computer-and-operating-system">
+<h1>1 Understanding Your Computer and Operating System<a class="headerlink" href="#understanding-your-computer-and-operating-system" title="Link to this heading">#</a></h1>
+<p>When you use a computer to analyze experimental data, generate a graph, run a scientific simulation, or collect measurements from a remote sensor, several different components work together. Your computer has physical hardware, including a processor, memory, and storage devices. It also has software that allows you to interact with that hardware and perform useful tasks.</p>
+<p>Most of us interact with computers through graphical interfaces, opening applications, clicking icons, and navigating folders. However, scientific computing often requires us to work more directly with the computer through a terminal, where we can enter commands, execute programs, and automate repetitive tasks.</p>
+<p>Before installing Python and the software we will use in this course, it is helpful to understand how computers organize files, execute programs, and manage their resources. We will also explore the differences among Windows, macOS, and Linux, and why many scientific computing tools were developed for Unix-like operating systems.</p>
+<p>Although students in this course may use different operating systems, our goal is to establish a common computing environment that allows everyone to work with the same Python packages, notebooks, and scientific datasets.</p>
+<section id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>After completing this notebook, you should be able to:</p>
+<ol class="arabic simple">
+<li><p>Describe the functions of an operating system.</p></li>
+<li><p>Identify important similarities and differences among Windows, macOS, and Linux.</p></li>
+<li><p>Explain how files and directories are organized and how file paths identify their locations.</p></li>
+<li><p>Distinguish between persistent storage and random-access memory (RAM).</p></li>
+<li><p>Explain the difference between a program and a running process.</p></li>
+<li><p>Distinguish between a graphical user interface, a terminal, and a shell.</p></li>
+<li><p>Explain why Unix-like computing environments are commonly used in scientific research.</p></li>
+</ol>
+</section>
+<section id="what-is-an-operating-system">
+<h2>1. What Is an Operating System?<a class="headerlink" href="#what-is-an-operating-system" title="Link to this heading">#</a></h2>
+<p>An <strong>operating system (OS)</strong> is the software that manages a computer’s hardware and provides the environment in which other programs run. Whether you are using a Windows laptop, an Apple Mac, or a computer running Linux, an operating system is responsible for coordinating the activities of the computer.</p>
+<p>A computer consists of physical components, collectively called <strong>hardware</strong>, and the instructions that tell those components what to do, called <strong>software</strong>. Hardware includes the central processing unit (CPU), random-access memory (RAM), storage devices, and peripherals such as keyboards, displays, and scientific instruments. Software includes the operating system as well as applications such as web browsers, spreadsheets, and scientific programming tools.</p>
+<p>The operating system serves as an intermediary between applications and the computer’s hardware. For example, when a Python program reads a file containing experimental measurements, it typically does not communicate directly with the storage device. Instead, it requests the data through services provided by the operating system.</p>
+<section id="major-functions-of-an-operating-system">
+<h3>1.1 Major Functions of an Operating System<a class="headerlink" href="#major-functions-of-an-operating-system" title="Link to this heading">#</a></h3>
+<p>Although operating systems perform many tasks, their principal responsibilities include:</p>
+<ol class="arabic simple">
+<li><p><strong>Process management:</strong> The OS manages running programs, allocating CPU time so that multiple applications can operate concurrently. For example, you might run a Python program while simultaneously using a web browser and editing a document.</p></li>
+<li><p><strong>Memory management:</strong> The OS allocates RAM to running programs and manages how memory is shared and protected. When a Python program loads a large scientific dataset, the operating system helps provide the memory needed to work with that data.</p></li>
+<li><p><strong>File management:</strong> The OS organizes information into files and directories (folders), allowing programs to create, read, modify, and delete data. Scientific measurements saved in a CSV file, for example, can later be retrieved and analyzed using Python.</p></li>
+<li><p><strong>Device management:</strong> The OS coordinates communication with hardware devices, including keyboards, displays, printers, storage devices, and connected scientific instruments. Device drivers allow the operating system to communicate with particular types of hardware.</p></li>
+<li><p><strong>Networking:</strong> The OS provides services that allow applications to communicate with other computers over local networks or the internet. A Python program might use these services to retrieve data from a scientific database or receive measurements from a remote sensor.</p></li>
+<li><p><strong>Security and access control:</strong> The OS manages user accounts, permissions, and access to files and system resources. These protections help prevent unauthorized access and keep programs from interfering with one another.</p></li>
+</ol>
+</section>
+<section id="operating-systems-and-scientific-computing">
+<h3>1.2 Operating Systems and Scientific Computing<a class="headerlink" href="#operating-systems-and-scientific-computing" title="Link to this heading">#</a></h3>
+<p>Consider a Python program that retrieves environmental measurements from an online database, calculates average temperatures, and generates a graph.</p>
+<p>Although we may think of this as a single Python program, the operating system supports several activities behind the scenes:</p>
+<ul class="simple">
+<li><p>It provides network services for retrieving the measurements.</p></li>
+<li><p>It allocates memory for storing and processing the data.</p></li>
+<li><p>It schedules CPU time for the calculations.</p></li>
+<li><p>It provides access to the display for viewing the graph.</p></li>
+<li><p>It manages the file system if the results are saved for later use.</p></li>
+</ul>
+<p>These activities illustrate an important principle: <strong>Python performs the scientific calculations and data processing, while the operating system manages the computing resources that make those operations possible.</strong></p>
+<p>Understanding this relationship will help us install and configure Python, manage scientific data, and troubleshoot problems when programs do not behave as expected.</p>
+</section>
+</section>
+<section id="windows-macos-and-linux">
+<h2>2. Windows, macOS, and Linux<a class="headerlink" href="#windows-macos-and-linux" title="Link to this heading">#</a></h2>
+<p>The three major operating systems used on personal computers are <strong>Microsoft Windows, Apple macOS, and Linux</strong>. Although they differ in their design, appearance, and underlying architecture, they perform essentially the same functions: managing hardware, running applications, organizing files, and providing interfaces through which users interact with their computers.</p>
+<section id="microsoft-windows">
+<h3>2.1 Microsoft Windows<a class="headerlink" href="#microsoft-windows" title="Link to this heading">#</a></h3>
+<p>Windows is widely used on personal computers in homes, schools, businesses, and research laboratories. It supports a large variety of commercial and scientific software and provides a familiar graphical user interface (GUI) for interacting with files and applications.</p>
+<p>Windows also includes command-line tools, such as PowerShell, that allow users to interact with the operating system by entering text commands. In this course, students using Windows will install the <strong>Windows Subsystem for Linux (WSL 2)</strong>, which allows Linux to run alongside Windows. They will then install <strong>Ubuntu</strong>, a popular Linux distribution, within WSL 2. This provides a Linux computing environment without replacing Windows or requiring a separate computer.</p>
+</section>
+<section id="apple-macos">
+<h3>2.2 Apple macOS<a class="headerlink" href="#apple-macos" title="Link to this heading">#</a></h3>
+<p>macOS is the operating system used on Apple Macintosh computers. Like Windows, it provides a graphical interface for managing files, launching applications, and interacting with the computer.</p>
+<p>An important distinction is that macOS is built on a Unix-based foundation. This means it already includes many of the command-line tools commonly used in scientific computing. Mac users can access these tools through the <strong>Terminal</strong> application without installing a separate Linux operating system.</p>
+</section>
+<section id="linux">
+<h3>2.3 Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
+<p>Linux is a family of free and open-source operating systems widely used in scientific research, web servers, cloud computing, and high-performance computing (HPC). Unlike Windows and macOS, which are developed primarily by individual companies, Linux is developed through contributions from an international community of programmers and organizations.</p>
+<p>Linux comes in different distributions, including Ubuntu, Debian, and Fedora. These distributions share the Linux kernel, which is the core of the operating system, but differ in the software and tools they provide.</p>
+<p>Linux is particularly important in scientific computing because many research computing systems, including supercomputers and remote servers, run Linux.</p>
+</section>
+<section id="comparing-operating-systems">
+<h3>2.4 Comparing Operating Systems<a class="headerlink" href="#comparing-operating-systems" title="Link to this heading">#</a></h3>
+<p>Despite their differences, all three operating systems can run Python and common scientific software packages, including NumPy, pandas, Matplotlib, and JupyterLab.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Windows</p></th>
+<th class="head"><p>macOS</p></th>
+<th class="head"><p>Linux</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Developer</p></td>
+<td><p>Microsoft</p></td>
+<td><p>Apple</p></td>
+<td><p>Open-source community</p></td>
+</tr>
+<tr class="row-odd"><td><p>Common command-line shell</p></td>
+<td><p>PowerShell</p></td>
+<td><p>Zsh</p></td>
+<td><p>Bash</p></td>
+</tr>
+<tr class="row-even"><td><p>Typical home directory</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">C:\Users\student</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/Users/student</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/home/student</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Unix-like environment</p></td>
+<td><p>Available through WSL 2</p></td>
+<td><p>Built in</p></td>
+<td><p>Native</p></td>
+</tr>
+<tr class="row-even"><td><p>Python support</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>One important difference among these systems is how they organize files and interpret commands. For example, Windows traditionally uses backslashes (<code class="docutils literal notranslate"><span class="pre">\</span></code>) to separate directories in file paths, whereas macOS and Linux use forward slashes (<code class="docutils literal notranslate"><span class="pre">/</span></code>).</p>
+<p>In the next notebook, we will establish a common Unix-like computing environment. Windows users will install Ubuntu through WSL 2, while macOS users will work with their existing Terminal application. This will allow us to use many of the same commands and tools throughout the course, regardless of the computer students own.</p>
+</section>
+</section>
+<section id="files-directories-and-file-paths">
+<h2>3. Files, Directories, and File Paths<a class="headerlink" href="#files-directories-and-file-paths" title="Link to this heading">#</a></h2>
+<p>Computers organize information using a <strong>file system</strong>, which manages how data is stored, named, and retrieved. Whether you are working with experimental measurements, Python programs, or scientific images, the information is typically stored in files organized into directories.</p>
+<p>A <strong>file</strong> is a named collection of data, such as a text document, a table of measurements, an image, or a Python program. A <strong>directory</strong> (often called a folder) is a container that can hold files and other directories. Directories provide a hierarchical structure that allows us to organize related information.</p>
+<p>Windows, macOS, and Linux all use hierarchical file systems, but they differ in how file locations are represented. Because we will use Ubuntu through WSL 2 on Windows and a Unix-based environment on macOS, we will focus on <strong>Unix-style file paths</strong> throughout this course.</p>
+<section id="the-directory-hierarchy">
+<h3>3.1 The Directory Hierarchy<a class="headerlink" href="#the-directory-hierarchy" title="Link to this heading">#</a></h3>
+<p>In Unix-like operating systems, the file system is organized as a tree of directories beginning at the <strong>root directory</strong>, represented by a forward slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>).</p>
+<p>For example, a student’s files might be organized as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/
+└── home/
+    └── student/
+        └── py4sci/
+            ├── data/
+            │   └── temperatures.csv
+            ├── notebooks/
+            │   └── analysis.ipynb
+            └── scripts/
+                └── analyze.py
+</pre></div>
+</div>
+<p>In this example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> represents the root of the file system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/home/student</span></code> is the student’s home directory on a typical Ubuntu installation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">py4sci</span></code> is a directory containing files for our Python for Science course.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span></code>, <code class="docutils literal notranslate"><span class="pre">notebooks</span></code>, and <code class="docutils literal notranslate"><span class="pre">scripts</span></code> are subdirectories used to organize different types of files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">temperatures.csv</span></code> is a file containing data, <code class="docutils literal notranslate"><span class="pre">analysis.ipynb</span></code> is a Jupyter notebook, and <code class="docutils literal notranslate"><span class="pre">analyze.py</span></code> is a Python script.</p></li>
+</ul>
+<p>On macOS, a student’s home directory typically begins with <code class="docutils literal notranslate"><span class="pre">/Users/</span></code> rather than <code class="docutils literal notranslate"><span class="pre">/home/</span></code>, but the same hierarchical organization and path conventions apply.</p>
+</section>
+<section id="absolute-and-relative-paths">
+<h3>3.2 Absolute and Relative Paths<a class="headerlink" href="#absolute-and-relative-paths" title="Link to this heading">#</a></h3>
+<p>A <strong>file path</strong> identifies the location of a file or directory within the file system. There are two principal ways to specify a path.</p>
+<p>An <strong>absolute path</strong> gives the complete location starting from the root directory. For example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/home/student/py4sci/data/temperatures.csv
+</pre></div>
+</div>
+<p>A <strong>relative path</strong> specifies a location relative to the current working directory.</p>
+<p>If our current working directory is <code class="docutils literal notranslate"><span class="pre">/home/student/py4sci</span></code>, we can refer to the same file using:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>data/temperatures.csv
+</pre></div>
+</div>
+<p>Relative paths are particularly useful in scientific programming because they allow projects to be moved between computers without requiring changes to every file reference.</p>
+<p>Two special directory references are frequently used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> represents the current directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">..</span></code> represents the parent directory, one level above the current directory.</p></li>
+</ul>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">../data/temperatures.csv</span></code> refers to a file in a directory named <code class="docutils literal notranslate"><span class="pre">data</span></code> located one level above the current directory.</p>
+</section>
+<section id="the-home-directory-and-working-directory">
+<h3>3.3 The Home Directory and Working Directory<a class="headerlink" href="#the-home-directory-and-working-directory" title="Link to this heading">#</a></h3>
+<p>Every user generally has a <strong>home directory</strong>, which serves as the default location for personal files, documents, and projects. In Unix-like environments, the symbol <code class="docutils literal notranslate"><span class="pre">~</span></code> is commonly used as shorthand for the current user’s home directory.</p>
+<p>For example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>~/py4sci
+</pre></div>
+</div>
+<p>refers to the <code class="docutils literal notranslate"><span class="pre">py4sci</span></code> directory inside the user’s home directory.</p>
+<p>The <strong>current working directory</strong> is the directory from which a program or command is operating. It determines how relative file paths are interpreted.</p>
+<p>This distinction is especially important when working with Python and Jupyter notebooks. A program may fail to locate a data file if its working directory is different from the directory you expected.</p>
+</section>
+<section id="why-file-paths-matter-in-scientific-computing">
+<h3>3.4 Why File Paths Matter in Scientific Computing<a class="headerlink" href="#why-file-paths-matter-in-scientific-computing" title="Link to this heading">#</a></h3>
+<p>Suppose you have collected temperature measurements and saved them in a CSV file. A Python program might load those measurements using:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/temperatures.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This example assumes that the current working directory contains a subdirectory named <code class="docutils literal notranslate"><span class="pre">data</span></code>, which contains the file <code class="docutils literal notranslate"><span class="pre">temperatures.csv</span></code>.</p>
+<p>Python uses the path you provide to locate the data file. If the file is stored elsewhere, or the program is running from a different working directory, the file may not be found.</p>
+<p>In the next notebook, we will learn to navigate the file system using terminal commands, create directories for our projects, and locate files using absolute and relative paths.</p>
+</section>
+</section>
+<section id="memory-and-storage">
+<h2>4. Memory and Storage<a class="headerlink" href="#memory-and-storage" title="Link to this heading">#</a></h2>
+<p>Computers need to store both the instructions that tell them what to do and the data they process. However, not all information is stored in the same way. Two important components are <strong>random-access memory (RAM)</strong> and <strong>persistent storage</strong>, such as solid-state drives (SSDs) and hard disk drives (HDDs).</p>
+<p>The fundamental difference between them is whether information is retained when the computer is turned off. This distinction is described using the terms <strong>volatile</strong> and <strong>nonvolatile</strong> memory.</p>
+<section id="volatile-memory-ram">
+<h3>4.1 Volatile Memory: RAM<a class="headerlink" href="#volatile-memory-ram" title="Link to this heading">#</a></h3>
+<p><strong>Random-access memory (RAM)</strong> is the computer’s primary working memory. It temporarily holds the instructions and data that running programs need to access.</p>
+<p>RAM is considered <em>volatile</em> because its contents are lost when the computer is powered off. It is designed for rapid access, allowing the CPU to retrieve and modify information much faster than it typically could from a storage drive.</p>
+<p>For example, suppose you are using Python to analyze a CSV file containing thousands of temperature measurements. The file is initially stored on your computer’s SSD. When Python reads the file, the data is loaded into RAM, where it can be processed, analyzed, and used to generate graphs.</p>
+<p>RAM is a limited resource. If you attempt to load a dataset that is too large for the available memory, your program may slow down considerably or fail to execute.</p>
+</section>
+<section id="nonvolatile-memory-persistent-storage">
+<h3>4.2 Nonvolatile Memory: Persistent Storage<a class="headerlink" href="#nonvolatile-memory-persistent-storage" title="Link to this heading">#</a></h3>
+<p><strong>Nonvolatile memory</strong> retains information even when electrical power is removed. Computers use persistent storage devices to preserve operating systems, applications, documents, and scientific datasets.</p>
+<p>Two common storage technologies are:</p>
+<ul class="simple">
+<li><p><strong>Solid-state drives (SSDs):</strong> Store information electronically using flash memory. They have no moving mechanical parts and are generally faster than traditional hard drives.</p></li>
+<li><p><strong>Hard disk drives (HDDs):</strong> Store information magnetically on rotating disks. They are generally slower than SSDs but can provide large storage capacities at relatively low cost.</p></li>
+</ul>
+<p>Unlike RAM, the contents of persistent storage remain available after the computer is turned off or restarted.</p>
+<p>For scientific computing, this means that experimental measurements, Python scripts, and Jupyter notebooks can be saved and retrieved during future computing sessions.</p>
+</section>
+<section id="how-memory-and-storage-work-together">
+<h3>4.3 How Memory and Storage Work Together<a class="headerlink" href="#how-memory-and-storage-work-together" title="Link to this heading">#</a></h3>
+<p>When you run a Python program, the operating system loads the instructions and necessary data from storage into RAM. The CPU executes the program’s instructions, accessing and modifying data in memory as needed.</p>
+<p>Consider a simple scientific workflow:</p>
+<ol class="arabic simple">
+<li><p>A dataset containing environmental measurements is saved on an SSD.</p></li>
+<li><p>A Python program reads the dataset from storage into RAM.</p></li>
+<li><p>The CPU executes instructions to calculate averages, identify trends, or generate graphs.</p></li>
+<li><p>The results can be saved back to the SSD for future use.</p></li>
+</ol>
+<p>This illustrates an important distinction: <strong>data being processed in RAM is not necessarily saved to persistent storage</strong>.</p>
+<p>For example, if you modify a dataset in Python but do not save the changes to a file, those modifications may be lost when the Python program ends or the computer is restarted.</p>
+<p>This distinction is particularly important when working in Jupyter notebooks. Saving a notebook preserves its code, markdown, and saved outputs, but it does not automatically preserve every variable or dataset currently held in the Python kernel’s memory.</p>
+</section>
+</section>
+<section id="programs-and-processes">
+<h2>5. Programs and Processes<a class="headerlink" href="#programs-and-processes" title="Link to this heading">#</a></h2>
+<p>When you open an application, such as a web browser or JupyterLab, your computer begins executing instructions that tell it what to do. In computing, it is important to distinguish between a <strong>program</strong> and a <strong>process</strong>.</p>
+<p>A <strong>program</strong> is a collection of instructions that can be executed by a computer. Programs are typically stored as files on persistent storage, such as an SSD. Examples include web browsers, Python interpreters, and applications used to analyze scientific data.</p>
+<p>A <strong>process</strong> is a running instance of a program. When a program is executed, the operating system creates a process and allocates resources, including memory and CPU time, so that its instructions can be carried out.</p>
+<p>For example, a Python script saved as <code class="docutils literal notranslate"><span class="pre">analyze.py</span></code> is a file containing program instructions. When you execute that script using Python, the operating system runs a Python interpreter process that reads and executes those instructions.</p>
+<section id="running-multiple-processes">
+<h3>5.1 Running Multiple Processes<a class="headerlink" href="#running-multiple-processes" title="Link to this heading">#</a></h3>
+<p>Modern operating systems support <strong>multitasking</strong>, allowing multiple processes to execute concurrently. For example, you might have a web browser open while Python analyzes a dataset and another application downloads scientific measurements.</p>
+<p>Each process has its own execution state and generally operates within a protected memory space. The operating system manages these processes, allocating CPU time and other resources as needed.</p>
+<p>On a computer with multiple CPU cores, different processes may execute instructions simultaneously. Even on a single-core processor, the operating system can rapidly switch between processes, creating the appearance that several programs are running at once.</p>
+</section>
+<section id="processes-in-scientific-computing">
+<h3>5.2 Processes in Scientific Computing<a class="headerlink" href="#processes-in-scientific-computing" title="Link to this heading">#</a></h3>
+<p>Consider working with a Jupyter notebook to analyze experimental measurements. Several components may be operating simultaneously:</p>
+<ol class="arabic simple">
+<li><p><strong>JupyterLab server:</strong> A running process that provides the JupyterLab interface and manages notebook sessions.</p></li>
+<li><p><strong>Python kernel:</strong> A separate process that executes Python code and maintains variables and other data in memory.</p></li>
+<li><p><strong>Web browser:</strong> An application that displays the JupyterLab interface and allows you to interact with notebooks.</p></li>
+</ol>
+<p>When you execute a code cell in a Jupyter notebook, the browser sends the request through the JupyterLab infrastructure to the Python kernel, which executes the code and returns the results.</p>
+<p>An important consequence of this arrangement is that <strong>the notebook interface and the Python kernel are separate components</strong>. Closing a browser tab does not necessarily stop the Python kernel, and restarting the kernel clears its Python execution state without deleting the notebook file.</p>
+<p>We will explore this relationship in greater detail when we begin using JupyterLab.</p>
+</section>
+</section>
+<section id="graphical-interfaces-terminals-and-shells">
+<h2>6. Graphical Interfaces, Terminals, and Shells<a class="headerlink" href="#graphical-interfaces-terminals-and-shells" title="Link to this heading">#</a></h2>
+<p>Operating systems provide different ways for users to interact with computers. Most people are familiar with graphical interfaces, where programs are launched by clicking icons and files are managed through windows and menus. However, computers can also be controlled by entering text commands.</p>
+<p>Both approaches allow users to accomplish many of the same tasks, but they differ in how instructions are communicated to the operating system.</p>
+<section id="graphical-user-interfaces-guis">
+<h3>6.1 Graphical User Interfaces (GUIs)<a class="headerlink" href="#graphical-user-interfaces-guis" title="Link to this heading">#</a></h3>
+<p>A <strong>graphical user interface (GUI)</strong> allows users to interact with a computer through visual elements such as windows, icons, menus, and buttons. Examples include the Windows desktop, macOS Finder, and file managers found in Linux distributions.</p>
+<p>GUIs make many computing tasks intuitive. For example, you can create a directory, rename a file, or launch an application by clicking the appropriate controls.</p>
+<p>Scientific software also frequently provides graphical interfaces. Applications such as spreadsheet programs, molecular visualization tools, and integrated development environments (IDEs) allow users to analyze data, create visualizations, and develop programs through interactive interfaces.</p>
+<p>JupyterLab, which we will use extensively in this course, provides a graphical interface that runs in a web browser. It allows us to create and edit notebooks, execute Python code, view results, and manage files within a common workspace.</p>
+</section>
+<section id="terminals-and-shells">
+<h3>6.2 Terminals and Shells<a class="headerlink" href="#terminals-and-shells" title="Link to this heading">#</a></h3>
+<p>A <strong>terminal</strong> is an application that provides a text-based interface through which users can enter commands and view their results. Rather than clicking through menus, users type instructions to perform tasks such as navigating directories, managing files, and running programs.</p>
+<p>A <strong>shell</strong> is a program that interprets those commands and launches the requested operations.</p>
+<p>Although the terms <em>terminal</em> and <em>shell</em> are sometimes used interchangeably, they refer to different components:</p>
+<ul class="simple">
+<li><p><strong>Terminal:</strong> The application or interface in which commands are entered and their output is displayed.</p></li>
+<li><p><strong>Shell:</strong> The program that interprets the commands and initiates the requested actions.</p></li>
+</ul>
+<p>Common shells include:</p>
+<ul class="simple">
+<li><p><strong>Bash (Bourne Again Shell):</strong> Widely used on Linux systems, including Ubuntu.</p></li>
+<li><p><strong>Zsh (Z Shell):</strong> The default interactive shell on modern macOS systems.</p></li>
+<li><p><strong>PowerShell:</strong> A command-line shell and scripting environment commonly used on Windows.</p></li>
+</ul>
+<p>For example, entering the following command in a Bash or Zsh shell displays the current working directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>The shell interprets the command and runs the appropriate utility, which obtains the current directory information and displays the result in the terminal.</p>
+<p>In the next notebook, we will learn to use terminal commands to navigate directories, create files, and prepare our computing environment.</p>
+</section>
+<section id="why-use-a-command-line-interface">
+<h3>6.3 Why Use a Command-Line Interface?<a class="headerlink" href="#why-use-a-command-line-interface" title="Link to this heading">#</a></h3>
+<p>A <strong>command-line interface (CLI)</strong> provides a way to interact with a computer through text commands rather than graphical controls.</p>
+<p>Although graphical interfaces are convenient for many everyday tasks, command-line tools offer several advantages in scientific computing.</p>
+<ol class="arabic simple">
+<li><p><strong>Automation:</strong> A sequence of commands can be saved in a script and executed repeatedly, reducing the need for manual interaction.</p></li>
+<li><p><strong>Reproducibility:</strong> Commands can be documented and shared, making it easier for others to repeat a computational procedure.</p></li>
+<li><p><strong>Remote computing:</strong> Many scientific servers and high-performance computing systems are accessed remotely through command-line interfaces rather than graphical desktops.</p></li>
+<li><p><strong>Software management:</strong> Many scientific programming tools, including Python package managers and development utilities, provide command-line interfaces for installing, configuring, and running software.</p></li>
+</ol>
+<p>Graphical interfaces and command-line tools are not competing approaches. Scientists frequently use both, choosing whichever is best suited to the task.</p>
+<p>For example, we will use terminal commands to set up Python environments and launch JupyterLab, while using JupyterLab’s graphical interface to write Python code, analyze scientific datasets, and generate visualizations.</p>
+</section>
+</section>
+<section id="why-scientists-use-unix-like-environments">
+<h2>7. Why Scientists Use Unix-Like Environments<a class="headerlink" href="#why-scientists-use-unix-like-environments" title="Link to this heading">#</a></h2>
+<p>Python runs on Windows, macOS, and Linux, and many scientific applications work equally well on all three operating systems. So why are we using Unix-like computing environments in this course?</p>
+<p>One reason is that <strong>Linux is widely used in scientific research</strong>, particularly on servers, cloud computing platforms, and high-performance computing (HPC) systems. Many scientific software packages and computational workflows are developed and tested in Linux environments.</p>
+<p>Unix-like operating systems also provide a collection of command-line tools that make it convenient to manage files, execute programs, automate repetitive tasks, and work with large datasets. These tools can be combined into scripts that perform sequences of operations, making computational workflows easier to reproduce and share.</p>
+<p>Another important advantage is consistency. Although Windows and macOS differ in how they manage software and interact with their underlying operating systems, we can use many of the same Unix commands and development tools on both platforms.</p>
+<p>In this course:</p>
+<ul class="simple">
+<li><p><strong>Windows users</strong> will install Ubuntu Linux within Windows Subsystem for Linux (WSL 2).</p></li>
+<li><p><strong>macOS users</strong> will use the Unix-based environment already provided by their operating system.</p></li>
+<li><p><strong>Linux users</strong> can work directly within their existing Linux environment.</p></li>
+</ul>
+<p>These environments are not identical, but they share many common conventions and tools. This will allow us to follow similar instructions for managing files, installing Python packages, and running scientific programs.</p>
+<p>Learning to work in a Unix-like environment also provides skills that transfer beyond this course. Whether you are analyzing data on your laptop, accessing a remote scientific database, or running calculations on a university computing cluster, many of the same commands and concepts will apply.</p>
+</section>
+<section id="introducing-python-and-its-computing-environments">
+<h2>8. Introducing Python and Its Computing Environments<a class="headerlink" href="#introducing-python-and-its-computing-environments" title="Link to this heading">#</a></h2>
+<p>Python is a free, open-source programming language widely used in scientific research, engineering, data analysis, and software development. Scientists use Python to analyze experimental measurements, generate visualizations, perform simulations, access scientific databases, and communicate with instruments and sensors.</p>
+<p>One of Python’s greatest strengths is its extensive collection of scientific packages, which provide tools for tasks ranging from numerical calculations to machine learning and molecular modeling.</p>
+<p>Before we begin working with Python, however, it is important to distinguish between the Python programming language, the software that executes Python code, and the computing environments in which that software runs.</p>
+<section id="what-is-python">
+<h3>8.1 What Is Python?<a class="headerlink" href="#what-is-python" title="Link to this heading">#</a></h3>
+<p>A <strong>programming language</strong> is a formal system for writing instructions that a computer can execute. Python provides a relatively readable syntax that makes it accessible to beginners while remaining powerful enough for complex scientific applications.</p>
+<p>For example, the following Python code calculates the average of five temperature measurements:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mf">21.3</span><span class="p">,</span> <span class="mf">22.1</span><span class="p">,</span> <span class="mf">20.8</span><span class="p">,</span> <span class="mf">23.0</span><span class="p">,</span> <span class="mf">21.7</span><span class="p">]</span>
+<span class="n">average</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">temperatures</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">average</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The result is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>21.78
+</pre></div>
+</div>
+<p>This example illustrates how Python can store data, perform calculations, and display results using only a few lines of code.</p>
+<p>However, the code itself does not execute automatically. It must be processed by software called a <strong>Python interpreter</strong>.</p>
+<p>The Python interpreter is a program that executes Python instructions. When you run a Python script or execute a cell in a Jupyter notebook, a Python interpreter carries out the requested operations.</p>
+<p>This introduces an important distinction:</p>
+<ul class="simple">
+<li><p><strong>Python the language</strong> defines the syntax and behavior of Python programs.</p></li>
+<li><p><strong>A Python interpreter</strong> is the software that executes those programs.</p></li>
+</ul>
+<p>A computer can have more than one Python interpreter installed, and different interpreters may use different versions of Python or have access to different scientific packages.</p>
+</section>
+<section id="python-packages">
+<h3>8.2 Python Packages<a class="headerlink" href="#python-packages" title="Link to this heading">#</a></h3>
+<p>Python includes a collection of built-in functions and modules, often called its <strong>standard library</strong>, that support common programming tasks.</p>
+<p>However, many scientific applications require additional capabilities. These are provided by packages developed by the Python community.</p>
+<p>Some widely used scientific packages include:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Package</p></th>
+<th class="head"><p>Scientific Applications</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NumPy</p></td>
+<td><p>Numerical calculations and multidimensional arrays</p></td>
+</tr>
+<tr class="row-odd"><td><p>pandas</p></td>
+<td><p>Organizing and analyzing tabular data</p></td>
+</tr>
+<tr class="row-even"><td><p>Matplotlib</p></td>
+<td><p>Creating graphs and scientific visualizations</p></td>
+</tr>
+<tr class="row-odd"><td><p>SciPy</p></td>
+<td><p>Scientific algorithms, statistics, and numerical methods</p></td>
+</tr>
+<tr class="row-even"><td><p>scikit-learn</p></td>
+<td><p>Machine learning and predictive modeling</p></td>
+</tr>
+<tr class="row-odd"><td><p>RDKit</p></td>
+<td><p>Cheminformatics and molecular structure analysis</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Packages allow scientists to build upon software developed by others rather than writing every algorithm from scratch.</p>
+<p>For example, pandas can read measurements stored in a CSV file and organize them into a table for analysis.</p>
+<p>Different projects may require different packages or versions of those packages. Managing these dependencies is one reason we use separate Python computing environments.</p>
+</section>
+<section id="python-installations-and-environments">
+<h3>8.3 Python Installations and Environments<a class="headerlink" href="#python-installations-and-environments" title="Link to this heading">#</a></h3>
+<p>One potentially confusing aspect of scientific programming is that <strong>a single computer may contain several separate Python installations</strong>.</p>
+<p>For example, after setting up Ubuntu and Miniconda, you may encounter three general categories:</p>
+<p><strong>1. System Python</strong></p>
+<p>Linux operating systems such as Ubuntu often include a Python interpreter installed as part of the operating system. It may be used by system utilities and other software.</p>
+<p>On Ubuntu, this interpreter is commonly located at:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/usr/bin/python3
+</pre></div>
+</div>
+<p>Because system tools may depend on this installation, we generally avoid modifying it or installing scientific packages directly into its system-managed directories.</p>
+<p><strong>2. Conda Base Python</strong></p>
+<p>When we install Miniconda, it creates a default environment called <code class="docutils literal notranslate"><span class="pre">base</span></code>. This environment includes a Python interpreter and the Conda software used to manage environments and packages.</p>
+<p>For example, if Miniconda is installed in a user’s home directory, its Python interpreter may be located at:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>~/miniconda3/bin/python
+</pre></div>
+</div>
+<p>The base environment is primarily used for managing Conda and creating other environments. We will generally avoid installing our scientific project packages directly into <code class="docutils literal notranslate"><span class="pre">base</span></code>.</p>
+<p><strong>3. Project-Specific Python Environments</strong></p>
+<p>Conda allows us to create separate environments, each containing its own Python interpreter and collection of packages.</p>
+<p>For example, we might create an environment named <code class="docutils literal notranslate"><span class="pre">py4sci</span></code> containing Python, NumPy, pandas, Matplotlib, and other packages needed for this course.</p>
+<p>Another project might require different packages or even a different version of Python.</p>
+<p>These environments are isolated from one another, reducing the likelihood that installing or updating software for one project will interfere with another.</p>
+<p>Importantly, these are not three different Python programming languages. They are different installations or environments that use the same Python language, potentially with different versions and packages.</p>
+</section>
+<section id="conda-and-environment-management">
+<h3>8.4 Conda and Environment Management<a class="headerlink" href="#conda-and-environment-management" title="Link to this heading">#</a></h3>
+<p><strong>Conda</strong> is a software tool used to manage packages and computing environments. It allows us to create separate environments, install software into those environments, and control which versions of Python and its packages are available.</p>
+<p>We will use <strong>Miniconda</strong>, a minimal distribution that provides Conda, Python, and the basic tools needed to manage environments.</p>
+<p>For example, a scientific computing project might require Python and packages such as NumPy and pandas. Rather than installing everything into the operating system’s Python installation, we can create a dedicated environment containing those dependencies.</p>
+<p>This approach provides several advantages:</p>
+<ul class="simple">
+<li><p><strong>Isolation:</strong> Packages installed for one project do not normally interfere with packages used by another.</p></li>
+<li><p><strong>Compatibility:</strong> Different environments can use different Python and package versions.</p></li>
+<li><p><strong>Reproducibility:</strong> Environment specifications can be shared so that others can recreate similar computing environments.</p></li>
+<li><p><strong>Maintenance:</strong> Environments can be updated, replaced, or removed without modifying the operating system’s Python installation.</p></li>
+</ul>
+<p>In later notebooks, we will learn how to install Miniconda, create environments, activate them, and install scientific packages.</p>
+</section>
+<section id="jupyterlab-notebooks-and-kernels">
+<h3>8.5 JupyterLab, Notebooks, and Kernels<a class="headerlink" href="#jupyterlab-notebooks-and-kernels" title="Link to this heading">#</a></h3>
+<p>Although Python programs can be written as text files and executed from a terminal, we will do much of our work in <strong>JupyterLab</strong>, an interactive development environment that runs in a web browser.</p>
+<p>JupyterLab allows us to work with Jupyter notebooks, which combine executable code, explanatory text, mathematical equations, tables, and visualizations in a single document.</p>
+<p>This makes notebooks particularly useful for scientific computing because they allow us to document not only the results of an analysis but also the procedures used to obtain them.</p>
+<p>A Jupyter notebook is typically saved as a file with the extension <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>.</p>
+<p>However, JupyterLab itself does not execute Python code. When a code cell is executed, the instructions are sent to a separate process called a <strong>Python kernel</strong>.</p>
+<p>The kernel runs the code using a Python interpreter and maintains the variables and data created during the computing session.</p>
+<p>An important feature of Jupyter is that the kernel can use a Python interpreter from an environment different from the environment running JupyterLab.</p>
+<p>For example, we may install JupyterLab in an environment named <code class="docutils literal notranslate"><span class="pre">jbenv</span></code>, while using a kernel associated with our <code class="docutils literal notranslate"><span class="pre">py4sci</span></code> environment to execute scientific Python code.</p>
+<p>This separation allows us to maintain JupyterLab independently from the packages used in individual projects.</p>
+<p>In subsequent notebooks, we will configure these environments and learn how to launch JupyterLab, select a Python kernel, and begin writing scientific programs.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "nbi"
+        },
+        kernelOptions: {
+            name: "nbi",
+            path: "./content/modules/module1-setup"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'nbi'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="README.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 1: Setting Up Your Computer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="01-02_Setting_Up_Your_Computer.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1.2 Setting Up Your Computer — WSL/Ubuntu for Windows students; Terminal for Mac students; Unix fundamentals.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-operating-system">1. What Is an Operating System?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-functions-of-an-operating-system">1.1 Major Functions of an Operating System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems-and-scientific-computing">1.2 Operating Systems and Scientific Computing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-macos-and-linux">2. Windows, macOS, and Linux</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-windows">2.1 Microsoft Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apple-macos">2.2 Apple macOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">2.3 Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-operating-systems">2.4 Comparing Operating Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-directories-and-file-paths">3. Files, Directories, and File Paths</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-directory-hierarchy">3.1 The Directory Hierarchy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">3.2 Absolute and Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-home-directory-and-working-directory">3.3 The Home Directory and Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-file-paths-matter-in-scientific-computing">3.4 Why File Paths Matter in Scientific Computing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-and-storage">4. Memory and Storage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volatile-memory-ram">4.1 Volatile Memory: RAM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonvolatile-memory-persistent-storage">4.2 Nonvolatile Memory: Persistent Storage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-memory-and-storage-work-together">4.3 How Memory and Storage Work Together</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programs-and-processes">5. Programs and Processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-multiple-processes">5.1 Running Multiple Processes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processes-in-scientific-computing">5.2 Processes in Scientific Computing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-interfaces-terminals-and-shells">6. Graphical Interfaces, Terminals, and Shells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-user-interfaces-guis">6.1 Graphical User Interfaces (GUIs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-shells">6.2 Terminals and Shells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-a-command-line-interface">6.3 Why Use a Command-Line Interface?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-scientists-use-unix-like-environments">7. Why Scientists Use Unix-Like Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-python-and-its-computing-environments">8. Introducing Python and Its Computing Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-python">8.1 What Is Python?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages">8.2 Python Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-installations-and-environments">8.3 Python Installations and Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-and-environment-management">8.4 Conda and Environment Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-notebooks-and-kernels">8.5 JupyterLab, Notebooks, and Kernels</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Robert Belford
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright CC 4.0 2026 Robert Belford, additional info on each notebook.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <script async src="https://hypothes.is/embed.js"></script>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
