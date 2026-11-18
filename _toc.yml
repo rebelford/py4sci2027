@@ -1,0 +1,9 @@
+format: jb-book
+root: content/intro
+
+parts:
+  - caption: Core Modules
+    chapters:
+    - file: content/modules/module1-setup/README
+      sections:
+      - file: content/modules/module1-setup/01-1_Introduction
