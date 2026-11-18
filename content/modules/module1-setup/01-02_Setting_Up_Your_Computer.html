@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.2 Setting Up Your Computer — WSL/Ubuntu for Windows students; Terminal for Mac students; Unix fundamentals. &#8212; 2027 Python for Scientists</title>
+    <title>1.2 Setting Up Your Computer &#8212; 2027 Python for Scientists</title>
   
   
   
@@ -183,7 +183,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Module 1: Setting Up Your Computer</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="01-01_Understanding_your_Computing_.html">1 Understanding Your Computer and Operating System</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2 Setting Up Your Computer — WSL/Ubuntu for Windows students; Terminal for Mac students; Unix fundamentals.</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2 Setting Up Your Computer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01-03_Installing_Miniconda.html">1.3 Installing Miniconda and Managing Python Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01-04_JupyterLab.html">1.4 Installing JupyterLab and Understanding Kernels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01-05_GitHub.html">1.5 Obtaining Course Materials from GitHub</a></li>
@@ -393,7 +393,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -404,11 +406,71 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1.2 Setting Up Your Computer — WSL/Ubuntu for Windows students; Terminal for Mac students; Unix fundamentals.</h1>
+    <h1>1.2 Setting Up Your Computer</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-your-computer">1.2.1 Preparing Your Computer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-users-installing-wsl-and-ubuntu">1.2.2 Windows Users: Installing WSL and Ubuntu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-requirements">Computer Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-powershell-as-administrator">Step 1: Open PowerShell as Administrator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-wsl-and-ubuntu">Step 2: Install WSL and Ubuntu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-set-up-ubuntu">Step 3: Set Up Ubuntu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-verify-your-installation">Step 4: Verify Your Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-users-opening-terminal">1.2.3 macOS Users: Opening Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Computer Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-terminal">Step 1: Open Terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-identify-your-shell">Step 2: Identify Your Shell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-verify-your-unix-environment">Step 3: Verify Your Unix Environment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-comfortable-with-the-terminal">1.2.4 Getting Comfortable with the Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-command-prompt">The Command Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recalling-and-editing-commands">Recalling and Editing Commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-tab-completion">Using Tab Completion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-home-directory">Your Home Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-something-goes-wrong">When Something Goes Wrong</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-practice-using-the-terminal">Activity: Practice Using the Terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal-best-practices">Terminal Best Practices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-unix-home-directory-and-file-system">1.2.4 Your Unix Home Directory and File System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-unix-directory-structure">The Unix Directory Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Your Home Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">Absolute and Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-windows-files-from-wsl">Accessing Windows Files from WSL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-exploring-your-home-directory">Activity: Exploring Your Home Directory</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix-home-directory-and-file-system">1.2.4 Unix Home Directory and File System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">The Unix Directory Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Your Home Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-current-working-directory">Your Current Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Absolute and Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-and-linux-file-systems-in-wsl">Windows and Linux File Systems in WSL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-explore-your-home-directory">Activity: Explore Your Home Directory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-unix-commands">1.2.5 Your First Unix Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-shell-and-executing-commands">1.2.6 Understanding the Shell and Executing Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-computing-environment">1.2.7 Check Your Computing Environment</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -418,8 +480,736 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-your-computer-wsl-ubuntu-for-windows-students-terminal-for-mac-students-unix-fundamentals">
-<h1>1.2 Setting Up Your Computer — WSL/Ubuntu for Windows students; Terminal for Mac students; Unix fundamentals.<a class="headerlink" href="#setting-up-your-computer-wsl-ubuntu-for-windows-students-terminal-for-mac-students-unix-fundamentals" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="setting-up-your-computer">
+<h1>1.2 Setting Up Your Computer<a class="headerlink" href="#setting-up-your-computer" title="Link to this heading">#</a></h1>
+<section id="preparing-your-computer">
+<h2>1.2.1 Preparing Your Computer<a class="headerlink" href="#preparing-your-computer" title="Link to this heading">#</a></h2>
+<p>Scientific Python relies on more than the Python programming language. Throughout this course, we will use a terminal to install software, manage Python environments, organize scientific projects, and interact with tools such as Git and JupyterLab.</p>
+<p>Before installing Python, we need to establish a computing environment that supports these activities. Windows and macOS handle this differently, but both can provide access to the Unix-style command-line tools commonly used in scientific computing.</p>
+<p>Windows users will install the <strong>Windows Subsystem for Linux (WSL)</strong>, which allows Ubuntu Linux to run alongside Windows without requiring a separate computer or traditional virtual machine. macOS users already have a Unix-based operating system and can access the necessary tools through the built-in Terminal application.</p>
+<p>After completing the operating-system-specific instructions, everyone will work through the same introductory Unix command-line activities. You will learn how to navigate directories, manage files, and execute commands from a terminal.</p>
+<section id="learning-objectives">
+<h3>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h3>
+<p>By the end of Section 1.2, you should be able to:</p>
+<ul class="simple">
+<li><p>Open a Unix-like terminal on your computer.</p></li>
+<li><p>Identify your home directory and navigate the file system.</p></li>
+<li><p>Create and manage directories and files using basic shell commands.</p></li>
+<li><p>Distinguish between your operating system, terminal, and shell.</p></li>
+<li><p>Prepare your computer for installing Miniconda in Section 1.3.</p></li>
+</ul>
+<p><strong>Note:</strong> You do not need to install Python, Miniconda, or JupyterLab yet. We will install and configure those tools in the following sections.</p>
+</section>
+</section>
+<section id="windows-users-installing-wsl-and-ubuntu">
+<h2>1.2.2 Windows Users: Installing WSL and Ubuntu<a class="headerlink" href="#windows-users-installing-wsl-and-ubuntu" title="Link to this heading">#</a></h2>
+<p>Windows users will install the Windows Subsystem for Linux (WSL), which allows you to run Ubuntu Linux directly within Windows. Ubuntu is a Linux distribution that provides the Unix command-line tools we will use throughout this course.</p>
+<p>WSL allows us to use a Linux computing environment without replacing Windows or installing a separate operating system alongside it. We will use <strong>WSL 2</strong>, the current default version for new installations.</p>
+<section id="computer-requirements">
+<h3>Computer Requirements<a class="headerlink" href="#computer-requirements" title="Link to this heading">#</a></h3>
+<p>Before installing WSL, check that your computer meets the following requirements.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Requirements and Recommendations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Operating System</p></td>
+<td><p>Windows 11 recommended; Windows 10 version 2004 (Build 19041) or later supports the installation command, although Windows 10 has reached the end of standard support</p></td>
+</tr>
+<tr class="row-odd"><td><p>Processor</p></td>
+<td><p>Modern 64-bit processor with hardware virtualization support</p></td>
+</tr>
+<tr class="row-even"><td><p>Memory (RAM)</p></td>
+<td><p>8 GB recommended minimum for this course; 16 GB preferred</p></td>
+</tr>
+<tr class="row-odd"><td><p>Storage</p></td>
+<td><p>At least 20 GB of available disk space recommended</p></td>
+</tr>
+<tr class="row-even"><td><p>Internet</p></td>
+<td><p>Required for downloading Ubuntu and other software</p></td>
+</tr>
+<tr class="row-odd"><td><p>Administrator Access</p></td>
+<td><p>Needed to enable WSL and install its Windows components</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Most modern Windows laptops should be able to run WSL 2. However, older computers and university-managed computers may have restrictions that prevent installation.</p>
+<p>To check your Windows version, press <strong>Windows + R</strong>, type <code class="docutils literal notranslate"><span class="pre">winver</span></code>, and press Enter.</p>
+<p>To check your installed memory, open <strong>Settings → System → About</strong>.</p>
+<p>If your computer does not meet these recommendations, contact your instructor before purchasing or changing any hardware.</p>
+</section>
+<section id="step-1-open-powershell-as-administrator">
+<h3>Step 1: Open PowerShell as Administrator<a class="headerlink" href="#step-1-open-powershell-as-administrator" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open the Windows <strong>Start</strong> menu.</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">PowerShell</span></code> in the search box.</p></li>
+<li><p>Right-click <strong>Windows PowerShell</strong> and select <strong>Run as administrator</strong>.</p></li>
+<li><p>If Windows asks whether you want to allow the application to make changes to your device, select <strong>Yes</strong>.</p></li>
+</ol>
+<p>You should now see a PowerShell window.</p>
+</section>
+<section id="step-2-install-wsl-and-ubuntu">
+<h3>Step 2: Install WSL and Ubuntu<a class="headerlink" href="#step-2-install-wsl-and-ubuntu" title="Link to this heading">#</a></h3>
+<p>Enter the following command into PowerShell:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="p">-</span><span class="n">-install</span>
+</pre></div>
+</div>
+<p>This command enables the required Windows components, installs WSL 2, and downloads Ubuntu Linux.</p>
+<p>Follow any instructions that appear on the screen. You may need to <strong>restart your computer</strong> to complete the installation.</p>
+<p>For additional information, see Microsoft’s <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">official WSL installation instructions</a>.</p>
+</section>
+<section id="step-3-set-up-ubuntu">
+<h3>Step 3: Set Up Ubuntu<a class="headerlink" href="#step-3-set-up-ubuntu" title="Link to this heading">#</a></h3>
+<p>After installation, open the Windows Start menu, search for <strong>Ubuntu</strong>, and launch it.</p>
+<p>The first time Ubuntu starts, you will be asked to create a Linux username and password.</p>
+<ul class="simple">
+<li><p>Choose a username, preferably using lowercase letters without spaces.</p></li>
+<li><p>Create a password that you can remember.</p></li>
+<li><p>When entering your password, <strong>no characters will appear on the screen</strong>. This is normal in Linux.</p></li>
+</ul>
+<p>Your Linux username and password are separate from your Windows credentials. You will use the Linux password when performing certain administrative tasks within Ubuntu.</p>
+<p>Once setup is complete, you should see a Linux command prompt similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>student@computer:~$
+</pre></div>
+</div>
+<p>The exact text will depend on your username and computer.</p>
+</section>
+<section id="step-4-verify-your-installation">
+<h3>Step 4: Verify Your Installation<a class="headerlink" href="#step-4-verify-your-installation" title="Link to this heading">#</a></h3>
+<p>Return to <strong>Windows PowerShell</strong> and enter:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">wsl</span> <span class="p">-</span><span class="n">-list</span> <span class="p">-</span><span class="n">-verbose</span>
+</pre></div>
+</div>
+<p>You should see output similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">NAME</span>      <span class="n">STATE</span>           <span class="n">VERSION</span>
+<span class="o">*</span> <span class="n">Ubuntu</span>    <span class="n">Running</span>         <span class="mi">2</span>
+</pre></div>
+</div>
+<p>The important part is that Ubuntu appears in the list and its version is <strong>2</strong>. The state may be <code class="docutils literal notranslate"><span class="pre">Running</span></code> or <code class="docutils literal notranslate"><span class="pre">Stopped</span></code>, depending on whether Ubuntu is currently open.</p>
+<p>You can now close PowerShell and return to your Ubuntu terminal.</p>
+<p>In Section 1.2.4, after our macOS users have opened their terminals, we will begin exploring the Unix file system and learning basic command-line operations.</p>
+</section>
+<section id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h3>
+<p>If installation fails, consult Microsoft’s <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/troubleshooting">WSL troubleshooting guide</a>.</p>
+<p>Common problems include disabled hardware virtualization, outdated Windows installations, or insufficient administrative permissions. If you encounter an error, record the error message and contact your instructor rather than attempting extensive system modifications.</p>
+</section>
+</section>
+<section id="macos-users-opening-terminal">
+<h2>1.2.3 macOS Users: Opening Terminal<a class="headerlink" href="#macos-users-opening-terminal" title="Link to this heading">#</a></h2>
+<p>Unlike Windows, macOS is already a Unix-based operating system. This means Mac users do not need to install Ubuntu or the Windows Subsystem for Linux (WSL). Instead, we will use the <strong>Terminal</strong> application included with macOS.</p>
+<p>Terminal provides a command-line interface that allows you to interact directly with your operating system, navigate directories, manage files, and execute programs.</p>
+<section id="id1">
+<h3>Computer Requirements<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Most modern Mac computers are suitable for this course. We recommend the following:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Recommendation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Operating System</p></td>
+<td><p>A currently supported version of macOS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Processor</p></td>
+<td><p>Apple Silicon (M-series) or Intel</p></td>
+</tr>
+<tr class="row-even"><td><p>Memory (RAM)</p></td>
+<td><p>8 GB minimum recommended; 16 GB preferred</p></td>
+</tr>
+<tr class="row-odd"><td><p>Storage</p></td>
+<td><p>At least 20 GB of available disk space</p></td>
+</tr>
+<tr class="row-even"><td><p>Internet</p></td>
+<td><p>Required for downloading course software</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Both Apple Silicon and Intel-based Macs can run the software used in this course, although installation packages may differ depending on the processor.</p>
+<p>To check your computer’s specifications, open the <strong>Apple menu → About This Mac</strong>.</p>
+</section>
+<section id="step-1-open-terminal">
+<h3>Step 1: Open Terminal<a class="headerlink" href="#step-1-open-terminal" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Press <strong>Command (⌘) + Space</strong> to open Spotlight Search.</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>.</p></li>
+<li><p>Press <strong>Return</strong> to launch the Terminal application.</p></li>
+</ol>
+<p>Alternatively, you can find Terminal under <strong>Applications → Utilities → Terminal</strong>.</p>
+<p>You should see a window containing a command prompt similar to:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>student@MacBook ~ %
+</pre></div>
+</div>
+<p>The exact appearance will depend on your computer’s configuration.</p>
+<p>The prompt indicates that Terminal is ready to accept commands.</p>
+</section>
+<section id="step-2-identify-your-shell">
+<h3>Step 2: Identify Your Shell<a class="headerlink" href="#step-2-identify-your-shell" title="Link to this heading">#</a></h3>
+<p>A <strong>shell</strong> is a program that interprets commands entered into a terminal.</p>
+<p>Modern versions of macOS use a shell called <strong>Zsh (Z shell)</strong> by default, while Ubuntu generally uses <strong>Bash (Bourne Again Shell)</strong>.</p>
+<p>To identify your default shell, enter the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$SHELL</span>
+</pre></div>
+</div>
+<p>On most Macs, the output will be:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/bin/zsh
+</pre></div>
+</div>
+<p>Both Zsh and Bash support the Unix commands we will use in this course, so there is no need to change your default shell.</p>
+</section>
+<section id="step-3-verify-your-unix-environment">
+<h3>Step 3: Verify Your Unix Environment<a class="headerlink" href="#step-3-verify-your-unix-environment" title="Link to this heading">#</a></h3>
+<p>Enter the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>This stands for <strong>print working directory</strong> and displays your current location in the file system.</p>
+<p>You should see something similar to:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/student
+</pre></div>
+</div>
+<p>This is your <strong>home directory</strong>, where your personal files and folders are stored.</p>
+<p>Next, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uname<span class="w"> </span>-s
+</pre></div>
+</div>
+<p>This identifies the operating system’s kernel. On macOS, the output should be:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Darwin
+</pre></div>
+</div>
+<p>Darwin is the Unix-based foundation of macOS.</p>
+<p>You do not need to install Python, Miniconda, Git, or JupyterLab at this point. We will introduce those tools in subsequent sections.</p>
+<p>For additional information, see Apple’s <a class="reference external" href="https://support.apple.com/guide/terminal/welcome/mac">Terminal User Guide</a>.</p>
+</section>
+</section>
+<section id="getting-comfortable-with-the-terminal">
+<h2>1.2.4 Getting Comfortable with the Terminal<a class="headerlink" href="#getting-comfortable-with-the-terminal" title="Link to this heading">#</a></h2>
+<p>You now have access to a Unix-like terminal, either through Ubuntu (WSL) or macOS Terminal. Throughout this course, we will use the terminal to install software, create and manage Python environments, work with GitHub repositories, and launch JupyterLab.</p>
+<p>Although we will do most of our Python programming in JupyterLab, it is important to become comfortable entering commands in a terminal. You do not need to become a Unix expert, but you should understand how to control your computing environment.</p>
+<section id="the-command-prompt">
+<h3>The Command Prompt<a class="headerlink" href="#the-command-prompt" title="Link to this heading">#</a></h3>
+<p>When you open your terminal, you will see a <strong>command prompt</strong> indicating that the shell is ready to accept a command.</p>
+<p>For example, an Ubuntu prompt might look like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>student@computer:~$
+</pre></div>
+</div>
+<p>The prompt typically contains information about your username, computer, and current directory.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">$</span></code> indicates that you are working as a regular user. Your prompt may look different depending on your operating system and shell.</p>
+<p>When you type a command and press <strong>Enter</strong>, the shell executes it. Once the command finishes, a new prompt generally appears, indicating that the terminal is ready for another command.</p>
+<p>Try entering:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello, Python for Science!&quot;</span>
+</pre></div>
+</div>
+<p>The command <code class="docutils literal notranslate"><span class="pre">echo</span></code> displays text in the terminal. You should see:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Hello, Python for Science!
+</pre></div>
+</div>
+</section>
+<section id="recalling-and-editing-commands">
+<h3>Recalling and Editing Commands<a class="headerlink" href="#recalling-and-editing-commands" title="Link to this heading">#</a></h3>
+<p>You do not need to retype commands every time you use them. The shell provides several keyboard shortcuts to make working in the terminal easier.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key or Command</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Up Arrow (↑)</strong></p></td>
+<td><p>Recall the previous command</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Down Arrow (↓)</strong></p></td>
+<td><p>Move forward through previously recalled commands</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Left / Right Arrows</strong></p></td>
+<td><p>Move the cursor within a command</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Tab</strong></p></td>
+<td><p>Autocomplete a command or file name when possible</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ctrl + C</strong></p></td>
+<td><p>Interrupt a running command</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Ctrl + L</strong></p></td>
+<td><p>Clear the visible terminal screen</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">history</span></code></p></td>
+<td><p>Display previously entered commands</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">clear</span></code></p></td>
+<td><p>Clear the terminal screen</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For example, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Scientific Python&quot;</span>
+</pre></div>
+</div>
+<p>Now press the <strong>Up Arrow</strong>. The command you just entered should reappear. You can edit it or press Enter to execute it again.</p>
+<p>Next, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">history</span>
+</pre></div>
+</div>
+<p>This displays a numbered list of commands you have previously entered. Your shell generally remembers commands between terminal sessions.</p>
+<p><strong>Tip:</strong> Recalling and editing commands is particularly useful when installing software or managing Python environments, where commands can be lengthy.</p>
+</section>
+<section id="using-tab-completion">
+<h3>Using Tab Completion<a class="headerlink" href="#using-tab-completion" title="Link to this heading">#</a></h3>
+<p>The <strong>Tab</strong> key can automatically complete commands, file names, and directory names.</p>
+<p>For example, type the following without pressing Enter:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>hist
+</pre></div>
+</div>
+<p>Now press <strong>Tab</strong>. Your shell may complete the command to:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">history</span>
+</pre></div>
+</div>
+<p>If several possible completions exist, the shell may require additional characters or display a list of possibilities.</p>
+<p>Tab completion helps reduce typing errors, especially when working with long file names and directory paths.</p>
+</section>
+<section id="your-home-directory">
+<h3>Your Home Directory<a class="headerlink" href="#your-home-directory" title="Link to this heading">#</a></h3>
+<p>Unix organizes files and directories into a hierarchical structure called a <strong>directory tree</strong>. At the top is the root directory (<code class="docutils literal notranslate"><span class="pre">/</span></code>), with other directories located beneath it.</p>
+<p>Every user has a <strong>home directory</strong>, where personal files and projects are stored.</p>
+<p>Unix uses the tilde (<code class="docutils literal notranslate"><span class="pre">~</span></code>) as a shortcut for your home directory.</p>
+<p>To see your current working directory, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>The command <code class="docutils literal notranslate"><span class="pre">pwd</span></code> stands for <strong>print working directory</strong>.</p>
+<p>To return to your home directory, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+</pre></div>
+</div>
+<p>We will explore directories and file paths in greater detail after downloading the course materials from GitHub. At that point, we will have actual scientific projects, notebooks, and data files to navigate.</p>
+</section>
+<section id="when-something-goes-wrong">
+<h3>When Something Goes Wrong<a class="headerlink" href="#when-something-goes-wrong" title="Link to this heading">#</a></h3>
+<p>Occasionally, you may enter a command incorrectly or encounter an error message. This is a normal part of working with a terminal.</p>
+<p>If a command is running and you need to interrupt it, press:</p>
+<p><strong>Ctrl + C</strong></p>
+<p>If you simply want to clear the terminal screen, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>clear
+</pre></div>
+</div>
+<p>Clearing the screen does not delete files or undo previously executed commands.</p>
+<p><strong>Important:</strong> Do not enter commands you do not understand, particularly commands involving <code class="docutils literal notranslate"><span class="pre">sudo</span></code>, which can grant administrative privileges. If you encounter an unfamiliar error, read the message before attempting to fix it.</p>
+</section>
+<section id="activity-practice-using-the-terminal">
+<h3>Activity: Practice Using the Terminal<a class="headerlink" href="#activity-practice-using-the-terminal" title="Link to this heading">#</a></h3>
+<p>With your terminal open, complete the following:</p>
+<ol class="arabic simple">
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&quot;Hello,</span> <span class="pre">Python</span> <span class="pre">for</span> <span class="pre">Science!&quot;</span></code> and observe the output.</p></li>
+<li><p>Press the Up Arrow to recall the command, then execute it again.</p></li>
+<li><p>Edit the recalled command to display a different message.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">history</span></code> to display previously executed commands.</p></li>
+<li><p>Try completing <code class="docutils literal notranslate"><span class="pre">history</span></code> by typing <code class="docutils literal notranslate"><span class="pre">hist</span></code> followed by Tab.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to display your current working directory.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code> to return to your home directory.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">clear</span></code> to clear the terminal screen.</p></li>
+</ol>
+<p>You now have the basic terminal skills needed to begin installing and managing scientific Python.</p>
+<p><strong>Next: Installing Miniconda</strong></p>
+<p>In Section 1.3, we will install Miniconda, a package and environment management system. We will use it to create isolated Python environments, install JupyterLab, and manage the scientific packages needed for this course.</p>
+</section>
+<section id="terminal-best-practices">
+<h3>Terminal Best Practices<a class="headerlink" href="#terminal-best-practices" title="Link to this heading">#</a></h3>
+<p>As you begin working with Python, Miniconda, and JupyterLab, a few habits will make your computing environment easier to manage.</p>
+<p><strong>1. You can open more than one terminal.</strong></p>
+<p>Each terminal operates independently. You can run JupyterLab in one terminal while using another to examine files or manage Python environments.</p>
+<p>For example, you might have:</p>
+<ul class="simple">
+<li><p><strong>Terminal 1:</strong> Running JupyterLab.</p></li>
+<li><p><strong>Terminal 2:</strong> Installing packages or checking a Conda environment.</p></li>
+</ul>
+<p>You can open additional Ubuntu terminals through Windows Terminal or the Start menu, and additional macOS terminals through Terminal’s <strong>Shell → New Window</strong> or <strong>New Tab</strong> menu.</p>
+<p><strong>2. Your command history is normally saved automatically.</strong></p>
+<p>The shell remembers commands you have entered. You can recall them with the Up Arrow or display them using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">history</span>
+</pre></div>
+</div>
+<p>In Ubuntu’s Bash shell, command history is normally stored in a hidden file called <code class="docutils literal notranslate"><span class="pre">.bash_history</span></code> in your home directory.</p>
+<p>When you close a terminal normally, Bash generally saves its history. You do not need to type <code class="docutils literal notranslate"><span class="pre">exit</span></code> every time, although doing so is a reliable way to close a shell session.</p>
+<p>If multiple terminals are open, each maintains its own command history. Commands entered in one terminal may not immediately appear in another terminal’s history.</p>
+<p><strong>3. Each terminal has its own working directory and active environment.</strong></p>
+<p>When you change directories or activate a Conda environment in one terminal, other terminals are not automatically affected.</p>
+<p>Later in this course, we will use commands such as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>jbenv
+</pre></div>
+</div>
+<p>This activates a Python environment in the current terminal session only.</p>
+<p><strong>4. Be aware of programs that continue running.</strong></p>
+<p>Some commands finish immediately and return you to the command prompt. Others launch programs that continue running.</p>
+<p>For example, when we launch JupyterLab using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+<p>the terminal will remain occupied while the JupyterLab server is running. This is normal.</p>
+<p>You can open another terminal to execute additional commands.</p>
+<p>When you are finished using JupyterLab, you can stop its server by returning to the terminal where it is running and pressing <strong>Ctrl+C</strong>, then confirming shutdown if prompted.</p>
+<p><strong>5. Close terminal sessions when you finish working.</strong></p>
+<p>To close a shell session, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exit</span>
+</pre></div>
+</div>
+<p>You can also close the terminal window. Before doing so, make sure you are not interrupting an installation or another program that is still running.</p>
+<p>These simple practices will help you manage your Python computing environment without needing to become an expert in Unix administration.</p>
+</section>
+</section>
+<section id="your-unix-home-directory-and-file-system">
+<h2>1.2.4 Your Unix Home Directory and File System<a class="headerlink" href="#your-unix-home-directory-and-file-system" title="Link to this heading">#</a></h2>
+<p>Unix organizes files and directories (folders) into a hierarchical structure called a <strong>directory tree</strong>. Understanding this structure is important because we will use terminal commands to navigate directories, organize scientific projects, and access data files.</p>
+<section id="the-unix-directory-structure">
+<h3>The Unix Directory Structure<a class="headerlink" href="#the-unix-directory-structure" title="Link to this heading">#</a></h3>
+<p>At the top of the directory tree is the <strong>root directory</strong>, represented by a forward slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>). All other files and directories are located beneath this root.</p>
+<p>A simplified Linux directory structure looks like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/
+├── bin/                  System commands
+├── etc/                  System configuration files
+├── home/                 User home directories
+│   └── student/
+│       ├── Documents/
+│       └── science-projects/
+├── tmp/                  Temporary files
+└── usr/                  System programs and libraries
+</pre></div>
+</div>
+<p>Unix uses the forward slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>) to separate directories in a path. This differs from Windows, which traditionally uses a backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>).</p>
+</section>
+<section id="id2">
+<h3>Your Home Directory<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Each user has a <strong>home directory</strong> where personal files, programs, and projects can be stored. On Ubuntu, this is typically:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/home/student
+</pre></div>
+</div>
+<p>The actual directory name depends on your username.</p>
+<p>Unix provides a shortcut for referring to your home directory: the tilde (<code class="docutils literal notranslate"><span class="pre">~</span></code>).</p>
+<p>For example, the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+</pre></div>
+</div>
+<p>changes your current working directory to your home directory.</p>
+<p>Your <strong>current working directory</strong> is the directory in which your terminal is presently operating. You can identify it using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>The command <code class="docutils literal notranslate"><span class="pre">pwd</span></code> stands for <strong>print working directory</strong>.</p>
+<p>For example, the output might be:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/home/student
+</pre></div>
+</div>
+<p>To list the files and directories in your current working directory, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+<p>The command <code class="docutils literal notranslate"><span class="pre">ls</span></code> stands for <strong>list</strong>.</p>
+</section>
+<section id="absolute-and-relative-paths">
+<h3>Absolute and Relative Paths<a class="headerlink" href="#absolute-and-relative-paths" title="Link to this heading">#</a></h3>
+<p>A <strong>path</strong> identifies the location of a file or directory.</p>
+<p>An <strong>absolute path</strong> begins at the root directory (<code class="docutils literal notranslate"><span class="pre">/</span></code>) and specifies the complete location.</p>
+<p>For example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/home/student/science-projects/experiment1
+</pre></div>
+</div>
+<p>A <strong>relative path</strong> specifies a location relative to your current working directory.</p>
+<p>If your current directory is <code class="docutils literal notranslate"><span class="pre">/home/student</span></code>, the same location can be represented as:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>science-projects/experiment1
+</pre></div>
+</div>
+<p>Unix also provides several shortcuts for referring to directories:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p>Root directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">~</span></code></p></td>
+<td><p>Home directory</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.</span></code></p></td>
+<td><p>Current directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p>Parent directory (one level above)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>..
+</pre></div>
+</div>
+<p>moves to the parent directory, while</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+</pre></div>
+</div>
+<p>returns to your home directory.</p>
+<p><strong>Relative paths are particularly useful in scientific computing.</strong> If a Python project contains notebooks and experimental data organized into subdirectories, relative paths allow the project to be moved or shared without changing the file locations referenced in the code.</p>
+</section>
+<section id="accessing-windows-files-from-wsl">
+<h3>Accessing Windows Files from WSL<a class="headerlink" href="#accessing-windows-files-from-wsl" title="Link to this heading">#</a></h3>
+<p>Ubuntu running under WSL has its own Linux file system, but it can also access files stored in Windows.</p>
+<p>For example:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Location</p></th>
+<th class="head"><p>Path</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ubuntu home directory</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/home/student</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Windows C: drive</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/mnt/c/</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Windows user directories</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/mnt/c/Users/</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For this course, we recommend storing Python projects, Conda environments, and Git repositories within your <strong>Linux home directory</strong>, rather than on the Windows C: drive.</p>
+<p>This generally provides better performance and avoids some file-permission and compatibility issues when using Linux development tools.</p>
+<p>You can access your Linux files from Windows File Explorer by entering the following command in your Ubuntu terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>explorer.exe<span class="w"> </span>.
+</pre></div>
+</div>
+<p>This opens the current directory in Windows File Explorer.</p>
+</section>
+<section id="activity-exploring-your-home-directory">
+<h3>Activity: Exploring Your Home Directory<a class="headerlink" href="#activity-exploring-your-home-directory" title="Link to this heading">#</a></h3>
+<p>Open your terminal and execute the following commands one at a time.</p>
+<p><strong>1. Move to your home directory.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+</pre></div>
+</div>
+<p><strong>2. Display your current working directory.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<p><strong>3. List the files and directories in your home directory.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+<p><strong>4. Display hidden files and directories.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-a
+</pre></div>
+</div>
+<p>Notice that hidden files and directories generally begin with a period (<code class="docutils literal notranslate"><span class="pre">.</span></code>).</p>
+<p><strong>5. Move to the parent directory and display your new location.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>..
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+<p><strong>6. Return to your home directory.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+</pre></div>
+</div>
+<section id="questions">
+<h4>Questions<a class="headerlink" href="#questions" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>What is the absolute path to your home directory?</p></li>
+<li><p>What is the difference between <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code>?</p></li>
+<li><p>What does the tilde (<code class="docutils literal notranslate"><span class="pre">~</span></code>) represent?</p></li>
+<li><p>Why might relative paths be preferable to absolute paths when sharing a scientific project?</p></li>
+</ol>
+<p>In the next section, we will use Unix commands to create directories, manage files, and organize a scientific computing project.</p>
+</section>
+</section>
+</section>
+<section id="unix-home-directory-and-file-system">
+<h2>1.2.4 Unix Home Directory and File System<a class="headerlink" href="#unix-home-directory-and-file-system" title="Link to this heading">#</a></h2>
+<p>Whether you are using Ubuntu through WSL on Windows or Terminal on macOS, you now have access to a Unix-like computing environment. Before we begin using terminal commands, we need to understand how Unix organizes files and directories (folders).</p>
+<section id="id3">
+<h3>The Unix Directory Structure<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Unix organizes files and directories into a hierarchical structure, often called a <strong>directory tree</strong>.</p>
+<p>At the top of this structure is the <strong>root directory</strong>, represented by a forward slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>). All other directories and files are located somewhere beneath this root.</p>
+<p>A simplified Unix directory structure looks like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/
+├── bin/              System commands
+├── etc/              System configuration files
+├── home/             User directories (typical Linux)
+│   └── student/
+│       ├── Documents/
+│       └── science-projects/
+├── tmp/              Temporary files
+└── usr/              System programs and libraries
+</pre></div>
+</div>
+<p>This example represents a typical Linux system. macOS uses a somewhat different directory structure, but the same basic principles apply.</p>
+<p>In particular, macOS normally stores user home directories under <code class="docutils literal notranslate"><span class="pre">/Users/</span></code> rather than <code class="docutils literal notranslate"><span class="pre">/home/</span></code>.</p>
+<p><strong>Important:</strong> Unix uses the forward slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>) to separate directories in a path, whereas Windows traditionally uses a backslash (<code class="docutils literal notranslate"><span class="pre">\</span></code>).</p>
+</section>
+<section id="id4">
+<h3>Your Home Directory<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Every user has a <strong>home directory</strong>, which provides a personal location for storing files, programs, and projects.</p>
+<p>For example:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Operating System</p></th>
+<th class="head"><p>Example Home Directory</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ubuntu (WSL)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/home/student</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>macOS</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/Users/student</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The actual directory name depends on your username.</p>
+<p>Unix provides a convenient shortcut for referring to your home directory: the tilde (<code class="docutils literal notranslate"><span class="pre">~</span></code>).</p>
+<p>For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+</pre></div>
+</div>
+<p>This command changes your current working directory to your home directory, regardless of whether you are using Ubuntu or macOS.</p>
+<p>We will learn more about the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command in the next section.</p>
+</section>
+<section id="your-current-working-directory">
+<h3>Your Current Working Directory<a class="headerlink" href="#your-current-working-directory" title="Link to this heading">#</a></h3>
+<p>When you open a terminal, you are working within a particular directory. This location is called your <strong>current working directory</strong>.</p>
+<p>To determine your current location, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>The command <code class="docutils literal notranslate"><span class="pre">pwd</span></code> stands for <strong>print working directory</strong>.</p>
+<p>For example, an Ubuntu user might see:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/home/student
+</pre></div>
+</div>
+<p>A macOS user might see:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/Users/student
+</pre></div>
+</div>
+<p>You can also list the files and directories in your current location using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+<p>The command <code class="docutils literal notranslate"><span class="pre">ls</span></code> stands for <strong>list</strong>.</p>
+<p>If the directory contains files or subdirectories, their names will appear in the terminal.</p>
+<p>Try both commands and examine the output.</p>
+</section>
+<section id="id5">
+<h3>Absolute and Relative Paths<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>A <strong>path</strong> identifies the location of a file or directory.</p>
+<p>There are two common ways to specify paths:</p>
+<p><strong>Absolute paths</strong> begin at the root directory (<code class="docutils literal notranslate"><span class="pre">/</span></code>) and describe the complete location of a file or directory.</p>
+<p>For example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/home/student/science-projects/experiment1
+</pre></div>
+</div>
+<p><strong>Relative paths</strong> describe a location relative to your current working directory.</p>
+<p>If your working directory is <code class="docutils literal notranslate"><span class="pre">/home/student</span></code>, you could refer to the same project using:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>science-projects/experiment1
+</pre></div>
+</div>
+<p>Unix also provides special symbols for navigating directories:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p>Root directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">~</span></code></p></td>
+<td><p>Your home directory</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.</span></code></p></td>
+<td><p>Current directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">..</span></code></p></td>
+<td><p>Parent directory (one level above)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> moves to the parent directory, while <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">.</span></code> leaves you in the current directory.</p>
+<p>Understanding relative and absolute paths is especially important when working with scientific data files, Python scripts, and Jupyter notebooks.</p>
+</section>
+<section id="windows-and-linux-file-systems-in-wsl">
+<h3>Windows and Linux File Systems in WSL<a class="headerlink" href="#windows-and-linux-file-systems-in-wsl" title="Link to this heading">#</a></h3>
+<p><strong>Windows users:</strong> Ubuntu running under WSL has its own Linux file system, but it can also access files stored in Windows.</p>
+<p>For example:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Location</p></th>
+<th class="head"><p>Example Path</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ubuntu home directory</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/home/student</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Windows C: drive from Ubuntu</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/mnt/c/</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Windows user directory from Ubuntu</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/mnt/c/Users/StudentName/</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This means you can access Windows files from your Ubuntu terminal.</p>
+<p>However, for this course, we recommend storing your Python projects, Conda environments, and Git repositories within your <strong>Linux home directory</strong>, rather than on the Windows C: drive.</p>
+<p>Working within the Linux file system generally provides better performance and fewer file-permission or compatibility issues when using Linux development tools.</p>
+<p>You can still access these files through Windows File Explorer. From your Ubuntu terminal, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>explorer.exe<span class="w"> </span>.
+</pre></div>
+</div>
+<p>This opens the current Linux directory in Windows File Explorer.</p>
+<p>Alternatively, you can enter <code class="docutils literal notranslate"><span class="pre">\\wsl$</span></code> into the File Explorer address bar to browse your WSL distributions.</p>
+<p><strong>macOS users:</strong> Your home directory is already part of the macOS file system. Files created through Terminal can also be accessed through Finder.</p>
+</section>
+<section id="activity-explore-your-home-directory">
+<h3>Activity: Explore Your Home Directory<a class="headerlink" href="#activity-explore-your-home-directory" title="Link to this heading">#</a></h3>
+<p>With your Ubuntu or macOS terminal open, complete the following:</p>
+<ol class="arabic simple">
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code> to move to your home directory.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and identify your home directory’s full path.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">ls</span></code> and examine the files and folders in your home directory.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code> to display all entries, including hidden files and directories.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> to move to the parent directory.</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">pwd</span></code> again. How has your location changed?</p></li>
+<li><p>Enter <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code> to return to your home directory.</p></li>
+</ol>
+<p><strong>Questions to consider:</strong></p>
+<ul class="simple">
+<li><p>What is the absolute path to your home directory?</p></li>
+<li><p>What is the difference between <code class="docutils literal notranslate"><span class="pre">.</span></code> and <code class="docutils literal notranslate"><span class="pre">..</span></code>?</p></li>
+<li><p>Why is <code class="docutils literal notranslate"><span class="pre">~</span></code> useful when writing commands that should work on different computers?</p></li>
+<li><p>Why might a relative path be preferable to an absolute path when sharing a scientific project with another student?</p></li>
+</ul>
+<p>In the next section, we will use these concepts to create directories, manage files, and organize our first scientific computing project.</p>
+</section>
+</section>
+<section id="your-first-unix-commands">
+<h2>1.2.5 Your First Unix Commands<a class="headerlink" href="#your-first-unix-commands" title="Link to this heading">#</a></h2>
+</section>
+<section id="understanding-the-shell-and-executing-commands">
+<h2>1.2.6 Understanding the Shell and Executing Commands<a class="headerlink" href="#understanding-the-shell-and-executing-commands" title="Link to this heading">#</a></h2>
+</section>
+<section id="check-your-computing-environment">
+<h2>1.2.7 Check Your Computing Environment<a class="headerlink" href="#check-your-computing-environment" title="Link to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -476,6 +1266,73 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-your-computer">1.2.1 Preparing Your Computer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-users-installing-wsl-and-ubuntu">1.2.2 Windows Users: Installing WSL and Ubuntu</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-requirements">Computer Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-powershell-as-administrator">Step 1: Open PowerShell as Administrator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-install-wsl-and-ubuntu">Step 2: Install WSL and Ubuntu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-set-up-ubuntu">Step 3: Set Up Ubuntu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-verify-your-installation">Step 4: Verify Your Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-users-opening-terminal">1.2.3 macOS Users: Opening Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Computer Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-terminal">Step 1: Open Terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-identify-your-shell">Step 2: Identify Your Shell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-verify-your-unix-environment">Step 3: Verify Your Unix Environment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-comfortable-with-the-terminal">1.2.4 Getting Comfortable with the Terminal</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-command-prompt">The Command Prompt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recalling-and-editing-commands">Recalling and Editing Commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-tab-completion">Using Tab Completion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-home-directory">Your Home Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-something-goes-wrong">When Something Goes Wrong</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-practice-using-the-terminal">Activity: Practice Using the Terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminal-best-practices">Terminal Best Practices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-unix-home-directory-and-file-system">1.2.4 Your Unix Home Directory and File System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-unix-directory-structure">The Unix Directory Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Your Home Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">Absolute and Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-windows-files-from-wsl">Accessing Windows Files from WSL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-exploring-your-home-directory">Activity: Exploring Your Home Directory</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unix-home-directory-and-file-system">1.2.4 Unix Home Directory and File System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">The Unix Directory Structure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Your Home Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-current-working-directory">Your Current Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Absolute and Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-and-linux-file-systems-in-wsl">Windows and Linux File Systems in WSL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-explore-your-home-directory">Activity: Explore Your Home Directory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-unix-commands">1.2.5 Your First Unix Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-shell-and-executing-commands">1.2.6 Understanding the Shell and Executing Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-computing-environment">1.2.7 Check Your Computing Environment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
