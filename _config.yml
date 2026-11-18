@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: 2026 Cheminformatics OLCC
+title: 2027 Python for Scientists
 author: Robert Belford
 logo: logo.png
 
@@ -32,7 +32,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/rebelford/2026Cheminformatics  # Online location of your book
+  url: https://github.com/rebelford/py4sci2027  # Online location of your book
   #path_to_book: repo root  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
