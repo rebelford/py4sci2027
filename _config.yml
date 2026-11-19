@@ -40,6 +40,7 @@ repository:
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 
 mathjax: true
+
 html:
   use_issues_button: true
   use_repository_button: true
@@ -47,6 +48,18 @@ html:
     - _static/custom.css
   extra_footer: |
     <script async src="https://hypothes.is/embed.js"></script>
+
+    <p style="font-size: 0.85em; margin-top: 10px;">
+      <strong>AI Assistance:</strong>
+      ChatGPT (OpenAI) was used to assist in developing,
+      editing, and refining instructional text, Python code,
+      and Jupyter notebooks through an iterative, prompt-driven
+      process. The author directs the content, structure, and
+      educational narrative and assumes full responsibility
+      for the final material.
+    </p>
+
+
 
 
 launch_buttons:
