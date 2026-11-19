@@ -16,40 +16,37 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -67,7 +64,6 @@
     <link rel="prev" title="1 Understanding Your Computer and Operating System" href="01-01_Understanding_your_Computing_.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -83,8 +79,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -92,6 +99,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -99,8 +107,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -116,8 +124,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -147,17 +154,21 @@
     
     
     <img src="../../../_static/logo.png" class="logo__image only-light" alt="2027 Python for Scientists - Home"/>
-    <img src="../../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="2027 Python for Scientists - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="2027 Python for Scientists - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -187,14 +198,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -355,7 +361,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -369,17 +375,25 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -424,7 +438,10 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-comfortable-with-the-terminal">1.2.4 Getting Comfortable with the Terminal</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-command-prompt">The Command Prompt</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recalling-and-editing-commands">Recalling and Editing Commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recalling-and-editing-commands">Recalling and Editing Commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reusing-commands-with-terminal-history">Reusing Commands with Terminal History</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-tab-completion">Using Tab Completion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-home-directory">Your Home Directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-something-goes-wrong">When Something Goes Wrong</a></li>
@@ -738,26 +755,62 @@
 </pre></div>
 </div>
 <p>Now press the <strong>Up Arrow</strong>. The command you just entered should reappear. You can edit it or press Enter to execute it again.</p>
-<p>Next, enter:</p>
+<section id="reusing-commands-with-terminal-history">
+<h4>Reusing Commands with Terminal History<a class="headerlink" href="#reusing-commands-with-terminal-history" title="Link to this heading">#</a></h4>
+<p>As you work in the terminal, you will often find yourself repeating commands. Rather than typing the same commands over and over, the shell maintains a <em>command history</em> that allows you to retrieve and reuse commands you previously entered.</p>
+<p>You can access this history in several ways:</p>
+<ul class="simple">
+<li><p><strong>Up Arrow (↑):</strong> Displays the previous command. Press it repeatedly to move backward through earlier commands. The Down Arrow (↓) moves forward through the history.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">history</span></code>:</strong> Displays a numbered list of previously entered commands.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">!number</span></code>:</strong> Executes the command associated with that history number.</p></li>
+</ul>
+<p>For example, the following screenshot shows the command history from a Bash terminal running Ubuntu under WSL.
+Notice that command <strong>658</strong> is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>info<span class="w"> </span>--envs
+</pre></div>
+</div>
+<p>Rather than typing that command again, we can enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>!658
+</pre></div>
+</div>
+<p><img alt="image.png" src="../../../_images/attachment-b32c587d39e1c812.png" /></p>
+<p>Bash retrieves command 658 from its history and executes it. In this example, the command lists the Conda environments installed on the computer and identifies the currently active environment with an asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p>
+<p>This is particularly useful when working with long commands that would be inconvenient to retype.</p>
+<p><strong>A word of caution:</strong> The <code class="docutils literal notranslate"><span class="pre">!number</span></code> syntax executes the selected command immediately, so be sure you know what the command does before using it. If you would rather inspect or edit the command first, you can retrieve it using the Up Arrow key or search for it with <code class="docutils literal notranslate"><span class="pre">Ctrl+R</span></code>.</p>
+<p>Command history is maintained by the shell. In Bash, recent commands are held in memory during a terminal session and are normally saved to a history file (typically <code class="docutils literal notranslate"><span class="pre">~/.bash_history</span></code>) when the shell exits. Separate terminal sessions may have their own in-memory histories, so commands entered in one terminal may not immediately appear in another.
+Next, enter:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">history</span>
 </pre></div>
 </div>
 <p>This displays a numbered list of commands you have previously entered. Your shell generally remembers commands between terminal sessions.</p>
 <p><strong>Tip:</strong> Recalling and editing commands is particularly useful when installing software or managing Python environments, where commands can be lengthy.</p>
 </section>
+</section>
 <section id="using-tab-completion">
 <h3>Using Tab Completion<a class="headerlink" href="#using-tab-completion" title="Link to this heading">#</a></h3>
-<p>The <strong>Tab</strong> key can automatically complete commands, file names, and directory names.</p>
+<p>The <strong>Tab</strong> key can automatically complete commands, file names, and directory names. It can also help you discover available commands when you are unsure of their exact names.</p>
 <p>For example, type the following without pressing Enter:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>hist
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>py
 </pre></div>
 </div>
-<p>Now press <strong>Tab</strong>. Your shell may complete the command to:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">history</span>
+<p>Now press <strong>Tab</strong>. Because several commands begin with <code class="docutils literal notranslate"><span class="pre">py</span></code>, the shell cannot determine which one you want. In the Bash shell used by Ubuntu, pressing <strong>Tab</strong> a second time typically displays a list of possible completions, as shown in the image below.</p>
+<p><img alt="image.png" src="../../../_images/attachment-1fed47d8e8a2534d.png" /></p>
+<p>Notice that the list includes several Python-related commands, including <code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">python3</span></code>, and <code class="docutils literal notranslate"><span class="pre">pyhtmlizer3</span></code>.</p>
+<p>If we want to run <code class="docutils literal notranslate"><span class="pre">pyhtmlizer3</span></code>, we can type the next letter, <code class="docutils literal notranslate"><span class="pre">h</span></code>, so the command becomes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyh
 </pre></div>
 </div>
-<p>If several possible completions exist, the shell may require additional characters or display a list of possibilities.</p>
-<p>Tab completion helps reduce typing errors, especially when working with long file names and directory paths.</p>
+<p>Pressing <strong>Tab</strong> again completes the command to:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pyhtmlizer3
+</pre></div>
+</div>
+<p>This illustrates two useful behaviors of Tab completion:</p>
+<ul class="simple">
+<li><p><strong>When a unique completion exists</strong>, pressing Tab can finish the command automatically.</p></li>
+<li><p><strong>When multiple completions exist</strong>, pressing Tab twice can display the available options, allowing you to type additional characters to narrow the choices.</p></li>
+</ul>
+<p>Tab completion also works with file and directory names, making it especially useful when navigating long directory paths or working with scientific data files.</p>
+<p><strong>Tip:</strong> Tab completion does not execute a command. You must press <strong>Enter</strong> to run it. This makes Tab a useful way to explore available commands without actually running them.</p>
 </section>
 <section id="your-home-directory">
 <h3>Your Home Directory<a class="headerlink" href="#your-home-directory" title="Link to this heading">#</a></h3>
@@ -1253,16 +1306,14 @@
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item"><div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+  <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-your-computer">1.2.1 Preparing Your Computer</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
@@ -1286,7 +1337,10 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-comfortable-with-the-terminal">1.2.4 Getting Comfortable with the Terminal</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-command-prompt">The Command Prompt</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recalling-and-editing-commands">Recalling and Editing Commands</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recalling-and-editing-commands">Recalling and Editing Commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#reusing-commands-with-terminal-history">Reusing Commands with Terminal History</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-tab-completion">Using Tab Completion</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#your-home-directory">Your Home Directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-something-goes-wrong">When Something Goes Wrong</a></li>
@@ -1379,8 +1433,8 @@ By Robert Belford
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
