@@ -12,7 +12,7 @@ By the end of this module, you should have a functioning scientific Python envir
 
 ## Module Contents
 
-### 1.1 Understanding your Computing_
+### 1.1 Understanding your Computer
 
 Explore the basic components of a computer, including the operating system, memory, files, programs, and processes. Compare Windows, macOS, and Linux, and learn what terminals and shells do.
 
