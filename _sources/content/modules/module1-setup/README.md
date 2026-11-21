@@ -12,13 +12,13 @@ By the end of this module, you should have a functioning scientific Python envir
 
 ## Module Contents
 
-### 1.1 Understanding Your Computer and Operating System
+### 1.1 Understanding your Computer
 
 Explore the basic components of a computer, including the operating system, memory, files, programs, and processes. Compare Windows, macOS, and Linux, and learn what terminals and shells do.
 
 **Goal:** Understand your computer's architecture before making changes to its software configuration.
 
-### 1.2 Setting Up a Unix-Like Computing Environment
+### 1.2 Setting Up Your _Computer
 
 Establish a common command-line environment for scientific computing. Windows users will install Windows Subsystem for Linux (WSL 2) and Ubuntu, while macOS users will work with their existing Unix-based environment.
 
@@ -26,13 +26,13 @@ Practice basic terminal commands such as `pwd`, `ls`, `cd`, and `mkdir`, and lea
 
 **Goal:** Develop a common command-line workflow across operating systems.
 
-### 1.3 Installing Miniconda and Managing Python Environments
+### 1.3 Installing Miniconda
 
 Install Miniconda and learn how Python environments and package managers work. Distinguish among the system Python installation, Conda's base environment, and the Python installations associated with individual projects.
 
 **Goal:** Understand how Python environments isolate software dependencies and determine which Python interpreter executes your code.
 
-### 1.4 Installing and Using JupyterLab
+### 1.4 upyterLab
 
 Create a dedicated JupyterLab environment (`jbenv`), install and launch JupyterLab, and learn to create and execute Jupyter notebooks.
 
@@ -40,7 +40,7 @@ Explore the relationships among the JupyterLab server, notebook files, kernels, 
 
 **Goal:** Run scientific Python code in a controlled, interactive computing environment.
 
-### 1.5 Files, Directories, and Computational Reproducibility
+### 1.5 GitHub
 
 Learn to organize scientific computing projects using directory structures, relative and absolute file paths, and consistent file-naming conventions.
 
@@ -48,7 +48,7 @@ Explore how data are loaded into memory, processed, and saved, and why documenti
 
 **Goal:** Organize, document, and preserve computational work so it can be reproduced.
 
-### 1.6 Git and GitHub
+### 1.6 Managing and Sharing Projects
 
 Introduce version control and learn how Git records changes to files and how GitHub facilitates collaboration and sharing.
 
