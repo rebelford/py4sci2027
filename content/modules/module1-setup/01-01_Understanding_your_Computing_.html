@@ -16,37 +16,40 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -64,6 +67,7 @@
     <link rel="prev" title="Module 1: Setting Up Your Computer" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,19 +83,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -99,7 +92,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,8 +99,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -124,7 +116,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -154,21 +147,17 @@
     
     
     <img src="../../../_static/logo.png" class="logo__image only-light" alt="2027 Python for Scientists - Home"/>
-    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="2027 Python for Scientists - Home"/>`);</script>
+    <img src="../../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="2027 Python for Scientists - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -198,9 +187,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -361,7 +355,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -375,25 +369,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -417,49 +403,49 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-operating-system">1. What Is an Operating System?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-functions-of-an-operating-system">1.1 Major Functions of an Operating System</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems-and-scientific-computing">1.2 Operating Systems and Scientific Computing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-operating-system">1.1 What Is an Operating System?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-functions-of-an-operating-system">1.1.1 Major Functions of an Operating System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems-and-scientific-computing">1.1.2 Operating Systems and Scientific Computing</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-macos-and-linux">2. Windows, macOS, and Linux</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-windows">2.1 Microsoft Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apple-macos">2.2 Apple macOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">2.3 Linux</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-operating-systems">2.4 Comparing Operating Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-macos-and-linux">1.2. Windows, macOS, and Linux</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-windows">1.2.1 Microsoft Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apple-macos">1.2.2 Apple macOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">1.2.3 Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-operating-systems">1.2.4 Comparing Operating Systems</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-directories-and-file-paths">3. Files, Directories, and File Paths</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-directory-hierarchy">3.1 The Directory Hierarchy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">3.2 Absolute and Relative Paths</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-home-directory-and-working-directory">3.3 The Home Directory and Working Directory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-file-paths-matter-in-scientific-computing">3.4 Why File Paths Matter in Scientific Computing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-directories-and-file-paths">1.3. Files, Directories, and File Paths</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-directory-hierarchy">1.3.1 The Directory Hierarchy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">1.3.2 Absolute and Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-home-directory-and-working-directory">1.3.3 The Home Directory and Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-file-paths-matter-in-scientific-computing">1.3.4 Why File Paths Matter in Scientific Computing</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-and-storage">4. Memory and Storage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volatile-memory-ram">4.1 Volatile Memory: RAM</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonvolatile-memory-persistent-storage">4.2 Nonvolatile Memory: Persistent Storage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-memory-and-storage-work-together">4.3 How Memory and Storage Work Together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-and-storage">1.4. Memory and Storage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volatile-memory-ram">1.4.1 Volatile Memory: RAM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonvolatile-memory-persistent-storage">1.4.2 Nonvolatile Memory: Persistent Storage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-memory-and-storage-work-together">1.4.3 How Memory and Storage Work Together</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programs-and-processes">5. Programs and Processes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-multiple-processes">5.1 Running Multiple Processes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processes-in-scientific-computing">5.2 Processes in Scientific Computing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programs-and-processes">1.5. Programs and Processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-multiple-processes">1.5.1 Running Multiple Processes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processes-in-scientific-computing">1.5.2 Processes in Scientific Computing</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-interfaces-terminals-and-shells">6. Graphical Interfaces, Terminals, and Shells</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-user-interfaces-guis">6.1 Graphical User Interfaces (GUIs)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-shells">6.2 Terminals and Shells</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-a-command-line-interface">6.3 Why Use a Command-Line Interface?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-interfaces-terminals-and-shells">1.6. Graphical Interfaces, Terminals, and Shells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-user-interfaces-guis">1.6.1 Graphical User Interfaces (GUIs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-shells">1.6.2 Terminals and Shells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-a-command-line-interface">1.6.3 Why Use a Command-Line Interface?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-scientists-use-unix-like-environments">7. Why Scientists Use Unix-Like Environments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-python-and-its-computing-environments">8. Introducing Python and Its Computing Environments</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-python">8.1 What Is Python?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages">8.2 Python Packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-installations-and-environments">8.3 Python Installations and Environments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-and-environment-management">8.4 Conda and Environment Management</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-notebooks-and-kernels">8.5 JupyterLab, Notebooks, and Kernels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-scientists-use-unix-like-environments">1.7. Why Scientists Use Unix-Like Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-python-and-its-computing-environments">1.8. Introducing Python and Its Computing Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-python">1.8.1 What Is Python?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages">1.8.2 Python Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-installations-and-environments">1.8.3 Python Installations and Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-and-environment-management">1.8.4 Conda and Environment Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-notebooks-and-kernels">1.8.5 JupyterLab, Notebooks, and Kernels</a></li>
 </ul>
 </li>
 </ul>
@@ -493,12 +479,12 @@ document.write(`
 </ol>
 </section>
 <section id="what-is-an-operating-system">
-<h2>1. What Is an Operating System?<a class="headerlink" href="#what-is-an-operating-system" title="Link to this heading">#</a></h2>
+<h2>1.1 What Is an Operating System?<a class="headerlink" href="#what-is-an-operating-system" title="Link to this heading">#</a></h2>
 <p>An <strong>operating system (OS)</strong> is the software that manages a computer’s hardware and provides the environment in which other programs run. Whether you are using a Windows laptop, an Apple Mac, or a computer running Linux, an operating system is responsible for coordinating the activities of the computer.</p>
 <p>A computer consists of physical components, collectively called <strong>hardware</strong>, and the instructions that tell those components what to do, called <strong>software</strong>. Hardware includes the central processing unit (CPU), random-access memory (RAM), storage devices, and peripherals such as keyboards, displays, and scientific instruments. Software includes the operating system as well as applications such as web browsers, spreadsheets, and scientific programming tools.</p>
 <p>The operating system serves as an intermediary between applications and the computer’s hardware. For example, when a Python program reads a file containing experimental measurements, it typically does not communicate directly with the storage device. Instead, it requests the data through services provided by the operating system.</p>
 <section id="major-functions-of-an-operating-system">
-<h3>1.1 Major Functions of an Operating System<a class="headerlink" href="#major-functions-of-an-operating-system" title="Link to this heading">#</a></h3>
+<h3>1.1.1 Major Functions of an Operating System<a class="headerlink" href="#major-functions-of-an-operating-system" title="Link to this heading">#</a></h3>
 <p>Although operating systems perform many tasks, their principal responsibilities include:</p>
 <ol class="arabic simple">
 <li><p><strong>Process management:</strong> The OS manages running programs, allocating CPU time so that multiple applications can operate concurrently. For example, you might run a Python program while simultaneously using a web browser and editing a document.</p></li>
@@ -510,7 +496,7 @@ document.write(`
 </ol>
 </section>
 <section id="operating-systems-and-scientific-computing">
-<h3>1.2 Operating Systems and Scientific Computing<a class="headerlink" href="#operating-systems-and-scientific-computing" title="Link to this heading">#</a></h3>
+<h3>1.1.2 Operating Systems and Scientific Computing<a class="headerlink" href="#operating-systems-and-scientific-computing" title="Link to this heading">#</a></h3>
 <p>Consider a Python program that retrieves environmental measurements from an online database, calculates average temperatures, and generates a graph.</p>
 <p>Although we may think of this as a single Python program, the operating system supports several activities behind the scenes:</p>
 <ul class="simple">
@@ -525,26 +511,26 @@ document.write(`
 </section>
 </section>
 <section id="windows-macos-and-linux">
-<h2>2. Windows, macOS, and Linux<a class="headerlink" href="#windows-macos-and-linux" title="Link to this heading">#</a></h2>
+<h2>1.2. Windows, macOS, and Linux<a class="headerlink" href="#windows-macos-and-linux" title="Link to this heading">#</a></h2>
 <p>The three major operating systems used on personal computers are <strong>Microsoft Windows, Apple macOS, and Linux</strong>. Although they differ in their design, appearance, and underlying architecture, they perform essentially the same functions: managing hardware, running applications, organizing files, and providing interfaces through which users interact with their computers.</p>
 <section id="microsoft-windows">
-<h3>2.1 Microsoft Windows<a class="headerlink" href="#microsoft-windows" title="Link to this heading">#</a></h3>
+<h3>1.2.1 Microsoft Windows<a class="headerlink" href="#microsoft-windows" title="Link to this heading">#</a></h3>
 <p>Windows is widely used on personal computers in homes, schools, businesses, and research laboratories. It supports a large variety of commercial and scientific software and provides a familiar graphical user interface (GUI) for interacting with files and applications.</p>
 <p>Windows also includes command-line tools, such as PowerShell, that allow users to interact with the operating system by entering text commands. In this course, students using Windows will install the <strong>Windows Subsystem for Linux (WSL 2)</strong>, which allows Linux to run alongside Windows. They will then install <strong>Ubuntu</strong>, a popular Linux distribution, within WSL 2. This provides a Linux computing environment without replacing Windows or requiring a separate computer.</p>
 </section>
 <section id="apple-macos">
-<h3>2.2 Apple macOS<a class="headerlink" href="#apple-macos" title="Link to this heading">#</a></h3>
+<h3>1.2.2 Apple macOS<a class="headerlink" href="#apple-macos" title="Link to this heading">#</a></h3>
 <p>macOS is the operating system used on Apple Macintosh computers. Like Windows, it provides a graphical interface for managing files, launching applications, and interacting with the computer.</p>
 <p>An important distinction is that macOS is built on a Unix-based foundation. This means it already includes many of the command-line tools commonly used in scientific computing. Mac users can access these tools through the <strong>Terminal</strong> application without installing a separate Linux operating system.</p>
 </section>
 <section id="linux">
-<h3>2.3 Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
+<h3>1.2.3 Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
 <p>Linux is a family of free and open-source operating systems widely used in scientific research, web servers, cloud computing, and high-performance computing (HPC). Unlike Windows and macOS, which are developed primarily by individual companies, Linux is developed through contributions from an international community of programmers and organizations.</p>
 <p>Linux comes in different distributions, including Ubuntu, Debian, and Fedora. These distributions share the Linux kernel, which is the core of the operating system, but differ in the software and tools they provide.</p>
 <p>Linux is particularly important in scientific computing because many research computing systems, including supercomputers and remote servers, run Linux.</p>
 </section>
 <section id="comparing-operating-systems">
-<h3>2.4 Comparing Operating Systems<a class="headerlink" href="#comparing-operating-systems" title="Link to this heading">#</a></h3>
+<h3>1.2.4 Comparing Operating Systems<a class="headerlink" href="#comparing-operating-systems" title="Link to this heading">#</a></h3>
 <p>Despite their differences, all three operating systems can run Python and common scientific software packages, including NumPy, pandas, Matplotlib, and JupyterLab.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -588,12 +574,12 @@ document.write(`
 </section>
 </section>
 <section id="files-directories-and-file-paths">
-<h2>3. Files, Directories, and File Paths<a class="headerlink" href="#files-directories-and-file-paths" title="Link to this heading">#</a></h2>
+<h2>1.3. Files, Directories, and File Paths<a class="headerlink" href="#files-directories-and-file-paths" title="Link to this heading">#</a></h2>
 <p>Computers organize information using a <strong>file system</strong>, which manages how data is stored, named, and retrieved. Whether you are working with experimental measurements, Python programs, or scientific images, the information is typically stored in files organized into directories.</p>
 <p>A <strong>file</strong> is a named collection of data, such as a text document, a table of measurements, an image, or a Python program. A <strong>directory</strong> (often called a folder) is a container that can hold files and other directories. Directories provide a hierarchical structure that allows us to organize related information.</p>
 <p>Windows, macOS, and Linux all use hierarchical file systems, but they differ in how file locations are represented. Because we will use Ubuntu through WSL 2 on Windows and a Unix-based environment on macOS, we will focus on <strong>Unix-style file paths</strong> throughout this course.</p>
 <section id="the-directory-hierarchy">
-<h3>3.1 The Directory Hierarchy<a class="headerlink" href="#the-directory-hierarchy" title="Link to this heading">#</a></h3>
+<h3>1.3.1 The Directory Hierarchy<a class="headerlink" href="#the-directory-hierarchy" title="Link to this heading">#</a></h3>
 <p>In Unix-like operating systems, the file system is organized as a tree of directories beginning at the <strong>root directory</strong>, represented by a forward slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>).</p>
 <p>For example, a student’s files might be organized as follows:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/
@@ -619,7 +605,7 @@ document.write(`
 <p>On macOS, a student’s home directory typically begins with <code class="docutils literal notranslate"><span class="pre">/Users/</span></code> rather than <code class="docutils literal notranslate"><span class="pre">/home/</span></code>, but the same hierarchical organization and path conventions apply.</p>
 </section>
 <section id="absolute-and-relative-paths">
-<h3>3.2 Absolute and Relative Paths<a class="headerlink" href="#absolute-and-relative-paths" title="Link to this heading">#</a></h3>
+<h3>1.3.2 Absolute and Relative Paths<a class="headerlink" href="#absolute-and-relative-paths" title="Link to this heading">#</a></h3>
 <p>A <strong>file path</strong> identifies the location of a file or directory within the file system. There are two principal ways to specify a path.</p>
 <p>An <strong>absolute path</strong> gives the complete location starting from the root directory. For example:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/home/student/py4sci/data/temperatures.csv
@@ -639,7 +625,7 @@ document.write(`
 <p>For example, <code class="docutils literal notranslate"><span class="pre">../data/temperatures.csv</span></code> refers to a file in a directory named <code class="docutils literal notranslate"><span class="pre">data</span></code> located one level above the current directory.</p>
 </section>
 <section id="the-home-directory-and-working-directory">
-<h3>3.3 The Home Directory and Working Directory<a class="headerlink" href="#the-home-directory-and-working-directory" title="Link to this heading">#</a></h3>
+<h3>1.3.3 The Home Directory and Working Directory<a class="headerlink" href="#the-home-directory-and-working-directory" title="Link to this heading">#</a></h3>
 <p>Every user generally has a <strong>home directory</strong>, which serves as the default location for personal files, documents, and projects. In Unix-like environments, the symbol <code class="docutils literal notranslate"><span class="pre">~</span></code> is commonly used as shorthand for the current user’s home directory.</p>
 <p>For example:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>~/py4sci
@@ -650,7 +636,7 @@ document.write(`
 <p>This distinction is especially important when working with Python and Jupyter notebooks. A program may fail to locate a data file if its working directory is different from the directory you expected.</p>
 </section>
 <section id="why-file-paths-matter-in-scientific-computing">
-<h3>3.4 Why File Paths Matter in Scientific Computing<a class="headerlink" href="#why-file-paths-matter-in-scientific-computing" title="Link to this heading">#</a></h3>
+<h3>1.3.4 Why File Paths Matter in Scientific Computing<a class="headerlink" href="#why-file-paths-matter-in-scientific-computing" title="Link to this heading">#</a></h3>
 <p>Suppose you have collected temperature measurements and saved them in a CSV file. A Python program might load those measurements using:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
@@ -663,18 +649,18 @@ document.write(`
 </section>
 </section>
 <section id="memory-and-storage">
-<h2>4. Memory and Storage<a class="headerlink" href="#memory-and-storage" title="Link to this heading">#</a></h2>
+<h2>1.4. Memory and Storage<a class="headerlink" href="#memory-and-storage" title="Link to this heading">#</a></h2>
 <p>Computers need to store both the instructions that tell them what to do and the data they process. However, not all information is stored in the same way. Two important components are <strong>random-access memory (RAM)</strong> and <strong>persistent storage</strong>, such as solid-state drives (SSDs) and hard disk drives (HDDs).</p>
 <p>The fundamental difference between them is whether information is retained when the computer is turned off. This distinction is described using the terms <strong>volatile</strong> and <strong>nonvolatile</strong> memory.</p>
 <section id="volatile-memory-ram">
-<h3>4.1 Volatile Memory: RAM<a class="headerlink" href="#volatile-memory-ram" title="Link to this heading">#</a></h3>
+<h3>1.4.1 Volatile Memory: RAM<a class="headerlink" href="#volatile-memory-ram" title="Link to this heading">#</a></h3>
 <p><strong>Random-access memory (RAM)</strong> is the computer’s primary working memory. It temporarily holds the instructions and data that running programs need to access.</p>
 <p>RAM is considered <em>volatile</em> because its contents are lost when the computer is powered off. It is designed for rapid access, allowing the CPU to retrieve and modify information much faster than it typically could from a storage drive.</p>
 <p>For example, suppose you are using Python to analyze a CSV file containing thousands of temperature measurements. The file is initially stored on your computer’s SSD. When Python reads the file, the data is loaded into RAM, where it can be processed, analyzed, and used to generate graphs.</p>
 <p>RAM is a limited resource. If you attempt to load a dataset that is too large for the available memory, your program may slow down considerably or fail to execute.</p>
 </section>
 <section id="nonvolatile-memory-persistent-storage">
-<h3>4.2 Nonvolatile Memory: Persistent Storage<a class="headerlink" href="#nonvolatile-memory-persistent-storage" title="Link to this heading">#</a></h3>
+<h3>1.4.2 Nonvolatile Memory: Persistent Storage<a class="headerlink" href="#nonvolatile-memory-persistent-storage" title="Link to this heading">#</a></h3>
 <p><strong>Nonvolatile memory</strong> retains information even when electrical power is removed. Computers use persistent storage devices to preserve operating systems, applications, documents, and scientific datasets.</p>
 <p>Two common storage technologies are:</p>
 <ul class="simple">
@@ -685,7 +671,7 @@ document.write(`
 <p>For scientific computing, this means that experimental measurements, Python scripts, and Jupyter notebooks can be saved and retrieved during future computing sessions.</p>
 </section>
 <section id="how-memory-and-storage-work-together">
-<h3>4.3 How Memory and Storage Work Together<a class="headerlink" href="#how-memory-and-storage-work-together" title="Link to this heading">#</a></h3>
+<h3>1.4.3 How Memory and Storage Work Together<a class="headerlink" href="#how-memory-and-storage-work-together" title="Link to this heading">#</a></h3>
 <p>When you run a Python program, the operating system loads the instructions and necessary data from storage into RAM. The CPU executes the program’s instructions, accessing and modifying data in memory as needed.</p>
 <p>Consider a simple scientific workflow:</p>
 <ol class="arabic simple">
@@ -700,19 +686,19 @@ document.write(`
 </section>
 </section>
 <section id="programs-and-processes">
-<h2>5. Programs and Processes<a class="headerlink" href="#programs-and-processes" title="Link to this heading">#</a></h2>
+<h2>1.5. Programs and Processes<a class="headerlink" href="#programs-and-processes" title="Link to this heading">#</a></h2>
 <p>When you open an application, such as a web browser or JupyterLab, your computer begins executing instructions that tell it what to do. In computing, it is important to distinguish between a <strong>program</strong> and a <strong>process</strong>.</p>
 <p>A <strong>program</strong> is a collection of instructions that can be executed by a computer. Programs are typically stored as files on persistent storage, such as an SSD. Examples include web browsers, Python interpreters, and applications used to analyze scientific data.</p>
 <p>A <strong>process</strong> is a running instance of a program. When a program is executed, the operating system creates a process and allocates resources, including memory and CPU time, so that its instructions can be carried out.</p>
 <p>For example, a Python script saved as <code class="docutils literal notranslate"><span class="pre">analyze.py</span></code> is a file containing program instructions. When you execute that script using Python, the operating system runs a Python interpreter process that reads and executes those instructions.</p>
 <section id="running-multiple-processes">
-<h3>5.1 Running Multiple Processes<a class="headerlink" href="#running-multiple-processes" title="Link to this heading">#</a></h3>
+<h3>1.5.1 Running Multiple Processes<a class="headerlink" href="#running-multiple-processes" title="Link to this heading">#</a></h3>
 <p>Modern operating systems support <strong>multitasking</strong>, allowing multiple processes to execute concurrently. For example, you might have a web browser open while Python analyzes a dataset and another application downloads scientific measurements.</p>
 <p>Each process has its own execution state and generally operates within a protected memory space. The operating system manages these processes, allocating CPU time and other resources as needed.</p>
 <p>On a computer with multiple CPU cores, different processes may execute instructions simultaneously. Even on a single-core processor, the operating system can rapidly switch between processes, creating the appearance that several programs are running at once.</p>
 </section>
 <section id="processes-in-scientific-computing">
-<h3>5.2 Processes in Scientific Computing<a class="headerlink" href="#processes-in-scientific-computing" title="Link to this heading">#</a></h3>
+<h3>1.5.2 Processes in Scientific Computing<a class="headerlink" href="#processes-in-scientific-computing" title="Link to this heading">#</a></h3>
 <p>Consider working with a Jupyter notebook to analyze experimental measurements. Several components may be operating simultaneously:</p>
 <ol class="arabic simple">
 <li><p><strong>JupyterLab server:</strong> A running process that provides the JupyterLab interface and manages notebook sessions.</p></li>
@@ -725,18 +711,18 @@ document.write(`
 </section>
 </section>
 <section id="graphical-interfaces-terminals-and-shells">
-<h2>6. Graphical Interfaces, Terminals, and Shells<a class="headerlink" href="#graphical-interfaces-terminals-and-shells" title="Link to this heading">#</a></h2>
+<h2>1.6. Graphical Interfaces, Terminals, and Shells<a class="headerlink" href="#graphical-interfaces-terminals-and-shells" title="Link to this heading">#</a></h2>
 <p>Operating systems provide different ways for users to interact with computers. Most people are familiar with graphical interfaces, where programs are launched by clicking icons and files are managed through windows and menus. However, computers can also be controlled by entering text commands.</p>
 <p>Both approaches allow users to accomplish many of the same tasks, but they differ in how instructions are communicated to the operating system.</p>
 <section id="graphical-user-interfaces-guis">
-<h3>6.1 Graphical User Interfaces (GUIs)<a class="headerlink" href="#graphical-user-interfaces-guis" title="Link to this heading">#</a></h3>
+<h3>1.6.1 Graphical User Interfaces (GUIs)<a class="headerlink" href="#graphical-user-interfaces-guis" title="Link to this heading">#</a></h3>
 <p>A <strong>graphical user interface (GUI)</strong> allows users to interact with a computer through visual elements such as windows, icons, menus, and buttons. Examples include the Windows desktop, macOS Finder, and file managers found in Linux distributions.</p>
 <p>GUIs make many computing tasks intuitive. For example, you can create a directory, rename a file, or launch an application by clicking the appropriate controls.</p>
 <p>Scientific software also frequently provides graphical interfaces. Applications such as spreadsheet programs, molecular visualization tools, and integrated development environments (IDEs) allow users to analyze data, create visualizations, and develop programs through interactive interfaces.</p>
 <p>JupyterLab, which we will use extensively in this course, provides a graphical interface that runs in a web browser. It allows us to create and edit notebooks, execute Python code, view results, and manage files within a common workspace.</p>
 </section>
 <section id="terminals-and-shells">
-<h3>6.2 Terminals and Shells<a class="headerlink" href="#terminals-and-shells" title="Link to this heading">#</a></h3>
+<h3>1.6.2 Terminals and Shells<a class="headerlink" href="#terminals-and-shells" title="Link to this heading">#</a></h3>
 <p>A <strong>terminal</strong> is an application that provides a text-based interface through which users can enter commands and view their results. Rather than clicking through menus, users type instructions to perform tasks such as navigating directories, managing files, and running programs.</p>
 <p>A <strong>shell</strong> is a program that interprets those commands and launches the requested operations.</p>
 <p>Although the terms <em>terminal</em> and <em>shell</em> are sometimes used interchangeably, they refer to different components:</p>
@@ -758,7 +744,7 @@ document.write(`
 <p>In the next notebook, we will learn to use terminal commands to navigate directories, create files, and prepare our computing environment.</p>
 </section>
 <section id="why-use-a-command-line-interface">
-<h3>6.3 Why Use a Command-Line Interface?<a class="headerlink" href="#why-use-a-command-line-interface" title="Link to this heading">#</a></h3>
+<h3>1.6.3 Why Use a Command-Line Interface?<a class="headerlink" href="#why-use-a-command-line-interface" title="Link to this heading">#</a></h3>
 <p>A <strong>command-line interface (CLI)</strong> provides a way to interact with a computer through text commands rather than graphical controls.</p>
 <p>Although graphical interfaces are convenient for many everyday tasks, command-line tools offer several advantages in scientific computing.</p>
 <ol class="arabic simple">
@@ -772,7 +758,7 @@ document.write(`
 </section>
 </section>
 <section id="why-scientists-use-unix-like-environments">
-<h2>7. Why Scientists Use Unix-Like Environments<a class="headerlink" href="#why-scientists-use-unix-like-environments" title="Link to this heading">#</a></h2>
+<h2>1.7. Why Scientists Use Unix-Like Environments<a class="headerlink" href="#why-scientists-use-unix-like-environments" title="Link to this heading">#</a></h2>
 <p>Python runs on Windows, macOS, and Linux, and many scientific applications work equally well on all three operating systems. So why are we using Unix-like computing environments in this course?</p>
 <p>One reason is that <strong>Linux is widely used in scientific research</strong>, particularly on servers, cloud computing platforms, and high-performance computing (HPC) systems. Many scientific software packages and computational workflows are developed and tested in Linux environments.</p>
 <p>Unix-like operating systems also provide a collection of command-line tools that make it convenient to manage files, execute programs, automate repetitive tasks, and work with large datasets. These tools can be combined into scripts that perform sequences of operations, making computational workflows easier to reproduce and share.</p>
@@ -787,12 +773,12 @@ document.write(`
 <p>Learning to work in a Unix-like environment also provides skills that transfer beyond this course. Whether you are analyzing data on your laptop, accessing a remote scientific database, or running calculations on a university computing cluster, many of the same commands and concepts will apply.</p>
 </section>
 <section id="introducing-python-and-its-computing-environments">
-<h2>8. Introducing Python and Its Computing Environments<a class="headerlink" href="#introducing-python-and-its-computing-environments" title="Link to this heading">#</a></h2>
+<h2>1.8. Introducing Python and Its Computing Environments<a class="headerlink" href="#introducing-python-and-its-computing-environments" title="Link to this heading">#</a></h2>
 <p>Python is a free, open-source programming language widely used in scientific research, engineering, data analysis, and software development. Scientists use Python to analyze experimental measurements, generate visualizations, perform simulations, access scientific databases, and communicate with instruments and sensors.</p>
 <p>One of Python’s greatest strengths is its extensive collection of scientific packages, which provide tools for tasks ranging from numerical calculations to machine learning and molecular modeling.</p>
 <p>Before we begin working with Python, however, it is important to distinguish between the Python programming language, the software that executes Python code, and the computing environments in which that software runs.</p>
 <section id="what-is-python">
-<h3>8.1 What Is Python?<a class="headerlink" href="#what-is-python" title="Link to this heading">#</a></h3>
+<h3>1.8.1 What Is Python?<a class="headerlink" href="#what-is-python" title="Link to this heading">#</a></h3>
 <p>A <strong>programming language</strong> is a formal system for writing instructions that a computer can execute. Python provides a relatively readable syntax that makes it accessible to beginners while remaining powerful enough for complex scientific applications.</p>
 <p>For example, the following Python code calculates the average of five temperature measurements:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mf">21.3</span><span class="p">,</span> <span class="mf">22.1</span><span class="p">,</span> <span class="mf">20.8</span><span class="p">,</span> <span class="mf">23.0</span><span class="p">,</span> <span class="mf">21.7</span><span class="p">]</span>
@@ -815,7 +801,7 @@ document.write(`
 <p>A computer can have more than one Python interpreter installed, and different interpreters may use different versions of Python or have access to different scientific packages.</p>
 </section>
 <section id="python-packages">
-<h3>8.2 Python Packages<a class="headerlink" href="#python-packages" title="Link to this heading">#</a></h3>
+<h3>1.8.2 Python Packages<a class="headerlink" href="#python-packages" title="Link to this heading">#</a></h3>
 <p>Python includes a collection of built-in functions and modules, often called its <strong>standard library</strong>, that support common programming tasks.</p>
 <p>However, many scientific applications require additional capabilities. These are provided by packages developed by the Python community.</p>
 <p>Some widely used scientific packages include:</p>
@@ -852,7 +838,7 @@ document.write(`
 <p>Different projects may require different packages or versions of those packages. Managing these dependencies is one reason we use separate Python computing environments.</p>
 </section>
 <section id="python-installations-and-environments">
-<h3>8.3 Python Installations and Environments<a class="headerlink" href="#python-installations-and-environments" title="Link to this heading">#</a></h3>
+<h3>1.8.3 Python Installations and Environments<a class="headerlink" href="#python-installations-and-environments" title="Link to this heading">#</a></h3>
 <p>One potentially confusing aspect of scientific programming is that <strong>a single computer may contain several separate Python installations</strong>.</p>
 <p>For example, after setting up Ubuntu and Miniconda, you may encounter three general categories:</p>
 <p><strong>1. System Python</strong></p>
@@ -877,7 +863,7 @@ document.write(`
 <p>Importantly, these are not three different Python programming languages. They are different installations or environments that use the same Python language, potentially with different versions and packages.</p>
 </section>
 <section id="conda-and-environment-management">
-<h3>8.4 Conda and Environment Management<a class="headerlink" href="#conda-and-environment-management" title="Link to this heading">#</a></h3>
+<h3>1.8.4 Conda and Environment Management<a class="headerlink" href="#conda-and-environment-management" title="Link to this heading">#</a></h3>
 <p><strong>Conda</strong> is a software tool used to manage packages and computing environments. It allows us to create separate environments, install software into those environments, and control which versions of Python and its packages are available.</p>
 <p>We will use <strong>Miniconda</strong>, a minimal distribution that provides Conda, Python, and the basic tools needed to manage environments.</p>
 <p>For example, a scientific computing project might require Python and packages such as NumPy and pandas. Rather than installing everything into the operating system’s Python installation, we can create a dedicated environment containing those dependencies.</p>
@@ -891,7 +877,7 @@ document.write(`
 <p>In later notebooks, we will learn how to install Miniconda, create environments, activate them, and install scientific packages.</p>
 </section>
 <section id="jupyterlab-notebooks-and-kernels">
-<h3>8.5 JupyterLab, Notebooks, and Kernels<a class="headerlink" href="#jupyterlab-notebooks-and-kernels" title="Link to this heading">#</a></h3>
+<h3>1.8.5 JupyterLab, Notebooks, and Kernels<a class="headerlink" href="#jupyterlab-notebooks-and-kernels" title="Link to this heading">#</a></h3>
 <p>Although Python programs can be written as text files and executed from a terminal, we will do much of our work in <strong>JupyterLab</strong>, an interactive development environment that runs in a web browser.</p>
 <p>JupyterLab allows us to work with Jupyter notebooks, which combine executable code, explanatory text, mathematical equations, tables, and visualizations in a single document.</p>
 <p>This makes notebooks particularly useful for scientific computing because they allow us to document not only the results of an analysis but also the procedures used to obtain them.</p>
@@ -961,59 +947,61 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-operating-system">1. What Is an Operating System?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-functions-of-an-operating-system">1.1 Major Functions of an Operating System</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems-and-scientific-computing">1.2 Operating Systems and Scientific Computing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-operating-system">1.1 What Is an Operating System?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-functions-of-an-operating-system">1.1.1 Major Functions of an Operating System</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems-and-scientific-computing">1.1.2 Operating Systems and Scientific Computing</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-macos-and-linux">2. Windows, macOS, and Linux</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-windows">2.1 Microsoft Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apple-macos">2.2 Apple macOS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">2.3 Linux</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-operating-systems">2.4 Comparing Operating Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-macos-and-linux">1.2. Windows, macOS, and Linux</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-windows">1.2.1 Microsoft Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apple-macos">1.2.2 Apple macOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">1.2.3 Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-operating-systems">1.2.4 Comparing Operating Systems</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-directories-and-file-paths">3. Files, Directories, and File Paths</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-directory-hierarchy">3.1 The Directory Hierarchy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">3.2 Absolute and Relative Paths</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-home-directory-and-working-directory">3.3 The Home Directory and Working Directory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-file-paths-matter-in-scientific-computing">3.4 Why File Paths Matter in Scientific Computing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-directories-and-file-paths">1.3. Files, Directories, and File Paths</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-directory-hierarchy">1.3.1 The Directory Hierarchy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-and-relative-paths">1.3.2 Absolute and Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-home-directory-and-working-directory">1.3.3 The Home Directory and Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-file-paths-matter-in-scientific-computing">1.3.4 Why File Paths Matter in Scientific Computing</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-and-storage">4. Memory and Storage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volatile-memory-ram">4.1 Volatile Memory: RAM</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonvolatile-memory-persistent-storage">4.2 Nonvolatile Memory: Persistent Storage</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-memory-and-storage-work-together">4.3 How Memory and Storage Work Together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-and-storage">1.4. Memory and Storage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#volatile-memory-ram">1.4.1 Volatile Memory: RAM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonvolatile-memory-persistent-storage">1.4.2 Nonvolatile Memory: Persistent Storage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-memory-and-storage-work-together">1.4.3 How Memory and Storage Work Together</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programs-and-processes">5. Programs and Processes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-multiple-processes">5.1 Running Multiple Processes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processes-in-scientific-computing">5.2 Processes in Scientific Computing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programs-and-processes">1.5. Programs and Processes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-multiple-processes">1.5.1 Running Multiple Processes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processes-in-scientific-computing">1.5.2 Processes in Scientific Computing</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-interfaces-terminals-and-shells">6. Graphical Interfaces, Terminals, and Shells</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-user-interfaces-guis">6.1 Graphical User Interfaces (GUIs)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-shells">6.2 Terminals and Shells</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-a-command-line-interface">6.3 Why Use a Command-Line Interface?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-interfaces-terminals-and-shells">1.6. Graphical Interfaces, Terminals, and Shells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-user-interfaces-guis">1.6.1 Graphical User Interfaces (GUIs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-shells">1.6.2 Terminals and Shells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-use-a-command-line-interface">1.6.3 Why Use a Command-Line Interface?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-scientists-use-unix-like-environments">7. Why Scientists Use Unix-Like Environments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-python-and-its-computing-environments">8. Introducing Python and Its Computing Environments</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-python">8.1 What Is Python?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages">8.2 Python Packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-installations-and-environments">8.3 Python Installations and Environments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-and-environment-management">8.4 Conda and Environment Management</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-notebooks-and-kernels">8.5 JupyterLab, Notebooks, and Kernels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-scientists-use-unix-like-environments">1.7. Why Scientists Use Unix-Like Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-python-and-its-computing-environments">1.8. Introducing Python and Its Computing Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-python">1.8.1 What Is Python?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-packages">1.8.2 Python Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-installations-and-environments">1.8.3 Python Installations and Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-and-environment-management">1.8.4 Conda and Environment Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-notebooks-and-kernels">1.8.5 JupyterLab, Notebooks, and Kernels</a></li>
 </ul>
 </li>
 </ul>
@@ -1078,8 +1066,8 @@ By Robert Belford
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

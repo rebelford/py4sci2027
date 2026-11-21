@@ -16,37 +16,40 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -64,6 +67,7 @@
     <link rel="prev" title="1.2 Setting Up Your Computer" href="01-02_Setting_Up_Your_Computer.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,19 +83,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -99,7 +92,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,8 +99,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -124,7 +116,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -154,21 +147,17 @@
     
     
     <img src="../../../_static/logo.png" class="logo__image only-light" alt="2027 Python for Scientists - Home"/>
-    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="2027 Python for Scientists - Home"/>`);</script>
+    <img src="../../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="2027 Python for Scientists - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -198,9 +187,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -361,7 +355,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -375,25 +369,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -409,6 +397,37 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-package-managers">1.3.1 Why Do We Need Package Managers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-package-and-environment-management-pip-venv-and-conda">1.3.2 Python Package and Environment Management: pip, venv, and Conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pip-installing-python-packages">pip: Installing Python Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#venv-creating-python-virtual-environments">venv: Creating Python Virtual Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-managing-packages-and-environments">conda: Managing Packages and Environments</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-conda-ecosystem">1.3.3 The Conda Ecosystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda-distribution-and-graphical-interfaces">Anaconda Distribution and Graphical Interfaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniconda-and-the-command-line-interface">Miniconda and the Command-Line Interface</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-miniconda">1.3.4 Installing Miniconda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-users-installing-miniconda-in-wsl-ubuntu">Windows Users: Installing Miniconda in WSL Ubuntu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-users-installing-miniconda">macOS Users: Installing Miniconda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-the-installation">Verifying the Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-have-we-installed">What Have We Installed?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-conda-base-environment">1.3.5 Understanding the Conda Base Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-conda-from-the-command-line">1.3.6 Exploring Conda from the Command Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-managing-conda-environments">1.3.7 Creating and Managing Conda Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-approaches-pip-and-venv">1.3.8 Other Approaches: pip and venv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-creating-your-first-conda-environment">1.3.9 Activity: Creating Your First Conda Environment</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -420,7 +439,253 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installing-miniconda-and-managing-python-environments">
 <h1>1.3 Installing Miniconda and Managing Python Environments<a class="headerlink" href="#installing-miniconda-and-managing-python-environments" title="Link to this heading">#</a></h1>
-<p>System Python, base Python, packages, and environments.</p>
+<section id="why-do-we-need-package-managers">
+<h2>1.3.1 Why Do We Need Package Managers?<a class="headerlink" href="#why-do-we-need-package-managers" title="Link to this heading">#</a></h2>
+<p>As discussed in Section 1.8, much of Python’s functionality comes from packages developed by the scientific and programming communities. These packages must be downloaded, installed, and maintained on our computers.</p>
+<p>Python packages are distributed through online repositories, including the <a class="reference external" href="https://pypi.org/">Python Package Index (PyPI)</a> and <a class="reference external" href="https://conda-forge.org/">conda-forge</a>. PyPI is the primary repository for packages installed using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, while conda-forge is a community-maintained repository of packages installed using <code class="docutils literal notranslate"><span class="pre">conda</span></code>. We will learn more about these tools later in this notebook.</p>
+<p>Installing packages, however, is not always straightforward. Many packages depend on other packages, which are called <strong>dependencies</strong>. For example, <strong><a class="reference external" href="https://numpy.org/">NumPy</a></strong> (Numerical Python) provides tools for numerical calculations and working with arrays of data. It is a foundational package used by many other scientific Python packages, including <strong><a class="reference external" href="https://matplotlib.org/">Matplotlib</a></strong>, which creates graphs and visualizations, and <strong><a class="reference external" href="https://pandas.pydata.org/">pandas</a></strong>, which organizes and analyzes tabular data. Both depend on NumPy for numerical operations. Furthermore, different packages may require specific versions of Python or their dependencies. A <strong>package manager</strong> helps us install software, identify dependencies, and find compatible versions.</p>
+<p>One major challenge is that <strong>updating one package can break another</strong>. For example, suppose a scientific program requires an older version of NumPy. Installing another program that requires a newer version of NumPy may cause the original program to stop working. A package manager can help identify these conflicts, but it cannot always resolve incompatible requirements within a single Python installation.</p>
+<p>Another concern is protecting the operating system itself. Linux distributions such as Ubuntu and Raspberry Pi OS use Python for some system utilities, and modifying their Python installations can interfere with system software. Python’s development is guided in part by Python Enhancement Proposals (PEPs), which are documents used to propose, discuss, and standardize changes to Python and its ecosystem. One example is PEP 668, which allows operating systems to designate their Python installations as externally managed, meaning that the operating system’s package manager (such as Ubuntu’s apt), rather than Python’s pip, is responsible for maintaining them. This prevents pip from inadvertently modifying software that other system programs depend on.</p>
+<p>The solution is to use <strong>isolated Python environments</strong>, each containing its own Python interpreter and collection of packages. This allows different projects to use different versions of Python and their dependencies without interfering with one another.</p>
+<p>In this course, we will use Miniconda, which provides the conda package and environment manager. Conda allows us to install and manage Python and its scientific packages independently of the operating system’s Python installation. We will learn to create separate environments for our scientific computing projects, allowing us to install, update, and maintain packages without interfering with other projects or the operating system.</p>
+</section>
+<section id="python-package-and-environment-management-pip-venv-and-conda">
+<h2>1.3.2 Python Package and Environment Management: pip, venv, and Conda<a class="headerlink" href="#python-package-and-environment-management-pip-venv-and-conda" title="Link to this heading">#</a></h2>
+<p>There are several tools for installing Python packages and managing the environments in which they run. Three that you are likely to encounter are <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">venv</span></code>, and <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Although their functions overlap, they serve different purposes.</p>
+<section id="pip-installing-python-packages">
+<h3>pip: Installing Python Packages<a class="headerlink" href="#pip-installing-python-packages" title="Link to this heading">#</a></h3>
+<p><strong>pip</strong> is the standard package installer for Python. It is commonly used to download and install packages from the <a class="reference external" href="https://pypi.org/">Python Package Index (PyPI)</a>.</p>
+<p>For example, scientific software documentation often includes installation instructions such as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>numpy
+</pre></div>
+</div>
+<p>This command tells <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install NumPy and any required dependencies into the Python environment associated with that <code class="docutils literal notranslate"><span class="pre">pip</span></code> command.</p>
+<p>However, <strong>pip does not create or manage separate Python environments</strong>. It installs packages into an existing environment, which may be the operating system’s Python installation or an isolated environment created for a particular project.</p>
+<p>Consequently, before running a <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command, it is important to know which Python environment will receive the package.</p>
+</section>
+<section id="venv-creating-python-virtual-environments">
+<h3>venv: Creating Python Virtual Environments<a class="headerlink" href="#venv-creating-python-virtual-environments" title="Link to this heading">#</a></h3>
+<p>Python includes a built-in module called <strong>venv</strong> for creating isolated Python environments. Each environment has its own package installation directory and uses a Python interpreter associated with that environment.</p>
+<p>For example, the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+</pre></div>
+</div>
+<p>creates a virtual environment in a directory named <code class="docutils literal notranslate"><span class="pre">.venv</span></code>. The leading period makes this a hidden directory on Unix-like systems, and <code class="docutils literal notranslate"><span class="pre">.venv</span></code> is a common naming convention rather than a required name.</p>
+<p>Once the environment is activated, packages can be installed into it using <code class="docutils literal notranslate"><span class="pre">pip</span></code> without modifying the operating system’s Python installation.</p>
+<p>Thus, <code class="docutils literal notranslate"><span class="pre">venv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> are commonly used together: <strong>venv creates the environment, while pip installs packages into it.</strong></p>
+</section>
+<section id="conda-managing-packages-and-environments">
+<h3>conda: Managing Packages and Environments<a class="headerlink" href="#conda-managing-packages-and-environments" title="Link to this heading">#</a></h3>
+<p><strong>Conda</strong> combines package management and environment management into a single tool. It can create isolated environments, install different versions of Python, and manage both Python packages and other software libraries required by scientific applications.</p>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">pip</span></code>, which primarily installs Python packages from PyPI, Conda obtains packages from repositories called <strong>channels</strong>. One widely used channel is <a class="reference external" href="https://conda-forge.org/">conda-forge</a>, a community-maintained repository containing scientific software and its dependencies.</p>
+<p>Conda is particularly useful in scientific computing, where packages may depend on compiled libraries and software written in languages other than Python.</p>
+<p>In this course, we will use <strong>Conda as our primary package and environment manager</strong>. This provides a consistent approach for installing Python, managing scientific packages, and maintaining separate computing environments.</p>
+<p>You will still encounter <code class="docutils literal notranslate"><span class="pre">pip</span></code> installation instructions, and there will be situations where we use <code class="docutils literal notranslate"><span class="pre">pip</span></code> within a Conda environment. However, our general practice will be to look for packages on conda-forge first, using <code class="docutils literal notranslate"><span class="pre">pip</span></code> when necessary.</p>
+<p>We will also return to <code class="docutils literal notranslate"><span class="pre">venv</span></code> later in the course so that you gain experience with both approaches to managing Python environments.</p>
+<p>The next section introduces the Conda ecosystem and the differences between Conda, Anaconda, and Miniconda.</p>
+</section>
+</section>
+<section id="the-conda-ecosystem">
+<h2>1.3.3 The Conda Ecosystem<a class="headerlink" href="#the-conda-ecosystem" title="Link to this heading">#</a></h2>
+<p>Conda is an open-source package and environment manager widely used in scientific computing. It is developed and maintained through contributions from an international community of developers and organizations. The broader Conda ecosystem includes software distributions, graphical interfaces, and community-maintained package repositories that help scientists install and manage the software needed for their research.</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://docs.conda.io/">Conda</a>:</strong> The package and environment manager used to install software, resolve dependencies, and create isolated computing environments.</p></li>
+<li><p><strong><a class="reference external" href="https://www.anaconda.com/docs/getting-started/anaconda/main">Anaconda Distribution</a>:</strong> A comprehensive Python distribution that includes Conda, Python, and hundreds of scientific and data analysis packages.</p></li>
+<li><p><strong><a class="reference external" href="https://www.anaconda.com/products/navigator">Anaconda Navigator</a> and <a class="reference external" href="https://www.anaconda.com/products/desktop">Anaconda Desktop</a>:</strong> Graphical interfaces for exploring and managing packages, creating computing environments, and launching applications such as JupyterLab. Anaconda Desktop is the newer application and adds capabilities for discovering and running AI models locally.</p></li>
+<li><p><strong><a class="reference external" href="https://www.anaconda.com/docs/getting-started/miniconda/main">Miniconda</a>:</strong> A minimal distribution containing Conda, Python, and the essential software needed to create and manage environments.</p></li>
+<li><p><strong><a class="reference external" href="https://conda-forge.org/">conda-forge</a>:</strong> A community-maintained repository of software packages that can be installed using Conda.</p></li>
+</ul>
+<p>These components provide complementary ways to access and manage scientific software. Anaconda Distribution offers a ready-to-use collection of scientific tools, while Miniconda provides a smaller starting point from which users can install the software they need. Both can access packages from repositories such as conda-forge.</p>
+<section id="anaconda-distribution-and-graphical-interfaces">
+<h3>Anaconda Distribution and Graphical Interfaces<a class="headerlink" href="#anaconda-distribution-and-graphical-interfaces" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://www.anaconda.com/docs/getting-started/concepts/anaconda-or-miniconda">Anaconda Distribution</a> provides a ready-to-use scientific computing environment that includes Python, Conda, JupyterLab, and hundreds of preinstalled packages for data analysis, visualization, machine learning, and other applications. This allows users to begin exploring scientific Python without first identifying and installing individual packages.</p>
+<p>Anaconda also provides graphical interfaces for managing these resources. <strong><a class="reference external" href="https://www.anaconda.com/products/navigator">Anaconda Navigator</a></strong> allows users to discover and install packages, create and manage environments, and launch applications such as JupyterLab without using terminal commands. Its newer successor, <strong><a class="reference external" href="https://www.anaconda.com/products/desktop">Anaconda Desktop</a></strong>, provides similar capabilities while adding tools for discovering and running artificial intelligence models locally.</p>
+<p>These tools offer a convenient way to explore the scientific Python ecosystem, discover new software, and manage computing environments. Although we will use Miniconda and the command-line interface in this course, Anaconda’s graphical tools remain valuable resources for students interested in exploring additional scientific applications.</p>
+</section>
+<section id="miniconda-and-the-command-line-interface">
+<h3>Miniconda and the Command-Line Interface<a class="headerlink" href="#miniconda-and-the-command-line-interface" title="Link to this heading">#</a></h3>
+<p>In this course, we will install <a class="reference external" href="https://www.anaconda.com/docs/getting-started/concepts/anaconda-or-miniconda">Miniconda</a> and interact with Conda through the <strong>command-line interface (CLI)</strong>. Once installed, Conda provides a new set of commands that we can execute from our terminal. Just as we use Unix commands such as <code class="docutils literal notranslate"><span class="pre">cd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span></code> to navigate the filesystem, we will use commands beginning with <code class="docutils literal notranslate"><span class="pre">conda</span></code> to create environments, install packages, and manage our scientific software.</p>
+<p>We are choosing this approach for several reasons:</p>
+<ol class="arabic simple">
+<li><p><strong>Smaller initial installation:</strong> We install only the scientific packages we need rather than downloading a large collection of software that may never be used.</p></li>
+<li><p><strong>Understanding our computing environments:</strong> By creating environments ourselves, we learn how Python versions, scientific packages, and dependencies fit together.</p></li>
+<li><p><strong>Transferable skills:</strong> Command-line tools can be used on personal computers, remote research servers, and high-performance computing systems where graphical interfaces may not be available.</p></li>
+</ol>
+<p>Our goal is not simply to use scientific software, but to develop the skills needed to <strong>build, understand, and maintain our own scientific computing environments</strong>. As the course progresses, we will learn to install packages from repositories such as conda-forge and PyPI, obtain and work with scientific code shared through GitHub, and configure environments to meet the needs of different scientific projects.</p>
+<p>In the next section, we will install Miniconda and begin working with Conda from the terminal.</p>
+</section>
+</section>
+<section id="installing-miniconda">
+<h2>1.3.4 Installing Miniconda<a class="headerlink" href="#installing-miniconda" title="Link to this heading">#</a></h2>
+<p>We will install Miniconda directly from the terminal, using the operating system environment configured in Notebook 1.2. Windows users will install it inside Ubuntu through Windows Subsystem for Linux (WSL), while macOS users will install it directly in macOS.</p>
+<p>The installation involves four basic steps:</p>
+<ol class="arabic simple">
+<li><p>Download the appropriate Miniconda installer.</p></li>
+<li><p>Run the installer and follow its instructions.</p></li>
+<li><p>Configure the terminal to recognize Conda commands.</p></li>
+<li><p>Verify that Conda was installed successfully.</p></li>
+</ol>
+<p>The official <a class="reference external" href="https://www.anaconda.com/docs/getting-started/miniconda/install">Miniconda installation documentation</a> provides additional installation instructions and troubleshooting information.</p>
+<section id="windows-users-installing-miniconda-in-wsl-ubuntu">
+<h3>Windows Users: Installing Miniconda in WSL Ubuntu<a class="headerlink" href="#windows-users-installing-miniconda-in-wsl-ubuntu" title="Link to this heading">#</a></h3>
+<p>If you are using Windows, open your Ubuntu terminal. We will install the Linux version of Miniconda inside WSL, not the Windows version. This is important because Ubuntu and Windows are separate operating environments, even though they run on the same computer. Installing Miniconda in Ubuntu allows us to use Linux-based Python environments and tools directly from the Ubuntu terminal.</p>
+<p><strong>Step 1: Navigate to your home directory</strong></p>
+<p>Enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">~</span></code> represents your home directory. We will download the installer here and allow Miniconda to create its installation directory inside your home directory.</p>
+<p><strong>Step 2: Download the Miniconda installer</strong></p>
+<p>For most Windows computers running Ubuntu through WSL, the appropriate installer is the Linux x86-64 version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">wget</span></code> command downloads a file from the internet. The filename identifies the operating system (Linux), processor architecture (<code class="docutils literal notranslate"><span class="pre">x86_64</span></code>), and file type (<code class="docutils literal notranslate"><span class="pre">.sh</span></code>, a shell script).</p>
+<p>If your computer uses an ARM processor, you may need a different installer. You can check the processor architecture with <code class="docutils literal notranslate"><span class="pre">uname</span> <span class="pre">-m</span></code>. The standard installer above is appropriate when the result is <code class="docutils literal notranslate"><span class="pre">x86_64</span></code>.</p>
+<p><strong>Step 3: Run the installer</strong></p>
+<p>Once the download is complete, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>This tells the Bash shell to execute the installation script.</p>
+<p>The installer will guide you through several steps:</p>
+<ul class="simple">
+<li><p>Press <strong>Enter</strong> to review the license agreement. Use Enter or Space to scroll through it, and enter <code class="docutils literal notranslate"><span class="pre">yes</span></code> if you agree to its terms.</p></li>
+<li><p>Accept the default installation location, which is typically <code class="docutils literal notranslate"><span class="pre">~/miniconda3</span></code>.</p></li>
+<li><p>Allow the installation to complete.</p></li>
+<li><p>When asked whether to initialize Conda by modifying your shell profile, enter <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+<p>Initializing Conda allows your terminal to recognize Conda commands when you open a new shell.</p>
+<p><strong>Do not use <code class="docutils literal notranslate"><span class="pre">sudo</span></code> to install Miniconda.</strong> We are installing it in your own home directory, where administrator privileges are not required.</p>
+</section>
+<section id="macos-users-installing-miniconda">
+<h3>macOS Users: Installing Miniconda<a class="headerlink" href="#macos-users-installing-miniconda" title="Link to this heading">#</a></h3>
+<p>Mac users can install Miniconda directly in macOS without installing Ubuntu.The procedure is similar to Linux, but the installer must match your Mac’s processor architecture.</p>
+<p><strong>Step 1: Open the Terminal application</strong></p>
+<p>Open Terminal and navigate to your home directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+</pre></div>
+</div>
+<p><strong>Step 2: Identify your processor architecture</strong></p>
+<p>Enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uname<span class="w"> </span>-m
+</pre></div>
+</div>
+<p>For a Mac with Apple Silicon (M-series processors), the result is typically:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>arm64
+</pre></div>
+</div>
+<p>For an older Intel-based Mac, the result is typically:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>x86_64
+</pre></div>
+</div>
+<p><strong>Step 3: Download the appropriate installer</strong></p>
+<p>For a Mac with Apple Silicon, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-O<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">curl</span></code> command downloads the installer, and the <code class="docutils literal notranslate"><span class="pre">-O</span></code> option saves it using its original filename.</p>
+<p>For Intel-based Macs, consult the <a class="reference external" href="https://repo.anaconda.com/miniconda/">official Miniconda installer archive</a> for the appropriate Intel-compatible installer. Anaconda has ended new Miniconda releases for Intel macOS, so the most recent compatible installer may be older than the Apple Silicon version.</p>
+<p><strong>Step 4: Run the installer</strong></p>
+<p>For Apple Silicon Macs, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>Miniconda3-latest-MacOSX-arm64.sh
+</pre></div>
+</div>
+<p>Follow the installation prompts, accept the default installation location, and allow Conda to initialize your shell when prompted. Most modern macOS installations use the <strong>Z shell (<code class="docutils literal notranslate"><span class="pre">zsh</span></code>)</strong> as their default terminal shell. The installer should configure Conda for the shell you are using.</p>
+</section>
+<section id="verifying-the-installation">
+<h3>Verifying the Installation<a class="headerlink" href="#verifying-the-installation" title="Link to this heading">#</a></h3>
+<p>After the installation finishes, <strong>close your terminal and open a new one</strong>. This allows the shell to load the configuration changes made during installation.</p>
+<p>Enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>If Miniconda was installed successfully, the terminal should display the installed Conda version, for example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>conda 25.x.x
+</pre></div>
+</div>
+<p>The exact version number may differ depending on when you installed Miniconda.</p>
+<p>You can also enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>info
+</pre></div>
+</div>
+<p>This displays information about your Conda installation, including its version, installation location, active environment, and configured package repositories. Look for a line identifying the location of the <strong>base environment</strong>. For an installation in your home directory, it will resemble:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>base environment : /home/student/miniconda3
+</pre></div>
+</div>
+<p>On macOS, the corresponding path will typically begin with <code class="docutils literal notranslate"><span class="pre">/Users/</span></code> rather than <code class="docutils literal notranslate"><span class="pre">/home/</span></code>. You may also notice that your terminal prompt now begins with <code class="docutils literal notranslate"><span class="pre">(base)</span></code>, for example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(base) student@computer:~$
+</pre></div>
+</div>
+<p>This indicates that Conda’s default environment, called <code class="docutils literal notranslate"><span class="pre">base</span></code>, is active. We will explore what this means in the next section.</p>
+</section>
+<section id="what-have-we-installed">
+<h3>What Have We Installed?<a class="headerlink" href="#what-have-we-installed" title="Link to this heading">#</a></h3>
+<p>We have installed Miniconda and configured our terminal to recognize Conda commands.</p>
+<p>Miniconda provides a Python interpreter, the Conda package and environment manager, and the supporting software needed for Conda to operate. It does <strong>not</strong> include the extensive collection of scientific packages provided by the full Anaconda Distribution.</p>
+<p>We now have the tools needed to begin creating and managing our own Python environments.</p>
+<p>In the next section, we will examine the Conda <code class="docutils literal notranslate"><span class="pre">base</span></code> environment and explain why we generally avoid installing our scientific project packages directly into it.</p>
+</section>
+</section>
+<section id="understanding-the-conda-base-environment">
+<h2>1.3.5 Understanding the Conda Base Environment<a class="headerlink" href="#understanding-the-conda-base-environment" title="Link to this heading">#</a></h2>
+<p>When Miniconda is installed, it creates a special environment called base.</p>
+<p>The base environment contains Conda itself, along with Python and the supporting software needed for Conda to operate.</p>
+<p>Students may notice that their terminal prompt now begins with:
+(base) student&#64;computer:~$</p>
+<p>The (base) indicates that the base Conda environment is currently active.</p>
+<p>An active environment determines which Python interpreter and installed software are used when commands are executed.
+Why should we avoid installing scientific packages in base?
+Although it is possible to install packages directly into base, this is generally not recommended for routine scientific work.</p>
+<p>The base environment is primarily used to maintain Conda and create or manage other environments.</p>
+<p>Installing numerous scientific packages into base can introduce dependency conflicts and make the package manager more difficult to maintain.</p>
+<p>Our practice will be to keep base relatively clean and create separate environments for our scientific projects.</p>
+<p>We will also examine how to configure Conda so that the base environment does not automatically activate every time we open a terminal.</p>
+</section>
+<section id="exploring-conda-from-the-command-line">
+<h2>1.3.6 Exploring Conda from the Command Line<a class="headerlink" href="#exploring-conda-from-the-command-line" title="Link to this heading">#</a></h2>
+<p>Before creating our first environment, we should become familiar with a few basic Conda commands.
+Command	Purpose
+conda –version	Display the installed Conda version
+conda info	Display information about the Conda installation
+conda env list	List existing Conda environments
+conda list	List packages in the active environment
+conda –help	Display general Conda help</p>
+<p>These commands allow us to inspect the installation without making changes.</p>
+<p>We will use them to answer questions such as: Where is Conda installed? Which environments exist? Which environment is active? What packages are installed?</p>
+<p>A more complete Conda command reference will be available in the appendix.</p>
+</section>
+<section id="creating-and-managing-conda-environments">
+<h2>1.3.7 Creating and Managing Conda Environments<a class="headerlink" href="#creating-and-managing-conda-environments" title="Link to this heading">#</a></h2>
+<p>The next step is to create a separate Python environment.</p>
+<p>Conda allows us to specify an environment name, a Python version, and the packages we want to install.</p>
+<p>For example, the general structure of an environment-creation command is:
+conda create -n environment_name python=3.x</p>
+<p>Here, environment_name represents a name chosen by the user, and 3.x represents a specified Python version.</p>
+<p>Once an environment is created, it can be activated:
+conda activate environment_name</p>
+<p>When an environment is active, commands such as python use the Python interpreter associated with that environment.</p>
+<p>We can leave the environment with:
+conda deactivate</p>
+<p>Students will practice these operations in the activity at the end of the notebook.</p>
+</section>
+<section id="other-approaches-pip-and-venv">
+<h2>1.3.8 Other Approaches: pip and venv<a class="headerlink" href="#other-approaches-pip-and-venv" title="Link to this heading">#</a></h2>
+<p>Conda is not the only way to install Python packages or create Python environments.</p>
+<p>Python also has a widely used package installer called pip, which installs packages primarily from the Python Package Index (PyPI).</p>
+<p>Another tool, venv, is included with Python and allows users to create lightweight virtual environments.</p>
+<p>These tools serve related but different purposes.
+Tool	Primary function
+conda	Manages environments, Python versions, and packages, including non-Python dependencies
+pip	Installs Python packages, typically from PyPI
+venv	Creates isolated Python environments</p>
+<p>Conda and pip are not necessarily competing technologies. In some projects, pip is used to install packages inside an existing Conda environment when a suitable Conda package is unavailable.</p>
+<p>However, mixing package managers requires care because Conda and pip do not coordinate all dependency changes.</p>
+<p>We will explore pip and venv in a later activity, after gaining experience with Conda</p>
+</section>
+<section id="activity-creating-your-first-conda-environment">
+<h2>1.3.9 Activity: Creating Your First Conda Environment<a class="headerlink" href="#activity-creating-your-first-conda-environment" title="Link to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -477,6 +742,46 @@ document.write(`
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-need-package-managers">1.3.1 Why Do We Need Package Managers?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-package-and-environment-management-pip-venv-and-conda">1.3.2 Python Package and Environment Management: pip, venv, and Conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pip-installing-python-packages">pip: Installing Python Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#venv-creating-python-virtual-environments">venv: Creating Python Virtual Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-managing-packages-and-environments">conda: Managing Packages and Environments</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-conda-ecosystem">1.3.3 The Conda Ecosystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda-distribution-and-graphical-interfaces">Anaconda Distribution and Graphical Interfaces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniconda-and-the-command-line-interface">Miniconda and the Command-Line Interface</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-miniconda">1.3.4 Installing Miniconda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-users-installing-miniconda-in-wsl-ubuntu">Windows Users: Installing Miniconda in WSL Ubuntu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-users-installing-miniconda">macOS Users: Installing Miniconda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-the-installation">Verifying the Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-have-we-installed">What Have We Installed?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-conda-base-environment">1.3.5 Understanding the Conda Base Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-conda-from-the-command-line">1.3.6 Exploring Conda from the Command Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-managing-conda-environments">1.3.7 Creating and Managing Conda Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-approaches-pip-and-venv">1.3.8 Other Approaches: pip and venv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-creating-your-first-conda-environment">1.3.9 Activity: Creating Your First Conda Environment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -535,8 +840,8 @@ By Robert Belford
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
