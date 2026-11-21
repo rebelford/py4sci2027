@@ -421,11 +421,30 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-have-we-installed">What Have We Installed?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-conda-base-environment">1.3.5 Understanding the Conda Base Environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-conda-from-the-command-line">1.3.6 Exploring Conda from the Command Line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-managing-conda-environments">1.3.7 Creating and Managing Conda Environments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-approaches-pip-and-venv">1.3.8 Other Approaches: pip and venv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-creating-your-first-conda-environment">1.3.9 Activity: Creating Your First Conda Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-conda-base-environment">1.3.5 Understanding the Conda Base Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activating-and-deactivating-environments">Activating and Deactivating Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-automatic-activation-of-base">Controlling Automatic Activation of Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-have-we-learned">What Have We Learned?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-exploring-conda-environments">1.3.6 Creating and Exploring Conda Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-our-first-conda-environment">1.3.6.1 Creating Our First Conda Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-jupyterlab-environment-jlab">1.3.6.2 Creating a JupyterLab Environment (<code class="docutils literal notranslate"><span class="pre">jlab</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-our-conda-environments">1.3.6.3 Exploring Our Conda Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-1-exploring-conda-environments">Activity 1: Exploring Conda Environments</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-2-exploring-installed-packages">Activity 2: Exploring Installed Packages</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-3-identifying-python-interpreter">Activity 3: Identifying Python Interpreter</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-4-getting-help-with-conda">Activity 4: Getting Help with Conda</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-pip-venv-and-conda">1.3.7 Working with pip, venv, and Conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages-with-pip-inside-a-conda-environment">Installing Packages with pip Inside a Conda Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-we-use-venv-instead-of-conda">When Would We Use venv Instead of Conda?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-right-tools">Choosing the Right Tools</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -621,70 +640,401 @@
 </section>
 <section id="what-have-we-installed">
 <h3>What Have We Installed?<a class="headerlink" href="#what-have-we-installed" title="Link to this heading">#</a></h3>
-<p>We have installed Miniconda and configured our terminal to recognize Conda commands.</p>
-<p>Miniconda provides a Python interpreter, the Conda package and environment manager, and the supporting software needed for Conda to operate. It does <strong>not</strong> include the extensive collection of scientific packages provided by the full Anaconda Distribution.</p>
+<p>We have installed Miniconda and configured our terminal to recognize Conda commands. Miniconda provides a Python interpreter, the Conda package and environment manager, and the supporting software needed for Conda to operate. It does not include the extensive collection of scientific packages provided by the full Anaconda Distribution.</p>
 <p>We now have the tools needed to begin creating and managing our own Python environments.</p>
 <p>In the next section, we will examine the Conda <code class="docutils literal notranslate"><span class="pre">base</span></code> environment and explain why we generally avoid installing our scientific project packages directly into it.</p>
 </section>
 </section>
 <section id="understanding-the-conda-base-environment">
 <h2>1.3.5 Understanding the Conda Base Environment<a class="headerlink" href="#understanding-the-conda-base-environment" title="Link to this heading">#</a></h2>
-<p>When Miniconda is installed, it creates a special environment called base.</p>
-<p>The base environment contains Conda itself, along with Python and the supporting software needed for Conda to operate.</p>
-<p>Students may notice that their terminal prompt now begins with:
-(base) student&#64;computer:~$</p>
-<p>The (base) indicates that the base Conda environment is currently active.</p>
-<p>An active environment determines which Python interpreter and installed software are used when commands are executed.
-Why should we avoid installing scientific packages in base?
-Although it is possible to install packages directly into base, this is generally not recommended for routine scientific work.</p>
-<p>The base environment is primarily used to maintain Conda and create or manage other environments.</p>
-<p>Installing numerous scientific packages into base can introduce dependency conflicts and make the package manager more difficult to maintain.</p>
-<p>Our practice will be to keep base relatively clean and create separate environments for our scientific projects.</p>
-<p>We will also examine how to configure Conda so that the base environment does not automatically activate every time we open a terminal.</p>
+<p>When we installed Miniconda, it created a special environment called <strong><code class="docutils literal notranslate"><span class="pre">base</span></code></strong>, which contains Conda itself, a Python interpreter, and the supporting software needed for Conda to operate. The <code class="docutils literal notranslate"><span class="pre">base</span></code> environment is primarily used to maintain Conda and manage other environments. Although we can install scientific packages directly into <code class="docutils literal notranslate"><span class="pre">base</span></code>, doing so can introduce dependency conflicts and make Conda more difficult to maintain. <strong>Our practice will be to keep <code class="docutils literal notranslate"><span class="pre">base</span></code> relatively clean and create separate environments for our scientific projects, including the Jupyter Lab environment.</strong></p>
+<section id="activating-and-deactivating-environments">
+<h3>Activating and Deactivating Environments<a class="headerlink" href="#activating-and-deactivating-environments" title="Link to this heading">#</a></h3>
+<p>You may have noticed that your terminal prompt changed after installing Miniconda. For example, it might now look like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(base) student@computer:~$
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">(base)</span></code> indicates that the Conda <code class="docutils literal notranslate"><span class="pre">base</span></code> environment is currently <strong>active</strong>. An active environment determines which Python interpreter and installed software are normally used when we execute commands in the terminal.</p>
+<p>Let’s explore how to activate and deactivate an environment.</p>
+<p><strong>Step 1: Deactivate the base environment</strong></p>
+<p>If your terminal prompt begins with <code class="docutils literal notranslate"><span class="pre">(base)</span></code>, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
+<p>You should notice that <code class="docutils literal notranslate"><span class="pre">(base)</span></code> disappears from your terminal prompt:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>student@computer:~$
+</pre></div>
+</div>
+<p>This indicates that <code class="docutils literal notranslate"><span class="pre">base</span></code> is no longer active. Your terminal is now using the software available through your normal shell configuration, which may include the operating system’s Python installation.</p>
+<p><strong>Step 2: Activate the base environment</strong></p>
+<p>Enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>base
+</pre></div>
+</div>
+<p>Your terminal prompt should change to something similar to:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(base) student@computer:~$
+</pre></div>
+</div>
+<p>You have now activated the Conda <code class="docutils literal notranslate"><span class="pre">base</span></code> environment.</p>
+<p>Notice that we did not open a new application or terminal. Instead, Conda modified our current shell environment so that commands such as <code class="docutils literal notranslate"><span class="pre">python</span></code> use the Python interpreter and packages associated with <code class="docutils literal notranslate"><span class="pre">base</span></code>environment.</p>
+<p><strong>Step 3: Deactivate base again</strong></p>
+<p>Enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">(base)</span></code> prefix should disappear.</p>
+<p>Importantly, <strong>deactivating an environment does not delete it or remove any installed packages</strong>. It simply changes which environment is active in the current terminal.</p>
 </section>
-<section id="exploring-conda-from-the-command-line">
-<h2>1.3.6 Exploring Conda from the Command Line<a class="headerlink" href="#exploring-conda-from-the-command-line" title="Link to this heading">#</a></h2>
-<p>Before creating our first environment, we should become familiar with a few basic Conda commands.
-Command	Purpose
-conda –version	Display the installed Conda version
-conda info	Display information about the Conda installation
-conda env list	List existing Conda environments
-conda list	List packages in the active environment
-conda –help	Display general Conda help</p>
-<p>These commands allow us to inspect the installation without making changes.</p>
-<p>We will use them to answer questions such as: Where is Conda installed? Which environments exist? Which environment is active? What packages are installed?</p>
-<p>A more complete Conda command reference will be available in the appendix.</p>
+<section id="controlling-automatic-activation-of-base">
+<h3>Controlling Automatic Activation of Base<a class="headerlink" href="#controlling-automatic-activation-of-base" title="Link to this heading">#</a></h3>
+<p>By default, Miniconda may configure your terminal to automatically activate <code class="docutils literal notranslate"><span class="pre">base</span></code> whenever you open a new terminal session. Although convenient, we will configure Conda so that <code class="docutils literal notranslate"><span class="pre">base</span></code> is not automatically activated. This helps us distinguish between the operating system’s Python installation and the Conda environments we will create for our projects.</p>
+<p>Enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span>
+</pre></div>
+</div>
+<p>This changes Conda’s configuration so that new terminal sessions do not automatically activate <code class="docutils literal notranslate"><span class="pre">base</span></code>.</p>
+<p><strong>Close your terminal and open a new one.</strong></p>
+<p>Your terminal prompt should no longer begin with <code class="docutils literal notranslate"><span class="pre">(base)</span></code>. However, Conda is still available. You can verify this by entering:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>You should see the Conda version number, just as you did after installing Miniconda. If you ever need to activate <code class="docutils literal notranslate"><span class="pre">base</span></code>, simply enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>base
+</pre></div>
+</div>
+<p>You can leave it again with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
 </section>
-<section id="creating-and-managing-conda-environments">
-<h2>1.3.7 Creating and Managing Conda Environments<a class="headerlink" href="#creating-and-managing-conda-environments" title="Link to this heading">#</a></h2>
-<p>The next step is to create a separate Python environment.</p>
-<p>Conda allows us to specify an environment name, a Python version, and the packages we want to install.</p>
-<p>For example, the general structure of an environment-creation command is:
-conda create -n environment_name python=3.x</p>
-<p>Here, environment_name represents a name chosen by the user, and 3.x represents a specified Python version.</p>
-<p>Once an environment is created, it can be activated:
-conda activate environment_name</p>
-<p>When an environment is active, commands such as python use the Python interpreter associated with that environment.</p>
-<p>We can leave the environment with:
-conda deactivate</p>
-<p>Students will practice these operations in the activity at the end of the notebook.</p>
+<section id="what-have-we-learned">
+<h3>What Have We Learned?<a class="headerlink" href="#what-have-we-learned" title="Link to this heading">#</a></h3>
+<p>We have learned that Conda environments can be activated and deactivated independently of the terminal itself. Activating an environment makes its Python interpreter and installed packages available to our current terminal session. We have also learned that <strong>Conda does not need to have <code class="docutils literal notranslate"><span class="pre">base</span></code> activated to manage environments</strong>. We can use Conda commands to create, inspect, and manage environments without working directly inside <code class="docutils literal notranslate"><span class="pre">base</span></code>.</p>
+<p>In the next section, we will begin exploring Conda commands and learn how to create our own Python environments.</p>
 </section>
-<section id="other-approaches-pip-and-venv">
-<h2>1.3.8 Other Approaches: pip and venv<a class="headerlink" href="#other-approaches-pip-and-venv" title="Link to this heading">#</a></h2>
-<p>Conda is not the only way to install Python packages or create Python environments.</p>
-<p>Python also has a widely used package installer called pip, which installs packages primarily from the Python Package Index (PyPI).</p>
-<p>Another tool, venv, is included with Python and allows users to create lightweight virtual environments.</p>
-<p>These tools serve related but different purposes.
-Tool	Primary function
-conda	Manages environments, Python versions, and packages, including non-Python dependencies
-pip	Installs Python packages, typically from PyPI
-venv	Creates isolated Python environments</p>
-<p>Conda and pip are not necessarily competing technologies. In some projects, pip is used to install packages inside an existing Conda environment when a suitable Conda package is unavailable.</p>
-<p>However, mixing package managers requires care because Conda and pip do not coordinate all dependency changes.</p>
-<p>We will explore pip and venv in a later activity, after gaining experience with Conda</p>
 </section>
-<section id="activity-creating-your-first-conda-environment">
-<h2>1.3.9 Activity: Creating Your First Conda Environment<a class="headerlink" href="#activity-creating-your-first-conda-environment" title="Link to this heading">#</a></h2>
+<section id="creating-and-exploring-conda-environments">
+<h2>1.3.6 Creating and Exploring Conda Environments<a class="headerlink" href="#creating-and-exploring-conda-environments" title="Link to this heading">#</a></h2>
+<p>Now that we have installed Miniconda and learned how to activate and deactivate environments, we are ready to create our first scientific Python environment.</p>
+<p>We will name this environment <strong><code class="docutils literal notranslate"><span class="pre">py4sci</span></code></strong>, and it will contain the Python interpreter and many of the scientific packages we will use throughout this course.</p>
+<p>After creating the environment, we will explore how Conda organizes and manages environments using commands entered in the terminal.</p>
+<section id="creating-our-first-conda-environment">
+<h3>1.3.6.1 Creating Our First Conda Environment<a class="headerlink" href="#creating-our-first-conda-environment" title="Link to this heading">#</a></h3>
+<p>We are now ready to create our first Conda environment. We will name it <strong><code class="docutils literal notranslate"><span class="pre">myenv</span></code></strong> and install Python along with several packages that we will use for scientific computing.</p>
+<p>Our environment will contain:</p>
+<ul class="simple">
+<li><p><strong>Python:</strong> The interpreter that executes our Python code.</p></li>
+<li><p><strong>NumPy:</strong> A package for numerical calculations and working with arrays of scientific data.</p></li>
+<li><p><strong>Matplotlib:</strong> A package for creating graphs and scientific visualizations.</p></li>
+<li><p><strong>ipykernel:</strong> Software that allows a Python environment to execute code from Jupyter notebooks.</p></li>
+</ul>
+<p><strong>Step 1: Create the environment</strong></p>
+<p>Open your terminal and enter the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>--override-channels<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12<span class="w"> </span>numpy<span class="w"> </span>matplotlib<span class="w"> </span>ipykernel
+</pre></div>
+</div>
+<p>Let’s examine the components of this command:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code> tells Conda to create a new environment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">myenv</span></code> specifies the name of our environment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">conda-forge</span></code> tells Conda to obtain packages from the conda-forge repository.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--override-channels</span></code> instructs Conda to use only the specified channel for this installation, rather than also searching other configured channels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python=3.12</span></code> specifies the Python version we want to install.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">matplotlib</span> <span class="pre">ipykernel</span></code> identifies the additional packages we want in the environment.</p></li>
+</ul>
+<p>Conda will examine the requested packages, determine their dependencies, and identify compatible versions to install. You will notice that Conda may list many more packages than the three we requested. These additional packages are dependencies required by Python or the scientific packages we are installing.</p>
+<p>After reviewing the proposed installation, enter <code class="docutils literal notranslate"><span class="pre">y</span></code> and press Enter to proceed. Depending on your computer and internet connection, the installation may take several minutes.</p>
+<p><strong>Step 2: Activate the environment</strong></p>
+<p>Once Conda finishes installing the packages, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>myenv
+</pre></div>
+</div>
+<p>Your terminal prompt should now begin with <code class="docutils literal notranslate"><span class="pre">(myenv)</span></code>, indicating that the environment is active.</p>
+<p>For example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(myenv) student@computer:~$
+</pre></div>
+</div>
+<p>When <code class="docutils literal notranslate"><span class="pre">myenv</span></code> is active, commands such as <code class="docutils literal notranslate"><span class="pre">python</span></code> will use the Python interpreter and packages installed in this environment.</p>
+<p><strong>Step 3: Verify the Python installation</strong></p>
+<p>Enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>The output should indicate Python 3.12, although the final version numbers may vary.</p>
+<p>Now let’s test NumPy by calculating the average of five temperature measurements. Enter the following command directly into the terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import numpy as np; print(np.mean([21.3, 22.1, 20.8, 23.0, 21.7]))&quot;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-c</span></code> option allows us to execute Python instructions directly from the terminal without creating a Python script.</p>
+<p>This command imports NumPy, calculates the mean of the five measurements, and prints the result:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>21.78
+</pre></div>
+</div>
+<p>If you see this result, you have successfully created a Conda environment and used one of its scientific packages.</p>
+<p><strong>Step 4: Deactivate the environment</strong></p>
+<p>Enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">(myenv)</span></code> prefix should disappear from your terminal prompt. The environment and its installed packages are still on your computer. You can activate <code class="docutils literal notranslate"><span class="pre">myenv</span></code> again whenever you need it by entering <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">myenv</span></code>.</p>
+<p>We have now created our first scientific Python environment. In the next section, we will create a second environment specifically for JupyterLab, which will provide the interactive interface used to work with our scientific notebooks.</p>
+</section>
+<section id="creating-a-jupyterlab-environment-jlab">
+<h3>1.3.6.2 Creating a JupyterLab Environment (<code class="docutils literal notranslate"><span class="pre">jlab</span></code>)<a class="headerlink" href="#creating-a-jupyterlab-environment-jlab" title="Link to this heading">#</a></h3>
+<p>We will now create a second Conda environment named <strong><code class="docutils literal notranslate"><span class="pre">jlab</span></code></strong>, which will contain <a class="reference external" href="https://jupyterlab.readthedocs.io/">JupyterLab</a>, the interactive development environment we will use to work with Python notebooks throughout this course.</p>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, which contains packages for scientific computing, <strong><code class="docutils literal notranslate"><span class="pre">jlab</span></code> will contain JupyterLab and the software needed to run it</strong>. Keeping these environments separate allows us to maintain or update JupyterLab without unnecessarily changing the scientific packages used in our projects.</p>
+<p>When we work in JupyterLab, we will be able to select a <strong>Python kernel</strong> associated with another environment, such as <code class="docutils literal notranslate"><span class="pre">myenv</span></code>. The kernel executes our Python code using the interpreter and packages installed in that environment. This is why we installed <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> in <code class="docutils literal notranslate"><span class="pre">myenv</span></code> in the previous section.</p>
+<p><strong>Step 1: Create the JupyterLab environment</strong></p>
+<p>Open your terminal and enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>jlab<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>--override-channels<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12<span class="w"> </span>jupyterlab
+</pre></div>
+</div>
+<p>Conda will identify the necessary dependencies and display the packages it proposes to install. Review the installation and enter <code class="docutils literal notranslate"><span class="pre">y</span></code> to proceed.</p>
+<p><strong>Step 2: Activate the environment</strong></p>
+<p>Once the installation is complete, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>jlab
+</pre></div>
+</div>
+<p>Your terminal prompt should now begin with <code class="docutils literal notranslate"><span class="pre">(jlab)</span></code>.</p>
+<p><strong>Step 3: Verify the JupyterLab installation</strong></p>
+<p>Enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>The terminal should display the installed version of JupyterLab, confirming that it is available in the active environment.</p>
+<p>We now have two environments with different purposes:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">myenv</span></code>:</strong> Contains Python, NumPy, Matplotlib, and <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> for executing scientific Python code.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">jlab</span></code>:</strong> Contains JupyterLab and its supporting software for working with notebooks.</p></li>
+</ul>
+<p>In the next notebook, we will launch JupyterLab and configure it to use the Python kernel from <code class="docutils literal notranslate"><span class="pre">myenv</span></code>. This will allow us to work with scientific Python packages through JupyterLab while maintaining the two environments independently.</p>
+</section>
+<section id="exploring-our-conda-environments">
+<h3>1.3.6.3 Exploring Our Conda Environments<a class="headerlink" href="#exploring-our-conda-environments" title="Link to this heading">#</a></h3>
+<p>We have now created three Conda environments: <code class="docutils literal notranslate"><span class="pre">base</span></code>, <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, and <code class="docutils literal notranslate"><span class="pre">jlab</span></code>. Each serves a different purpose and contains its own collection of software.</p>
+<p>In the following guided activities, we will explore these environments and learn how to inspect the software installed in each one.</p>
+<p><strong>Keep the Conda Command Reference in the appendix open in a separate browser tab.</strong> Use it to identify the commands needed to complete each activity. You may also find it helpful to keep your terminal open alongside the notebook.</p>
+<p>Each activity includes questions with expandable answers. Try to answer the questions by running the appropriate Conda commands before revealing the explanations.</p>
+<p>The goal is not to memorize commands, but to become comfortable finding and using the tools needed to investigate your computing environment.</p>
+<section id="activity-1-exploring-conda-environments">
+<h4>Activity 1: Exploring Conda Environments<a class="headerlink" href="#activity-1-exploring-conda-environments" title="Link to this heading">#</a></h4>
+<div class="alert alert-block alert-info">
+<p><strong>Activity 1: Exploring Conda Environments</strong></p>
+<div class="alert alert-block alert-success">
+<p><strong>Use the Conda Command Reference in the appendix to find the command that lists the Conda environments installed on your computer.</strong></p>
+</div>
+<p><strong>1.</strong> What command did you use, and what environments are listed?</p>
+<details>
+<summary>Show Answer</summary>
+<p>Enter <code>conda info --envs</code> to display your Conda environments. The equivalent command <code>conda env list</code> produces the same information.</p>
+<p>You should see at least three environments: <code>base</code>, <code>myenv</code>, and <code>jlab</code>.</p>
+<p>The output also displays the filesystem location of each environment.</p>
+</details>
+<hr>
+<p><strong>2.</strong> How can you identify which environment is currently active?</p>
+<details>
+<summary>Show Answer</summary>
+<p>Conda places an asterisk (<code>*</code>) beside the active environment. Its name also normally appears in parentheses at the beginning of your terminal prompt.</p>
+<p>If no Conda environment is active, no asterisk will appear.</p>
+</details>
+<hr>
+<p><strong>3.</strong> Activate a different environment and repeat the command. What changes?</p>
+<details>
+<summary>Show Answer</summary>
+<p>The asterisk moves to the newly activated environment, and the terminal prompt changes to display its name.</p>
+<p>The environments themselves have not changed. Conda has simply changed which environment is active in the current terminal.</p>
+</details>
+</div>
+</section>
+<section id="activity-2-exploring-installed-packages">
+<h4>Activity 2: Exploring Installed Packages<a class="headerlink" href="#activity-2-exploring-installed-packages" title="Link to this heading">#</a></h4>
+<div class="alert alert-block alert-info">
+<p><strong>Activity 2: Exploring Installed Packages</strong></p>
+<div class="alert alert-block alert-success">
+<p><strong>Use the Conda Command Reference in the appendix to investigate the packages installed in your <code>myenv</code> and <code>jlab</code> environments. Compare their contents and identify package dependencies.</strong></p>
+</div>
+<p><strong>1.</strong> What command can you use to list the packages installed in <code>myenv</code>? How can you examine the packages in <code>jlab</code> without activating that environment?</p>
+<details>
+<summary>Show Answer</summary>
+<p>Activate <code>myenv</code> and enter:</p>
+<pre><code>conda list</code></pre>
+<p>To list packages in another environment without activating it, specify the environment name:</p>
+<pre><code>conda list -n jlab</code></pre>
+<p>The <code>-n</code> option identifies the environment whose packages you want to inspect.</p>
+</details>
+<hr>
+<p><strong>2.</strong> What information does Conda display about each installed package? Find NumPy in <code>myenv</code> and identify its version.</p>
+<details>
+<summary>Show Answer</summary>
+<p>The <code>conda list</code> output normally includes the package name, version, build identifier, and channel or source.</p>
+<p>To find NumPy without scrolling through the entire list, you can enter:</p>
+<pre><code>conda list -n myenv numpy</code></pre>
+<p>The installed version depends on when you created your environment and the compatible versions available at that time.</p>
+</details>
+<hr>
+<p><strong>3.</strong> Compare the packages installed in <code>myenv</code> and <code>jlab</code>. Why are they different? Why does each environment contain more packages than we explicitly requested?</p>
+<details>
+<summary>Show Answer</summary>
+<p>The environments were created for different purposes. <code>myenv</code> contains packages for scientific computing, including NumPy, Matplotlib, and ipykernel. The <code>jlab</code> environment contains JupyterLab and the software required to run it.</p>
+<p>Both environments also contain additional packages called <strong>dependencies</strong>. These are installed automatically because other packages require them to function.</p>
+<p>Some packages may appear in both environments because different applications can share common dependencies. However, each environment maintains its own installed collection.</p>
+</details>
+<hr>
+<p><strong>4.</strong> If you update NumPy in <code>myenv</code>, will that automatically update NumPy in <code>jlab</code> or other Conda environments?</p>
+<details>
+<summary>Show Answer</summary>
+<p>No. Conda environments maintain separate collections of packages. Updating NumPy in <code>myenv</code> does not automatically update NumPy in another environment.</p>
+<p>This isolation is one reason we use different environments for different scientific projects.</p>
+</details>
+</div>
+</section>
+<section id="activity-3-identifying-python-interpreter">
+<h4>Activity 3: Identifying Python Interpreter<a class="headerlink" href="#activity-3-identifying-python-interpreter" title="Link to this heading">#</a></h4>
+<div class="alert alert-block alert-info">
+<p><strong>Activity 3: Identifying Python Interpreters</strong></p>
+<div class="alert alert-block alert-success">
+<p><strong>Use the terminal to investigate which Python interpreter is used when different Conda environments are active. Compare the interpreter locations and Python versions.</strong></p>
+</div>
+<p><strong>1.</strong> Activate <code>myenv</code>. What command identifies the Python interpreter used when you type <code>python</code>? Where is it located?</p>
+<details>
+<summary>Show Answer</summary>
+<p>Activate the environment and enter:</p>
+<pre><code>conda activate myenv
+which python</code></pre>
+<p>On Ubuntu, you should see a path similar to:</p>
+<pre><code>/home/student/miniconda3/envs/myenv/bin/python</code></pre>
+<p>This identifies the Python executable associated with <code>myenv</code>. Your exact path will depend on your operating system, username, and installation location.</p>
+</details>
+<hr>
+<p><strong>2.</strong> Activate <code>jlab</code> and repeat the command. How does the result compare with <code>myenv</code>?</p>
+<details>
+<summary>Show Answer</summary>
+<p>Enter:</p>
+<pre><code>conda activate jlab
+which python</code></pre>
+<p>The path should now point to the Python interpreter associated with <code>jlab</code>, for example:</p>
+<pre><code>/home/student/miniconda3/envs/jlab/bin/python</code></pre>
+<p>Notice that the environment name in the path has changed. Each environment has its own Python interpreter, even if both use the same Python version.</p>
+</details>
+<hr>
+<p><strong>3.</strong> Deactivate your Conda environment and investigate the Python interpreter available from your operating system. What do you observe?</p>
+<details>
+<summary>Show Answer</summary>
+<p>Enter:</p>
+<pre><code>conda deactivate
+which python3</code></pre>
+<p>On Ubuntu, the result will commonly be:</p>
+<pre><code>/usr/bin/python3</code></pre>
+<p>This is typically the Python interpreter provided by Ubuntu rather than Miniconda.</p>
+<p>On macOS, the path may differ depending on your system configuration and any additional Python installations.</p>
+<p>We generally avoid installing scientific packages directly into the operating system's Python installation.</p>
+</details>
+<hr>
+<p><strong>4.</strong> How can you determine the Python version associated with an active environment? Do different environments necessarily have different Python versions?</p>
+<details>
+<summary>Show Answer</summary>
+<p>Activate an environment and enter:</p>
+<pre><code>python --version</code></pre>
+<p>This displays the Python version associated with the active environment.</p>
+<p>Different Conda environments can use different Python versions, but they do not have to. Our <code>myenv</code> and <code>jlab</code> environments were both created using Python 3.12.</p>
+<p>Although the versions may be the same, the interpreters and their installed packages belong to separate environments.</p>
+</details>
+</div>
+</section>
+<section id="activity-4-getting-help-with-conda">
+<h4>Activity 4: Getting Help with Conda<a class="headerlink" href="#activity-4-getting-help-with-conda" title="Link to this heading">#</a></h4>
+<div class="alert alert-block alert-info">
+<p><strong>Activity 4: Getting Help with Conda</strong></p>
+<div class="alert alert-block alert-success">
+<p><strong>Explore Conda's built-in help system to learn how to find available commands, identify command options, and obtain additional information without leaving the terminal.</strong></p>
+</div>
+<p><strong>1.</strong> What command displays Conda's general help information? What kinds of information does it provide?</p>
+<details>
+<summary>Show Answer</summary>
+<p>Enter:</p>
+<pre><code>conda --help</code></pre>
+<p>Conda displays information about its command syntax, available commands, and general options.</p>
+<p>For example, you will see commands for creating environments, installing packages, listing packages, and displaying information about Conda.</p>
+</details>
+<hr>
+<p><strong>2.</strong> How can you obtain help for a specific Conda command, such as <code>conda list</code>?</p>
+<details>
+<summary>Show Answer</summary>
+<p>Enter:</p>
+<pre><code>conda list --help</code></pre>
+<p>This displays information about the <code>list</code> command, including its available options.</p>
+<p>The <code>--help</code> option is widely used by command-line programs, not just Conda.</p>
+</details>
+<hr>
+<p><strong>3.</strong> Use Conda's help system to determine what the <code>-n</code> option does when used with <code>conda list</code>.</p>
+<details>
+<summary>Show Answer</summary>
+<p>Enter:</p>
+<pre><code>conda list --help</code></pre>
+<p>Look for the option:</p>
+<pre><code>-n, --name</code></pre>
+<p>This option allows you to specify the name of the environment whose packages you want to list.</p>
+<p>For example:</p>
+<pre><code>conda list -n myenv</code></pre>
+<p>lists packages installed in <code>myenv</code>, even if that environment is not currently active.</p>
+</details>
+<hr>
+<p><strong>4.</strong> Use Conda's help system to find out how to obtain additional information about your Conda installation. What command would you use?</p>
+<details>
+<summary>Show Answer</summary>
+<p>Enter:</p>
+<pre><code>conda info</code></pre>
+<p>This displays information about your Conda installation, including environment locations, configured channels, and other settings.</p>
+<p>You can explore additional options using:</p>
+<pre><code>conda info --help</code></pre>
+<p>Remember that <code>conda info --envs</code>, which we used in Activity 1, is one example of an option provided by this command.</p>
+</details>
+</div>
+</section>
+</section>
+</section>
+<section id="working-with-pip-venv-and-conda">
+<h2>1.3.7 Working with pip, venv, and Conda<a class="headerlink" href="#working-with-pip-venv-and-conda" title="Link to this heading">#</a></h2>
+<p>Earlier in this notebook, we introduced three tools for managing Python packages and environments: <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">venv</span></code>, and <code class="docutils literal notranslate"><span class="pre">conda</span></code>. We have now used Conda to create and manage our own Python environments, but you will frequently encounter scientific software that provides installation instructions using <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">venv</span></code> instead. For example, when downloading scientific software or following instructions from GitHub or PyPI, you may encounter commands such as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+pip<span class="w"> </span>install<span class="w"> </span>numpy
+</pre></div>
+</div>
+<p>The first command creates a virtual environment using Python’s built-in <code class="docutils literal notranslate"><span class="pre">venv</span></code> module. The name <code class="docutils literal notranslate"><span class="pre">.venv</span></code> is simply a common convention for the directory containing that environment. The second command installs NumPy into the Python environment associated with the <code class="docutils literal notranslate"><span class="pre">pip</span></code> command. These are widely used approaches to managing Python software, and <strong>they are not inherently better or worse than Conda</strong>. They represent different tools and workflows for accomplishing many of the same tasks.</p>
+<section id="installing-packages-with-pip-inside-a-conda-environment">
+<h3>Installing Packages with pip Inside a Conda Environment<a class="headerlink" href="#installing-packages-with-pip-inside-a-conda-environment" title="Link to this heading">#</a></h3>
+<p>An important point is that <strong>we can use <code class="docutils literal notranslate"><span class="pre">pip</span></code> within a Conda environment</strong>. We do not necessarily need to create a new environment using <code class="docutils literal notranslate"><span class="pre">venv</span></code> simply because software documentation provides <code class="docutils literal notranslate"><span class="pre">pip</span></code> installation instructions. For example, suppose we are working in our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> environment and encounter a scientific package that is available on PyPI but not on conda-forge. Before using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, we need to ensure that it is installed in the active environment. We can check by entering:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">pip</span></code> is installed, this command displays its version and installation location. If Python reports that the <code class="docutils literal notranslate"><span class="pre">pip</span></code> module cannot be found, we can install it using Conda:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>--override-channels<span class="w"> </span>pip
+</pre></div>
+</div>
+<p>Once <code class="docutils literal notranslate"><span class="pre">pip</span></code> is available, we can install packages from PyPI into our active environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>package_name
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">package_name</span></code> represents the name of the package we wish to install. Using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span></code> explicitly runs <code class="docutils literal notranslate"><span class="pre">pip</span></code> with the Python interpreter associated with the active environment, helping ensure that the package is installed in the intended location.</p>
+<p>However, <strong>Conda and pip manage dependencies differently</strong>. Conda does not fully coordinate with changes made by <code class="docutils literal notranslate"><span class="pre">pip</span></code>, and subsequent Conda operations may introduce conflicts with pip-installed packages.</p>
+<p>For this reason, we will generally follow these practices:</p>
+<ol class="arabic simple">
+<li><p><strong>Look for the package on conda-forge first.</strong> If it is available, install it using Conda.</p></li>
+<li><p><strong>Use pip when necessary.</strong> If the package is unavailable through Conda, we can often install it using <code class="docutils literal notranslate"><span class="pre">pip</span></code> within an existing Conda environment.</p></li>
+<li><p><strong>Install Conda packages before pip packages.</strong> Avoid making further Conda modifications after installing packages with <code class="docutils literal notranslate"><span class="pre">pip</span></code>, when possible.</p></li>
+<li><p><strong>Create a new environment if necessary.</strong> If dependencies become incompatible, it may be easier and more reliable to create a fresh environment than to repair a heavily modified one.</p></li>
+</ol>
+</section>
+<section id="when-would-we-use-venv-instead-of-conda">
+<h3>When Would We Use venv Instead of Conda?<a class="headerlink" href="#when-would-we-use-venv-instead-of-conda" title="Link to this heading">#</a></h3>
+<p>Python’s built-in <code class="docutils literal notranslate"><span class="pre">venv</span></code> module provides a lightweight way to create isolated Python environments without requiring Conda. A common workflow is to create a virtual environment using <code class="docutils literal notranslate"><span class="pre">venv</span></code>, activate it, and then install the required Python packages using <code class="docutils literal notranslate"><span class="pre">pip</span></code>. This approach is widely used in Python software development, particularly for projects whose dependencies are available through PyPI and do not require extensive management of non-Python software libraries. Conda provides additional capabilities, including managing Python versions and non-Python dependencies, which makes it particularly useful for many scientific computing applications.</p>
+<p><strong>In this course, we will use Conda as our primary environment manager</strong>, but you should understand that many scientific Python projects use <code class="docutils literal notranslate"><span class="pre">venv</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code>. Later in the course, we will create a virtual environment using <code class="docutils literal notranslate"><span class="pre">venv</span></code> so you can compare the two approaches directly.</p>
+</section>
+<section id="choosing-the-right-tools">
+<h3>Choosing the Right Tools<a class="headerlink" href="#choosing-the-right-tools" title="Link to this heading">#</a></h3>
+<p>As you begin working with scientific software from different sources, remember that installation instructions are not necessarily tied to a single environment-management system.</p>
+<p>A package whose documentation says <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> may also be available through conda-forge. Conversely, some packages may only be available through PyPI or may require specialized installation procedures. The important skill is not memorizing one set of installation commands, but <strong>understanding which Python environment you are modifying, where packages come from, and how their dependencies are managed</strong>.</p>
+</section>
 </section>
 </section>
 
@@ -697,16 +1047,16 @@ venv	Creates isolated Python environments</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "nbi"
+            mode: "cinf26"
         },
         kernelOptions: {
-            name: "nbi",
+            name: "cinf26",
             path: "./content/modules/module1-setup"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'nbi'</script>
+    <script>kernelName = 'cinf26'</script>
 
                 </article>
               
@@ -773,11 +1123,30 @@ venv	Creates isolated Python environments</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-have-we-installed">What Have We Installed?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-conda-base-environment">1.3.5 Understanding the Conda Base Environment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-conda-from-the-command-line">1.3.6 Exploring Conda from the Command Line</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-managing-conda-environments">1.3.7 Creating and Managing Conda Environments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-approaches-pip-and-venv">1.3.8 Other Approaches: pip and venv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-creating-your-first-conda-environment">1.3.9 Activity: Creating Your First Conda Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-conda-base-environment">1.3.5 Understanding the Conda Base Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activating-and-deactivating-environments">Activating and Deactivating Environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-automatic-activation-of-base">Controlling Automatic Activation of Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-have-we-learned">What Have We Learned?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-exploring-conda-environments">1.3.6 Creating and Exploring Conda Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-our-first-conda-environment">1.3.6.1 Creating Our First Conda Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-jupyterlab-environment-jlab">1.3.6.2 Creating a JupyterLab Environment (<code class="docutils literal notranslate"><span class="pre">jlab</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-our-conda-environments">1.3.6.3 Exploring Our Conda Environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-1-exploring-conda-environments">Activity 1: Exploring Conda Environments</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-2-exploring-installed-packages">Activity 2: Exploring Installed Packages</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-3-identifying-python-interpreter">Activity 3: Identifying Python Interpreter</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-4-getting-help-with-conda">Activity 4: Getting Help with Conda</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-pip-venv-and-conda">1.3.7 Working with pip, venv, and Conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages-with-pip-inside-a-conda-environment">Installing Packages with pip Inside a Conda Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-would-we-use-venv-instead-of-conda">When Would We Use venv Instead of Conda?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-the-right-tools">Choosing the Right Tools</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
