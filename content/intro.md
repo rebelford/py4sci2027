@@ -18,7 +18,7 @@ Our primary goal in this module is to establish a working scientific computing e
 
 **Module 3: Scientific Computing with Python.** Python has an extensive ecosystem of scientific packages. Some, such as NumPy, pandas, Matplotlib, and SciPy, provide fundamental tools for numerical calculations, data analysis, and visualization that are useful across virtually all scientific disciplines. Others are developed to address specialized problems in fields such as chemistry, biology, physics, and geology. As a class, we will explore the core scientific Python ecosystem before branching into individual projects where students discover and apply discipline-specific packages to scientific problems of their own interest. These projects will include creating customized Python environments and sharing their work through GitHub repositories.
 
-## Appendices: Reference and Further Exploration
+**Appendices: Reference and Further Exploration**
 
 The appendices provide a collection of tutorials, explanations, examples, and reference materials that complement the three core modules. While the main lessons introduce concepts and tools in the context of specific activities, the appendices allow us to explore those topics in greater depth without interrupting the progression of the course.
 
