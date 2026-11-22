@@ -6,7 +6,7 @@ parts:
     chapters:
     - file: content/modules/module1-setup/README
       sections:
-      - file: content/modules/module1-setup/01-01_Understanding_your_Computing_
+      - file: content/modules/module1-setup/01-01_Understanding_your_Computer_
       - file: content/modules/module1-setup/01-02_Setting_Up_Your_Computer
       - file: content/modules/module1-setup/01-03_Installing_Miniconda
       - file: content/modules/module1-setup/01-04_JupyterLab
