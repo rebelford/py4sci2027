@@ -60,6 +60,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/module1-setup/01-04_JupyterLab';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -421,8 +423,19 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-jupyterlab">1.4.5 Anatomy of JupyterLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-and-directories">1.4.6 Working with Files and Directories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-consoles-in-jupyterlab">1.4.7 Terminals and Consoles in JupyterLab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-and-directories">1.4.6 Working with Files and Directories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environments-and-your-personal-workspace">1.4.6.1 Python Environments and Your Personal Workspace</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-course-materials-and-our-personal-workspace">Organizing Course Materials and Our Personal Workspace</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-our-personal-workspace">1.4.6.2 Creating Our Personal Workspace</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-directories-using-the-command-line">Creating Directories Using the Command Line</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-directories-using-the-jupyterlab-file-browser">Creating Directories Using the JupyterLab File Browser</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-our-directory-structure">Verifying Our Directory Structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -643,9 +656,162 @@ In this example, we select <strong>Python (myenv)</strong>, which is the kernel 
 </section>
 <section id="working-with-files-and-directories">
 <span id="sec-1-4-6"></span><h2>1.4.6 Working with Files and Directories<a class="headerlink" href="#working-with-files-and-directories" title="Link to this heading">#</a></h2>
+<p>In Section 1.1, we introduced files, directories, and file paths, and discussed how operating systems organize information in a hierarchical file system. In Section 1.2, we learned some basic terminal commands for navigating directories. Since then, we have installed Miniconda, created a Conda environment named <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, and installed JupyterLab. But where is all this software located on our computer, and how does it relate to the files we will create as we learn Python?</p>
+<section id="python-environments-and-your-personal-workspace">
+<span id="sec-1-4-6-1"></span><h3>1.4.6.1 Python Environments and Your Personal Workspace<a class="headerlink" href="#python-environments-and-your-personal-workspace" title="Link to this heading">#</a></h3>
+<p>Recall that a <strong>Python environment</strong> provides a particular Python interpreter along with a collection of installed packages and dependencies. Our computer may now have several different Python interpreters:</p>
+<ol class="arabic simple">
+<li><p><strong>System Python:</strong> A Python interpreter provided or managed by the operating system.</p></li>
+<li><p><strong>Conda base Python:</strong> The interpreter installed with Miniconda in its <code class="docutils literal notranslate"><span class="pre">base</span></code> environment.</p></li>
+<li><p><strong>Our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> Python:</strong> The interpreter associated with the Conda environment we created for this course.</p></li>
+</ol>
+<p>These interpreters are separate executable files, located in different directories. For example, on an Ubuntu system with Miniconda installed in the default location, our file system might resemble:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>├── usr/
+│   └── bin/
+│       └── python3                  # System Python
+│
+└── home/
+    └── student/
+        ├── miniconda3/
+        │   ├── bin/
+        │   │   └── python           # Conda base Python
+        │   └── envs/
+        │       ├── myenv/
+        │       │   └── bin/
+        │       │       └── python   # Python for myenv kernel
+        │       │
+        │       └── jlab/
+        │           └── bin/
+        │               └── python   # Python for running JupyterLab
+        │
+        ├── py4sci/                  # Course GitHub repository (to be cloned)
+        │
+        └── my_work/                 # Our personal workspace (to be created)
+            ├── notebooks/
+            │   └── module1/
+            └── data/
+                └── module1/
+</pre></div>
+</div>
+<section id="organizing-course-materials-and-our-personal-workspace">
+<h4>Organizing Course Materials and Our Personal Workspace<a class="headerlink" href="#organizing-course-materials-and-our-personal-workspace" title="Link to this heading">#</a></h4>
+<p>Notice that the Python environments are located inside the <code class="docutils literal notranslate"><span class="pre">miniconda3</span></code> directory, while our course materials and personal workspace will be located elsewhere.</p>
+<p><strong>Python environments contain the software we use to run our programs, while our personal workspace contains the programs, data, and results we create.</strong> A Python program does not need to be stored in the same directory as the environment used to execute it. In fact, we may use different Python environments to run programs stored in the same workspace.</p>
+<p>Later in this module, we will use Git to <strong>clone the course repository from GitHub</strong> into a directory named <code class="docutils literal notranslate"><span class="pre">py4sci</span></code>. Cloning a repository downloads its files and reproduces its directory structure on our computer. This means that the notebooks, data files, and other course materials will already be organized into directories when we obtain them.</p>
+<p>We will periodically update the course repository using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> to obtain new assignments, examples, and other materials from the instructor. <strong>We should not modify the original files in <code class="docutils literal notranslate"><span class="pre">py4sci</span></code>.</strong> Instead, we will copy the files we need into our personal workspace and work on those copies. This will allow us to update the course repository without interfering with our own work or creating conflicts with changes made by the instructor.</p>
+<p>Unlike the course repository, our personal workspace will not be downloaded from GitHub. <strong>We will create its directory structure ourselves</strong>, beginning in this activity. Our workspace will be named <code class="docutils literal notranslate"><span class="pre">my_work</span></code> and will contain two primary directories:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">notebooks/</span></code></strong> will contain our Jupyter notebooks and the Python code we develop throughout the course. We will organize notebooks by module so that we can easily locate the programs associated with different assignments and activities.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">data/</span></code></strong> will contain datasets used by our programs, as well as files generated during our analyses. These may include experimental measurements, environmental sensor readings, data retrieved from online sources, or results produced by Python programs.</p></li>
+</ul>
+<p>Initially, we will create a <code class="docutils literal notranslate"><span class="pre">module1</span></code> directory under both <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> and <code class="docutils literal notranslate"><span class="pre">data</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>my_work/
+├── notebooks/
+│   └── module1/
+└── data/
+    └── module1/
+</pre></div>
+</div>
+<p>As we progress through the course, we will add directories for subsequent modules and projects. For example, a notebook stored in <code class="docutils literal notranslate"><span class="pre">my_work/notebooks/module1</span></code> might read experimental measurements from <code class="docutils literal notranslate"><span class="pre">my_work/data/module1</span></code>, perform calculations, and save the results back into that data directory.</p>
+<p>This organization will become particularly important as we begin working with multiple scientific programs, datasets, and Python environments. By keeping our files organized, we will know where to find the materials for each activity, where to save our work, and how to locate the data needed by our programs.</p>
 </section>
-<section id="terminals-and-consoles-in-jupyterlab">
-<span id="sec-1-4-7"></span><h2>1.4.7 Terminals and Consoles in JupyterLab<a class="headerlink" href="#terminals-and-consoles-in-jupyterlab" title="Link to this heading">#</a></h2>
+</section>
+<section id="creating-our-personal-workspace">
+<span id="sec-1-4-6-2"></span><h3>1.4.6.2 Creating Our Personal Workspace<a class="headerlink" href="#creating-our-personal-workspace" title="Link to this heading">#</a></h3>
+<p>We will now create the directory structure described in the previous section. We will use two different approaches: first, the command-line interface (CLI), and then the graphical file browser in JupyterLab.</p>
+<p>Both interfaces interact with the same file system, but they provide different ways of working with files and directories.</p>
+<section id="creating-directories-using-the-command-line">
+<h4>Creating Directories Using the Command Line<a class="headerlink" href="#creating-directories-using-the-command-line" title="Link to this heading">#</a></h4>
+<p>We will begin by creating the <code class="docutils literal notranslate"><span class="pre">my_work/notebooks/module1</span></code> directory structure using the terminal. Open a terminal in JupyterLab or use the Ubuntu terminal (Windows/WSL) or Terminal (macOS) and note, you are not using any packages and so do not need to activate a Conda environment.</p>
+<p>First, navigate to your home directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+</pre></div>
+</div>
+<p>Recall that <code class="docutils literal notranslate"><span class="pre">~</span></code> represents your home directory. We are starting here because we want <code class="docutils literal notranslate"><span class="pre">my_work</span></code> to be located directly within our home directory, alongside the <code class="docutils literal notranslate"><span class="pre">py4sci</span></code> directory we will create later when we clone the course repository.</p>
+<p>Now enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>my_work/notebooks/module1
+</pre></div>
+</div>
+<p>This single command creates three nested directories:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">my_work</span></code>, our personal workspace.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notebooks</span></code>, where we will store our Jupyter notebooks.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">module1</span></code>, where we will store the notebooks associated with Module 1.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> command stands for <em>make directory</em>. The <code class="docutils literal notranslate"><span class="pre">-p</span></code> option tells the operating system to create any missing parent directories along the specified path.</p>
+<p>Without <code class="docutils literal notranslate"><span class="pre">-p</span></code>, we would need to create each directory separately, beginning with <code class="docutils literal notranslate"><span class="pre">my_work</span></code>, then <code class="docutils literal notranslate"><span class="pre">notebooks</span></code>, and finally <code class="docutils literal notranslate"><span class="pre">module1</span></code>.</p>
+<p>We can verify that our directories were created by entering:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>my_work
+</pre></div>
+</div>
+<p>The output should be:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>notebooks
+</pre></div>
+</div>
+<p>We can also examine the contents of the <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>my_work/notebooks
+</pre></div>
+</div>
+<p>Which should display:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>module1
+</pre></div>
+</div>
+<p>We have now created three nested directories with a single command!
+bob&#64;MSI:~<span class="math notranslate nohighlight">\( mkdir -p my_work/notebooks/module1
+bob&#64;MSI:~\)</span> ls my_work
+notebooks
+bob&#64;MSI:~<span class="math notranslate nohighlight">\( ls my_work/notebooks
+module1
+bob&#64;MSI:~\)</span></p>
+</section>
+<section id="creating-directories-using-the-jupyterlab-file-browser">
+<h4>Creating Directories Using the JupyterLab File Browser<a class="headerlink" href="#creating-directories-using-the-jupyterlab-file-browser" title="Link to this heading">#</a></h4>
+<p>Next, we will create our <code class="docutils literal notranslate"><span class="pre">data/module1</span></code> directory structure using JupyterLab’s graphical file browser. In JupyterLab, locate the <strong>File Browser</strong> panel on the left side of the interface. If it is not visible, click the folder icon in the left sidebar. Navigate to your home directory and open <code class="docutils literal notranslate"><span class="pre">my_work</span></code>.</p>
+<p>You should see the <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> directory that you just created using the terminal.</p>
+<p>Notice that we did not need to import or transfer anything into JupyterLab. The directory appears automatically because JupyterLab’s file browser and the terminal access the same file system.</p>
+<p>Now create the data directories:</p>
+<ol class="arabic simple">
+<li><p>Navigate to my_work</p></li>
+<li><p>While viewing <code class="docutils literal notranslate"><span class="pre">my_work</span></code>, right-click in an empty area of the file browser and select <strong>New Folder</strong>.</p></li>
+<li><p>Rename the new folder <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p></li>
+<li><p>Double-click <code class="docutils literal notranslate"><span class="pre">data</span></code> to open it.4. Double-click <code class="docutils literal notranslate"><span class="pre">data</span></code> to open it.</p></li>
+<li><p>This time choose the “New Folder” Icon, select <strong>New Folder</strong>, and rename this folder <code class="docutils literal notranslate"><span class="pre">module1</span></code>.
+<img alt="image.png" src="../../../_images/attachment-16109c10b0b7a7f9.png" />
+You should now have the following directory structure:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>my_work/
+├── notebooks/
+│   └── module1/
+└── data/
+    └── module1/
+</pre></div>
+</div>
+<p>We could also have created these directories using our operating system’s graphical file manager: <strong>File Explorer in Windows</strong> or <strong>Finder in macOS</strong>.</p>
+</section>
+<section id="verifying-our-directory-structure">
+<h4>Verifying Our Directory Structure<a class="headerlink" href="#verifying-our-directory-structure" title="Link to this heading">#</a></h4>
+<p>The following screenshot shows our <code class="docutils literal notranslate"><span class="pre">my_work</span></code> directory as viewed through Windows File Explorer, including the directories we created using the terminal and JupyterLab.
+<img alt="image.png" src="../../../_images/attachment-c52ed3fb24ac28c4.png" /></p>
+<p>Let’s return to the terminal and verify that the directories we created in JupyterLab are visible there as well.</p>
+<p>First, return to your home directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+</pre></div>
+</div>
+<p>Then enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>my_work/data
+</pre></div>
+</div>
+<p>You should see:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>module1
+</pre></div>
+</div>
+<p>We created <code class="docutils literal notranslate"><span class="pre">notebooks/module1</span></code> using the terminal and <code class="docutils literal notranslate"><span class="pre">data/module1</span></code> using JupyterLab. We then viewed both directories through Windows File Explorer and verified their existence using the terminal.</p>
+<p><strong>Although we used different interfaces, we were working with the same file system.</strong> Each interface provides a different way to create, organize, and access files and directories, but the resulting directories are the same regardless of how they were created.</p>
+<p>This is an important principle of scientific computing. Sometimes a graphical interface is more convenient, while other times a command-line instruction can accomplish several steps at once. As we learn Python, we will discover a third approach: writing programs that create, read, and modify files automatically.</p>
+<p>The choice of interface depends on the task, but the underlying files and directories remain the same.</p>
+<p>We now have a personal workspace organized into separate directories for notebooks and data. In the next activity, we will create our first Jupyter notebook and use Python to generate a text file in our new <code class="docutils literal notranslate"><span class="pre">data/module1</span></code> directory.</p>
+</section>
+</section>
 </section>
 </section>
 
@@ -733,8 +899,19 @@ In this example, we select <strong>Python (myenv)</strong>, which is the kernel 
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-jupyterlab">1.4.5 Anatomy of JupyterLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-and-directories">1.4.6 Working with Files and Directories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-consoles-in-jupyterlab">1.4.7 Terminals and Consoles in JupyterLab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-and-directories">1.4.6 Working with Files and Directories</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-environments-and-your-personal-workspace">1.4.6.1 Python Environments and Your Personal Workspace</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#organizing-course-materials-and-our-personal-workspace">Organizing Course Materials and Our Personal Workspace</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-our-personal-workspace">1.4.6.2 Creating Our Personal Workspace</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-directories-using-the-command-line">Creating Directories Using the Command Line</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-directories-using-the-jupyterlab-file-browser">Creating Directories Using the JupyterLab File Browser</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-our-directory-structure">Verifying Our Directory Structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
