@@ -10,5 +10,6 @@ parts:
       - file: content/modules/module1-setup/01-02_Setting_Up_Your_Computer
       - file: content/modules/module1-setup/01-03_Installing_Miniconda
       - file: content/modules/module1-setup/01-04_JupyterLab
-      - file: content/modules/module1-setup/01-05_GitHub
-      - file: content/modules/module1-setup/01-06_Managing_and_Sharing_Projects
+      - file: content/modules/module1-setup/01-05_Jupyter_Notebooks
+      - file: content/modules/module1-setup/01-06_GitHub
+      - file: content/modules/module1-setup/01-07_Managing_and_Sharing_Projects

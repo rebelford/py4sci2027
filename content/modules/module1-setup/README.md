@@ -32,7 +32,7 @@ Install Miniconda and learn how Python environments and package managers work. D
 
 **Goal:** Understand how Python environments isolate software dependencies and determine which Python interpreter executes your code.
 
-### 1.4 upyterLab
+### 1.4 JupyterLab
 
 Create a dedicated JupyterLab environment (`jbenv`), install and launch JupyterLab, and learn to create and execute Jupyter notebooks.
 
