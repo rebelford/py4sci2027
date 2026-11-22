@@ -403,12 +403,26 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyterlab">1.4.1 What Is JupyterLab?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-and-stopping-jupyterlab">1.4.2 Starting and Stopping JupyterLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-servers-environments-and-kernels">1.4.3 Understanding Servers, Environments, and Kernels</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-jupyterlab-interface">1.4.4 Exploring the JupyterLab Interface</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-and-directories">1.4.5 Working with Files and Directories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-consoles-in-jupyterlab">1.4.6 Terminals and Consoles in JupyterLab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-jupyter-and-the-jupyter-ecosystem">1.4.1 Project Jupyter and the Jupyter Ecosystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-this-jupyter-book">Navigating This Jupyter Book</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyterlab">1.4.2 What Is JupyterLab?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-and-stopping-jupyterlab">1.4.3 Starting and Stopping JupyterLab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-jupyterlab">Starting JupyterLab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-jupyterlab-from-different-directories">Starting JupyterLab from Different Directories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopping-jupyterlab">Stopping JupyterLab</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-servers-environments-and-kernels">1.4.4 Understanding Servers, Environments, and Kernels</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-jupyterlab-executes-python-code">How JupyterLab Executes Python Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-our-myenv-environment-available-as-a-kernel">Making Our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> Environment Available as a Kernel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-and-changing-a-notebook-s-kernel">Viewing and Changing a Notebook’s Kernel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-jupyterlab">1.4.5 Anatomy of JupyterLab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-and-directories">1.4.6 Working with Files and Directories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-consoles-in-jupyterlab">1.4.7 Terminals and Consoles in JupyterLab</a></li>
 </ul>
             </nav>
         </div>
@@ -422,23 +436,216 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="jupyterlab">
 <span id="sec-1-4"></span><h1>1.4 JupyterLab<a class="headerlink" href="#jupyterlab" title="Link to this heading">#</a></h1>
+<section id="project-jupyter-and-the-jupyter-ecosystem">
+<span id="sec-1-4-1"></span><h2>1.4.1 Project Jupyter and the Jupyter Ecosystem<a class="headerlink" href="#project-jupyter-and-the-jupyter-ecosystem" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://jupyter.org/">Project Jupyter</a> is an open-source initiative that develops software and tools for interactive computing, scientific research, and education. The name <em>Jupyter</em> originated from three programming languages: <strong>Julia, Python, and R</strong>. Although we will focus on Python in this course, Jupyter supports many programming languages.</p>
+<p>One of the central ideas behind Project Jupyter is that scientific computing involves more than simply writing and executing code. Scientists also need to document their methods, analyze data, visualize results, and communicate their findings. The Jupyter ecosystem provides tools that help integrate these activities into a common workflow.</p>
+<p>Several related Jupyter tools serve different purposes:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Tool</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Jupyter Notebook</strong></p></td>
+<td><p>A document (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) that combines executable code, explanatory text, equations, visualizations, and computational results. The name also refers to an application for editing notebooks.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>JupyterLab</strong></p></td>
+<td><p>A browser-based application for working with notebooks, Python scripts, data files, terminals, and other scientific computing resources.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>JupyterHub</strong></p></td>
+<td><p>A system that provides multiple users with access to centrally managed Jupyter computing environments, often running on remote servers.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Jupyter Book</strong></p></td>
+<td><p>A publishing system that transforms notebooks and Markdown files into structured websites, textbooks, and other instructional materials.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These tools are related, but they are not interchangeable. A notebook is a computational document, JupyterLab is an environment for working with that document, JupyterHub provides access to remotely hosted computing environments, and Jupyter Book provides a way to publish notebooks and other materials for others to read.</p>
+<section id="navigating-this-jupyter-book">
+<h3>Navigating This Jupyter Book<a class="headerlink" href="#navigating-this-jupyter-book" title="Link to this heading">#</a></h3>
+<p>If you are just beginning this course, you are probably reading this lesson through our published <strong>Jupyter Book</strong>, a website generated from Jupyter notebooks and Markdown files. This allows you to access the instructional materials through a web browser without installing JupyterLab or running Python code. However, once you have downloaded or cloned the course materials from GitHub, you can also open this same lesson as a <strong>Jupyter notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) in JupyterLab</strong>. In that case, you are working directly with the source document rather than viewing its published version. You can edit the text, execute code cells, and save your own changes.</p>
+<p>The distinction is important: <strong>Jupyter Book provides a published view of course materials, while JupyterLab provides an interactive environment for working with the underlying notebooks.</strong> Both may display much of the same content, but they serve different purposes.</p>
+<p>If you are viewing this lesson through the published Jupyter Book, notice the navigation panel on the left, which provides access to the different modules and lessons. You can expand sections and move between topics as you work through the course. The published book also includes buttons in the upper-right corner that connect it to other resources, as illustrated below.</p>
+<p><img alt="image.png" src="../../../_images/attachment-69ea2aea3139f935.png" /></p>
+<p><strong>GitHub repository:</strong> The GitHub icon opens a menu containing links to the course’s <a class="reference external" href="https://github.com/rebelford/py4sci2027">GitHub repository</a> and its issue tracker. The repository contains the source notebooks and other course materials. In a later lesson, you will learn how to clone the repository to your computer so you can open and work with these files in JupyterLab. The <strong>Open issue</strong> option provides a way to report problems or suggest improvements.</p>
+<p><img alt="image.png" src="../../../_images/attachment-56365e511b311c3b.png" /></p>
+<p><strong>JupyterHub:</strong> The rocket-shaped launch button provides options for opening supported course notebooks in an interactive computing environment. The JupyterHub option is intended to launch notebooks on a remote server, where Python code can be executed without requiring the same software installation on your local computer. We may use this capability through <a class="reference external" href="https://nanohub.org/">nanoHUB</a> later in the course.</p>
+<p>The important distinction is that <strong>reading a Jupyter Book is not the same as running a Jupyter notebook</strong>. The published book displays instructional content and saved computational results, while JupyterLab provides an interactive environment in which we can create, modify, and execute notebooks.</p>
+<p>In <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-03_Installing_Miniconda.html#sec-1-3-6-2">Section 1.3.6.2, Creating a JupyterLab Environment</a>, we created a dedicated Conda environment called `jlab for running JupyterLab. In the next section, we will begin using that environment and explore how JupyterLab provides a workspace for scientific computing.</p>
+</section>
+</section>
 <section id="what-is-jupyterlab">
-<span id="sec-1-4-1"></span><h2>1.4.1 What Is JupyterLab?<a class="headerlink" href="#what-is-jupyterlab" title="Link to this heading">#</a></h2>
+<span id="sec-1-4-2"></span><h2>1.4.2 What Is JupyterLab?<a class="headerlink" href="#what-is-jupyterlab" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://jupyterlab.readthedocs.io/">JupyterLab</a> is a browser-based interactive computing environment that provides a graphical interface for working with Jupyter notebooks, Python scripts, data files, and terminals. Unlike the published Jupyter Book, which is primarily used to read course materials, JupyterLab allows us to create, edit, execute, and organize our own scientific computing projects.</p>
+<p>One of the primary activities in JupyterLab is working with <strong>Jupyter notebooks</strong>. A notebook consists of individual <strong>cells</strong>, which can contain three types of content:</p>
+<ul class="simple">
+<li><p><strong>Code cells</strong> contain executable programming instructions, such as Python code, along with any resulting output.</p></li>
+<li><p><strong>Markdown cells</strong> contain formatted text, headings, lists, links, and mathematical expressions. Markdown (MD) is a lightweight markup language that allows us to format text using simple symbols rather than a word processor.</p></li>
+<li><p><strong>Raw cells</strong> contain text that is not executed as code or rendered as Markdown. They are less commonly used and can be useful when exporting notebooks to other formats.</p></li>
+</ul>
+<p>JupyterLab can have multiple notebooks open simultaneously, each in its own tab. These notebooks can execute code independently using different <strong>kernels</strong>, which are processes that execute code within particular computing environments. For example, one notebook might use Python from our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> environment, while another uses Python from a different Conda environment. We will explore how kernels relate to Conda environments later in this lesson.</p>
+<p>Although JupyterLab runs in a web browser, that does not necessarily mean our calculations are performed on the internet. When we launch JupyterLab on our own computers, its server and Python processes run locally. The browser provides the interface through which we interact with them. Later, we may also use JupyterLab through remote services such as JupyterHub, where the computations run on another computer.</p>
+<p>In the next section, we will activate the <code class="docutils literal notranslate"><span class="pre">jlab</span></code> Conda environment we created earlier and launch JupyterLab for the first time.</p>
 </section>
 <section id="starting-and-stopping-jupyterlab">
-<span id="sec-1-4-2"></span><h2>1.4.2 Starting and Stopping JupyterLab<a class="headerlink" href="#starting-and-stopping-jupyterlab" title="Link to this heading">#</a></h2>
+<span id="sec-1-4-3"></span><h2>1.4.3 Starting and Stopping JupyterLab<a class="headerlink" href="#starting-and-stopping-jupyterlab" title="Link to this heading">#</a></h2>
+<p>In <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-03_Installing_Miniconda.html#sec-1-3-6-2">Section 1.3.6.2, Creating a JupyterLab Environment</a>, we created a Conda environment called <code class="docutils literal notranslate"><span class="pre">jlab</span></code> and installed JupyterLab. We will now activate that environment and launch JupyterLab for the first time.</p>
+<section id="starting-jupyterlab">
+<h3>Starting JupyterLab<a class="headerlink" href="#starting-jupyterlab" title="Link to this heading">#</a></h3>
+<p>Open your Ubuntu (Windows/WSL) or macOS terminal and activate the <code class="docutils literal notranslate"><span class="pre">jlab</span></code> environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>jlab
+</pre></div>
+</div>
+<p>Your terminal prompt should now display <code class="docutils literal notranslate"><span class="pre">(jlab)</span></code>, indicating that the environment is active.</p>
+<p>Next, enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+<p>This command starts a Jupyter server on your computer and normally opens JupyterLab in your default web browser. The terminal also displays information about the running server, including URLs that can be used to access it.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>http://localhost:8888/lab?token=...
+http://127.0.0.1:8888/lab?token=...
+</pre></div>
+</div>
+<p>Both URLs access the same Jupyter server running on your computer. Let’s examine their components:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">localhost</span></code></strong> refers to your own computer. The numeric address <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code> is another way of referring to the same computer.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">8888</span></code></strong> is the <em>port number</em> used by this Jupyter server. This is the default port, although Jupyter may use another port (such as 8889) if 8888 is already in use.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">/lab</span></code></strong> directs your browser to the JupyterLab interface.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">?token=...</span></code></strong> is an authentication token generated by the Jupyter server. The <code class="docutils literal notranslate"><span class="pre">...</span></code> in the example represents a long, randomly generated string that helps prevent unauthorized access to the server. Each Jupyter server normally generates its own token, which is included in the URL displayed in the terminal.</p></li>
+</ul>
+<p>Once JupyterLab is running, you can usually access it by entering http://localhost:8888/lab in your browser, without including the authentication token. This works because your browser may remember that you have already authenticated with the Jupyter server. However, if you are opening JupyterLab for the first time, using a different browser, or connecting to a server that has generated a new token, you may be asked to authenticate again. In that case, copy the complete URL, including the token, from the terminal where JupyterLab is running and paste it into your browser’s address bar.</p>
+<p>Important: The Jupyter server must be running for your browser to connect to it. Keep the terminal where you launched JupyterLab open, as you will need it when you are ready to shut down the server. If you need to execute additional commands while JupyterLab is running, you can open another terminal window or tab.</p>
+</section>
+<section id="starting-jupyterlab-from-different-directories">
+<h3>Starting JupyterLab from Different Directories<a class="headerlink" href="#starting-jupyterlab-from-different-directories" title="Link to this heading">#</a></h3>
+<p>Recall our earlier discussion of files, directories, and file paths. When we start JupyterLab, the directory from which we launch the server normally becomes the <strong>root directory of the JupyterLab file browser</strong>. The file browser can navigate through this directory and its subdirectories, but it cannot normally navigate to directories above it. For example, if we enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/projects
+jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+<p>JupyterLab will normally open with <code class="docutils literal notranslate"><span class="pre">~/projects</span></code> as its root directory. We can navigate through the files and subdirectories within <code class="docutils literal notranslate"><span class="pre">~/projects</span></code>, but we cannot use the JupyterLab file browser to move up to our home directory (<code class="docutils literal notranslate"><span class="pre">~</span></code>) or access other directories outside <code class="docutils literal notranslate"><span class="pre">~/projects</span></code>.</p>
+<p><strong>For this course, we recommend starting JupyterLab from your home directory</strong>, which is represented by <code class="docutils literal notranslate"><span class="pre">~</span></code> in Unix-like systems:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~
+conda<span class="w"> </span>activate<span class="w"> </span>jlab
+jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+<p>We will explore the JupyterLab file browser and its navigation features later in this lesson.</p>
+</section>
+<section id="stopping-jupyterlab">
+<h3>Stopping JupyterLab<a class="headerlink" href="#stopping-jupyterlab" title="Link to this heading">#</a></h3>
+<p>When you are finished working in JupyterLab, save any open notebooks and return to the terminal where you started the server. Press:</p>
+<p><strong>Ctrl+C</strong></p>
+<p>Jupyter may ask you to confirm that you want to shut down the server. If prompted, type <code class="docutils literal notranslate"><span class="pre">y</span></code> and press Enter. This stops the Jupyter server and returns control to your terminal.</p>
+<p><strong>Closing the browser tab does not necessarily stop JupyterLab.</strong> The server may continue running in the terminal even after you close the browser. Conversely, if you close the terminal or stop the server, your JupyterLab browser session will no longer be able to communicate with it.</p>
+<p>Once the server has stopped, you can deactivate the Conda environment if you wish:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate
+</pre></div>
+</div>
+<p><strong>Try it yourself:</strong> Activate <code class="docutils literal notranslate"><span class="pre">jlab</span></code>, start JupyterLab, observe the browser address and terminal output, and then shut down the server using Ctrl+C. Restart it once more to verify that you can open and close JupyterLab independently.</p>
+<p>In the next section, we will examine what happens behind the scenes when JupyterLab runs, including the relationship between the Jupyter server, Python environments, and kernels.</p>
+</section>
 </section>
 <section id="understanding-servers-environments-and-kernels">
-<span id="sec-1-4-3"></span><h2>1.4.3 Understanding Servers, Environments, and Kernels<a class="headerlink" href="#understanding-servers-environments-and-kernels" title="Link to this heading">#</a></h2>
+<span id="sec-1-4-4"></span><h2>1.4.4 Understanding Servers, Environments, and Kernels<a class="headerlink" href="#understanding-servers-environments-and-kernels" title="Link to this heading">#</a></h2>
+<p>In the previous section, we launched JupyterLab from our <code class="docutils literal notranslate"><span class="pre">jlab</span></code> Conda environment. However, in <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-03_Installing_Miniconda.html#sec-1-3-6">Section 1.3.6, Creating and Exploring Conda Environments</a>, we created two environments with different purposes:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">jlab</span></code></strong> contains JupyterLab and the software needed to run its interface.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">myenv</span></code></strong> contains Python and scientific packages such as NumPy and Matplotlib, which we want to use in our notebooks.</p></li>
+</ul>
+<p>How can we run JupyterLab from one environment while executing Python code from another? The answer involves understanding the relationship between <strong>Jupyter servers, environments, and kernels</strong>.</p>
+<section id="how-jupyterlab-executes-python-code">
+<h3>How JupyterLab Executes Python Code<a class="headerlink" href="#how-jupyterlab-executes-python-code" title="Link to this heading">#</a></h3>
+<p>When we launch JupyterLab from the <code class="docutils literal notranslate"><span class="pre">jlab</span></code> environment, we start a <strong>Jupyter server</strong>, which provides the interface we access through our browser. The server manages notebooks, files, and connections to computational processes called <strong>kernels</strong>. A kernel is a separate process that executes the code in a notebook. For Python notebooks, the kernel uses a particular Python interpreter and its associated packages. This means that the environment used to run JupyterLab does not have to be the same environment used to execute our notebook code.</p>
+<p>For example, we can launch JupyterLab from <code class="docutils literal notranslate"><span class="pre">jlab</span></code> and open a notebook that uses a Python kernel associated with <code class="docutils literal notranslate"><span class="pre">myenv</span></code>. When we execute code in that notebook, Python and the scientific packages installed in <code class="docutils literal notranslate"><span class="pre">myenv</span></code> are used, even though JupyterLab itself is running from <code class="docutils literal notranslate"><span class="pre">jlab</span></code>. We can also have multiple notebooks open simultaneously, with each notebook connected to its own kernel. One notebook might use <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, while another uses a different Python environment. The notebooks can execute code independently without interfering with each other’s Python variables or memory.</p>
 </section>
-<section id="exploring-the-jupyterlab-interface">
-<span id="sec-1-4-4"></span><h2>1.4.4 Exploring the JupyterLab Interface<a class="headerlink" href="#exploring-the-jupyterlab-interface" title="Link to this heading">#</a></h2>
+<section id="making-our-myenv-environment-available-as-a-kernel">
+<h3>Making Our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> Environment Available as a Kernel<a class="headerlink" href="#making-our-myenv-environment-available-as-a-kernel" title="Link to this heading">#</a></h3>
+<p>Before JupyterLab can use <code class="docutils literal notranslate"><span class="pre">myenv</span></code> as a notebook kernel, we need to make sure it is registered with Jupyter. Recall that we installed a package called <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> when we created <code class="docutils literal notranslate"><span class="pre">myenv</span></code>. This package provides the software that allows a Python interpreter to communicate with the Jupyter server. We will now register <code class="docutils literal notranslate"><span class="pre">myenv</span></code> as an available kernel.</p>
+<p><strong>Step 1: Activate <code class="docutils literal notranslate"><span class="pre">myenv</span></code></strong></p>
+<p>Open a new terminal and enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>myenv
+</pre></div>
+</div>
+<p><strong>Step 2: Register the Python kernel</strong></p>
+<p>Enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>myenv<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python (myenv)&quot;</span>
+</pre></div>
+</div>
+<p>Let’s examine the command:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">ipykernel</span> <span class="pre">install</span></code> registers a Jupyter kernel associated with the Python interpreter in our active environment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--user</span></code> installs the kernel configuration for our user account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--name</span> <span class="pre">myenv</span></code> gives the kernel an internal name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--display-name</span> <span class="pre">&quot;Python</span> <span class="pre">(myenv)&quot;</span></code> specifies the name that will appear in JupyterLab’s kernel selection menu.</p></li>
+</ul>
+<p>The command creates a small configuration file, called a <strong>kernel specification</strong> or <em>kernelspec</em>, that tells Jupyter how to start Python from <code class="docutils literal notranslate"><span class="pre">myenv</span></code>. It does not create another Conda environment or install another copy of Python.</p>
+<p><strong>Step 3: Verify the available kernels</strong></p>
+<p>We can view the registered Jupyter kernels using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>kernelspec<span class="w"> </span>list
+</pre></div>
+</div>
+<p>You should see an entry named <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, along with any other kernels available on your computer. Once the kernel has been registered, we can deactivate <code class="docutils literal notranslate"><span class="pre">myenv</span></code> and return to <code class="docutils literal notranslate"><span class="pre">jlab</span></code> when we want to launch JupyterLab.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>deactivate
+conda<span class="w"> </span>activate<span class="w"> </span>jlab
+jupyter<span class="w"> </span>lab
+</pre></div>
+</div>
+<p>When we create or open a notebook, JupyterLab will allow us to select the <strong>Python (myenv)</strong> kernel. We can then execute Python code using the interpreter and packages installed in <code class="docutils literal notranslate"><span class="pre">myenv</span></code>.</p>
+<p>This separation is useful for scientific computing. We can maintain one JupyterLab installation while creating different Python environments for different projects. Each project can use the packages and versions it requires without unnecessarily changing the environment that runs JupyterLab.</p>
+</section>
+<section id="viewing-and-changing-a-notebook-s-kernel">
+<h3>Viewing and Changing a Notebook’s Kernel<a class="headerlink" href="#viewing-and-changing-a-notebook-s-kernel" title="Link to this heading">#</a></h3>
+<p>When a notebook is open in JupyterLab, its <strong>active kernel</strong> appears in the upper-right corner of the notebook window. The kernel determines which Python interpreter and installed packages are used to execute the notebook’s code.</p>
+<p>The figure below illustrates the basic process of changing a notebook’s kernel.</p>
+<p><img alt="image.png" src="../../../_images/attachment-081c281e9362cd4c.png" /></p>
+<p>To change the kernel for a notebook:</p>
+<ol class="arabic">
+<li><p><strong>Locate the active kernel.</strong><br />
+In the upper-right corner of the notebook, JupyterLab displays the name of the kernel currently connected to that notebook. In the example, the notebook is initially using <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3</span> <span class="pre">(ipykernel)</span></code>.</p></li>
+<li><p><strong>Click the kernel name.</strong><br />
+Clicking the kernel name opens the <strong>Select Kernel</strong> menu, which lists the available kernels on your system.</p></li>
+<li><p><strong>Choose a different kernel.</strong><br />
+In this example, we select <strong>Python (myenv)</strong>, which is the kernel associated with the <code class="docutils literal notranslate"><span class="pre">myenv</span></code> Conda environment.</p></li>
+<li><p><strong>Confirm the change.</strong></p>
+<p>After you select a new kernel, its name appears in the upper-right corner of the notebook. This confirms that the notebook is now connected to the new kernel. Changing the kernel changes the Python interpreter and installed packages used by that notebook. It does <strong>not</strong> change the Conda environment running the JupyterLab server itself. It is also important to remember that a different kernel means a different Python process. Variables, imported packages, and other information stored in the previous kernel’s memory are not automatically available after switching.</p>
+</li>
+</ol>
+<p>Different notebooks can use different kernels at the same time. For example, one notebook might use <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">(myenv)</span></code> while another uses a different Python environment. This is one reason JupyterLab is such a flexible environment for scientific computing.</p>
+<p>In the next lesson, we will create notebooks, choose kernels, and begin executing Python code.</p>
+</section>
+</section>
+<section id="anatomy-of-jupyterlab">
+<span id="sec-1-4-5"></span><h2>1.4.5 Anatomy of JupyterLab<a class="headerlink" href="#anatomy-of-jupyterlab" title="Link to this heading">#</a></h2>
+<p>Now that we have launched JupyterLab and learned how it connects notebooks to different Python environments, let’s explore its graphical interface.</p>
+<p>JupyterLab provides a flexible workspace for working with notebooks, Python scripts, data files, terminals, and other scientific computing resources. Like many desktop applications, it contains menus, toolbars, sidebars, and a main work area where multiple documents can be opened and arranged.</p>
+<p>The following image illustrates the major components of the JupyterLab interface.</p>
+<p><img alt="image.png" src="../../../_images/attachment-5fc6115212587686.png" /></p>
+<p><em>The JupyterLab workspace, showing the menu bar, left sidebar with the File Browser active, document tabs, main work area, and status bar.</em></p>
+<p>The major components of the interface include:</p>
+<ul class="simple">
+<li><p><strong>Menu Bar:</strong> Located near the top of JupyterLab, this provides access to commands for opening and saving files, editing documents, managing kernels, changing settings, and obtaining help.</p></li>
+<li><p><strong>Left Sidebar:</strong> Contains icons for opening different tools, including the File Browser, running sessions, and table of contents. In the image above, the File Browser is active, allowing us to navigate through files and directories accessible from the Jupyter server.</p></li>
+<li><p><strong>Document Tabs:</strong> Allow us to switch between open notebooks and other documents. Multiple documents can be open simultaneously and arranged in different parts of the workspace.</p></li>
+<li><p><strong>Main Work Area:</strong> The central region where notebooks, text files, terminals, and other documents are displayed and edited.</p></li>
+<li><p><strong>Toolbars:</strong> Provide convenient buttons for commonly used commands. For example, the <strong>File Browser toolbar</strong> contains buttons for creating a new folder, uploading files, refreshing the directory listing, and opening the Launcher. When a notebook is open, its <strong>Notebook toolbar</strong> provides controls for saving the notebook, adding cells, executing code, and selecting cell types. Different tools and document types may have different toolbars.</p></li>
+<li><p><strong>Status Bar:</strong> Located at the bottom of JupyterLab, this displays information about the current session and active document, such as kernel status and editing mode.</p></li>
+</ul>
+<p>JupyterLab also includes a <strong>right sidebar</strong> that provides access to additional tools, depending on the extensions and features installed.</p>
+<p><strong>Learning JupyterLab Throughout the Course</strong></p>
+<p>Our goal in this module is to establish a working scientific computing environment and become familiar with the tools we will use throughout the course. We do not need to master every feature of JupyterLab before we begin using it. As the course progresses, we will create our own Jupyter notebooks, obtain additional course materials by cloning a GitHub repository, and use JupyterLab to write Python code, work with scientific data, and organize our projects. Along the way, we will encounter new commands, menus, and features as they become relevant to the tasks we are performing.</p>
+<p>In addition to the activities embedded in our lessons, we will develop a series of <strong>appendices that serve as reference guides</strong> for JupyterLab, Conda, Unix commands, GitHub, and other computing tools introduced in this module. These resources will provide more detailed explanations and instructions that you can return to whenever you need them, without interrupting the progression of the main course.</p>
+<p>For now, take a few minutes to explore the JupyterLab interface. Identify the menu bar, sidebars, File Browser, document tabs, main work area, and status bar. Open a few menus and observe the available commands. You do not need to memorize them or create any files yet.</p>
+<p>The important thing is to become comfortable navigating JupyterLab and knowing where to look when you need a particular tool.</p>
 </section>
 <section id="working-with-files-and-directories">
-<span id="sec-1-4-5"></span><h2>1.4.5 Working with Files and Directories<a class="headerlink" href="#working-with-files-and-directories" title="Link to this heading">#</a></h2>
+<span id="sec-1-4-6"></span><h2>1.4.6 Working with Files and Directories<a class="headerlink" href="#working-with-files-and-directories" title="Link to this heading">#</a></h2>
 </section>
 <section id="terminals-and-consoles-in-jupyterlab">
-<span id="sec-1-4-6"></span><h2>1.4.6 Terminals and Consoles in JupyterLab<a class="headerlink" href="#terminals-and-consoles-in-jupyterlab" title="Link to this heading">#</a></h2>
+<span id="sec-1-4-7"></span><h2>1.4.7 Terminals and Consoles in JupyterLab<a class="headerlink" href="#terminals-and-consoles-in-jupyterlab" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -451,16 +658,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "cinf26"
         },
         kernelOptions: {
-            name: "python3",
+            name: "cinf26",
             path: "./content/modules/module1-setup"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'cinf26'</script>
 
                 </article>
               
@@ -508,12 +715,26 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyterlab">1.4.1 What Is JupyterLab?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-and-stopping-jupyterlab">1.4.2 Starting and Stopping JupyterLab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-servers-environments-and-kernels">1.4.3 Understanding Servers, Environments, and Kernels</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-jupyterlab-interface">1.4.4 Exploring the JupyterLab Interface</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-and-directories">1.4.5 Working with Files and Directories</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-consoles-in-jupyterlab">1.4.6 Terminals and Consoles in JupyterLab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-jupyter-and-the-jupyter-ecosystem">1.4.1 Project Jupyter and the Jupyter Ecosystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-this-jupyter-book">Navigating This Jupyter Book</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-jupyterlab">1.4.2 What Is JupyterLab?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-and-stopping-jupyterlab">1.4.3 Starting and Stopping JupyterLab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-jupyterlab">Starting JupyterLab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-jupyterlab-from-different-directories">Starting JupyterLab from Different Directories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stopping-jupyterlab">Stopping JupyterLab</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-servers-environments-and-kernels">1.4.4 Understanding Servers, Environments, and Kernels</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-jupyterlab-executes-python-code">How JupyterLab Executes Python Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-our-myenv-environment-available-as-a-kernel">Making Our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> Environment Available as a Kernel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-and-changing-a-notebook-s-kernel">Viewing and Changing a Notebook’s Kernel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-jupyterlab">1.4.5 Anatomy of JupyterLab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-and-directories">1.4.6 Working with Files and Directories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-consoles-in-jupyterlab">1.4.7 Terminals and Consoles in JupyterLab</a></li>
 </ul>
   </nav></div>
 
