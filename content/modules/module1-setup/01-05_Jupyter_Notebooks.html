@@ -403,8 +403,18 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-jupyter-notebook">1.5.1 What Is a Jupyter Notebook?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-first-notebook">1.5.2 Creating Your First Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-jupyter-notebook">1.5.1 What Is a Jupyter Notebook?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-scripts-ides-and-jupyter-notebooks">Python Scripts, IDEs, and Jupyter Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-is-a-jupyter-notebook-organized">How Is a Jupyter Notebook Organized?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-notebooks-and-kernels">JupyterLab, Notebooks, and Kernels</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-first-notebook">1.5.2 Creating Your First Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-notebook-in-jupyterlab">Creating a Notebook in JupyterLab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-your-notebook">Naming Your Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-your-kernel">Checking Your Kernel</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-code-cells">1.5.3 Working with Code Cells</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-markdown-cell">1.5.4 Working with Markdown Cell</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-notebook-execution">1.5.5 Understanding Notebook Execution</a></li>
@@ -425,12 +435,81 @@
 <span id="sec-1-5"></span><h1>1.5 Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Link to this heading">#</a></h1>
 <section id="what-is-a-jupyter-notebook">
 <span id="sec-1-5-1"></span><h2>1.5.1 What Is a Jupyter Notebook?<a class="headerlink" href="#what-is-a-jupyter-notebook" title="Link to this heading">#</a></h2>
+<p>We have installed Python, created Conda environments, and learned how to navigate files and directories using JupyterLab. We now have the tools needed to begin programming in Python. But how do we actually write and execute Python code? There are several ways to work with Python, and the tools we choose depend on what we are trying to accomplish. Two common approaches involve writing <strong>Python scripts (*.py files)</strong> and working with <strong>Jupyter notebooks (*.ipynb files)</strong>.</p>
+<section id="python-scripts-ides-and-jupyter-notebooks">
+<h3>Python Scripts, IDEs, and Jupyter Notebooks<a class="headerlink" href="#python-scripts-ides-and-jupyter-notebooks" title="Link to this heading">#</a></h3>
+<p>A <strong>Python script</strong> is a text file containing Python instructions, typically saved with the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension. We can write scripts using a text editor and execute them using the Python interpreter. However, most programmers use specialized software that makes writing, running, testing, and debugging code easier. These tools are often called <strong>Integrated Development Environments (IDEs)</strong>.</p>
+<p>Some popular Python development tools include:</p>
+<ul class="simple">
+<li><p><strong>Visual Studio Code (VS Code):</strong> A widely used code editor with extensions for Python, Jupyter notebooks, debugging, and other development tools.</p></li>
+<li><p><strong>PyCharm:</strong> An IDE designed specifically for Python development, with tools for managing projects, writing code, and debugging programs.</p></li>
+<li><p><strong>Thonny:</strong> A simpler Python IDE designed primarily for beginners, with tools that help users understand how Python programs execute.</p></li>
+</ul>
+<p>Another approach is to use a <strong>Jupyter notebook</strong>, which allows us to write and execute Python code interactively, one section at a time. Jupyter notebooks are saved as <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files, rather than <code class="docutils literal notranslate"><span class="pre">.py</span></code> files. Unlike a conventional Python script, a notebook can combine executable code, formatted text, mathematical equations, graphs, and computational results in a single document. This makes notebooks particularly useful for scientific computing, where we often want to perform a calculation, examine the results, modify our approach, and document what we have learned.</p>
+<p>These approaches are not mutually exclusive. For example, VS Code supports both Python scripts and Jupyter notebooks. As you become more comfortable with Python, you may find that different tools are useful for different tasks. <strong>In this course, we will begin with Jupyter notebooks using JupyterLab.</strong> This will allow us to focus on learning Python and applying it to scientific problems without first having to learn the features of a full programming IDE.</p>
+</section>
+<section id="how-is-a-jupyter-notebook-organized">
+<h3>How Is a Jupyter Notebook Organized?<a class="headerlink" href="#how-is-a-jupyter-notebook-organized" title="Link to this heading">#</a></h3>
+<p>A Jupyter notebook is organized into sections called <strong>cells</strong>. The two types of cells we will use most frequently are:</p>
+<ul class="simple">
+<li><p><strong>Code cells:</strong> Contain Python instructions that can be executed. Results appear below the cell and may include numbers, text, tables, graphs, or error messages.</p></li>
+<li><p><strong>Markdown cells:</strong> Contain formatted text, including headings, explanations, lists, links, and mathematical equations. They allow us to document our work alongside our code.</p></li>
+</ul>
+<p>For example, we might use a Markdown cell to describe a scientific problem, a code cell to perform a calculation, and another Markdown cell to explain what the results mean. We can execute code cells individually, allowing us to develop and test our calculations incrementally rather than running an entire program each time.</p>
+</section>
+<section id="jupyterlab-notebooks-and-kernels">
+<h3>JupyterLab, Notebooks, and Kernels<a class="headerlink" href="#jupyterlab-notebooks-and-kernels" title="Link to this heading">#</a></h3>
+<p>In <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-04_JupyterLab.html#sec-1-4-4">Section 1.4.4, Understanding Servers, Environments, and Kernels</a>, we introduced the relationship between JupyterLab, Python environments, and kernels. Recall that:</p>
+<ul class="simple">
+<li><p><strong>JupyterLab</strong> provides the graphical interface for working with notebooks, files, terminals, and other tools.</p></li>
+<li><p><strong>A Jupyter notebook</strong> is a <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file containing code, explanatory text, and saved computational results.</p></li>
+<li><p><strong>A Python kernel</strong> is the process that executes code in a notebook using a particular Python environment.</p></li>
+</ul>
+<p>We also created two Conda environments in <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-03_Installing_Miniconda.html#sec-1-3-6">Section 1.3.6, Creating and Exploring Conda Environments</a>: <code class="docutils literal notranslate"><span class="pre">jlab</span></code>, which runs JupyterLab, and <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, which contains the Python packages we will use for scientific computing. <strong>Remember that the environment running JupyterLab does not have to be the same environment used to execute notebook code.</strong> We can launch JupyterLab from <code class="docutils literal notranslate"><span class="pre">jlab</span></code> while running Python code through a kernel associated with <code class="docutils literal notranslate"><span class="pre">myenv</span></code>.</p>
+<p>In the next section, we will put these ideas into practice by creating our first Jupyter notebook, selecting a kernel, and executing Python code.</p>
+</section>
 </section>
 <section id="creating-your-first-notebook">
 <span id="sec-1-5-2"></span><h2>1.5.2 Creating Your First Notebook<a class="headerlink" href="#creating-your-first-notebook" title="Link to this heading">#</a></h2>
+<p>In <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-04_JupyterLab.html#working-with-files-and-directories">Section 1.4.6, Working with Files and Directories</a>, we created a personal workspace named <code class="docutils literal notranslate"><span class="pre">my_work</span></code> to organize our notebooks and scientific data. We will now create our first Jupyter notebook inside that workspace.</p>
+<section id="creating-a-notebook-in-jupyterlab">
+<h3>Creating a Notebook in JupyterLab<a class="headerlink" href="#creating-a-notebook-in-jupyterlab" title="Link to this heading">#</a></h3>
+<p>JupyterLab provides several ways to create notebooks, including the File menu, the Launcher, and the File Browser. We will use the File Browser because it forces us to choose exactly where our notebook will be created.</p>
+<ol class="arabic simple">
+<li><p>Start JupyterLab if it is not already running (see <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-04_JupyterLab.html#starting-and-stopping-jupyterlab">Section 1.4.3, Starting and Stopping JupyterLab</a>), and locate the <strong>File Browser</strong> in the left sidebar.</p></li>
+<li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">my_work/notebooks/module1</span></code>, the directory we created in the <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-04_JupyterLab.html#creating-directories-using-the-jupyterlab-file-browser">lesson1.4.6.1</a></p></li>
+<li><p>Right-click in an empty area of the File Browser and select <strong>New Notebook</strong>. (Mac users can use a two-finger click on the trackpad or Control-click.)</p></li>
+<li><p>JupyterLab will open a new notebook and may ask you to select a kernel. Choose the Python kernel associated with our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> Conda environment.</p></li>
+</ol>
+<p>Notice that we navigated to our <code class="docutils literal notranslate"><span class="pre">module1</span></code> directory <strong>before</strong> creating the notebook. This means the notebook is created in that directory, rather than somewhere else in our file system.</p>
+</section>
+<section id="naming-your-notebook">
+<h3>Naming Your Notebook<a class="headerlink" href="#naming-your-notebook" title="Link to this heading">#</a></h3>
+<p>JupyterLab initially gives a new notebook a default name such as <code class="docutils literal notranslate"><span class="pre">Untitled.ipynb</span></code>. We should rename it to something more descriptive. Right-click the notebook’s filename in the File Browser and select <strong>Rename</strong>. Change its name to:</p>
+<p><code class="docutils literal notranslate"><span class="pre">my_first_notebook.ipynb</span></code></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> extension identifies the file as a Jupyter notebook. We should retain this extension when renaming notebooks. Our workspace now contains:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>my_work/
+├── notebooks/
+│   └── module1/
+│       └── my_first_notebook.ipynb
+└── data/
+    └── module1/
+</pre></div>
+</div>
+<p>Notice that the notebook is stored separately from our data directory. As we begin working with scientific data, this organization will help us distinguish between the programs we write and the files those programs use.</p>
+</section>
+<section id="checking-your-kernel">
+<h3>Checking Your Kernel<a class="headerlink" href="#checking-your-kernel" title="Link to this heading">#</a></h3>
+<p>Look at the upper-right area of your notebook in JupyterLab. You should see the name of the kernel associated with the notebook.</p>
+<p>Recall from <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-04_JupyterLab.html#understanding-servers-environments-and-kernels">Section 1.4.4, Understanding Servers, Environments, and Kernels</a> that the kernel determines which Python interpreter executes our code.</p>
+<p>For this course, we want to use the kernel associated with <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, which contains the Python packages we will use for scientific computing. If another kernel is selected, you can change it by clicking the kernel name and choosing the appropriate kernel.</p>
+<p>We now have our first notebook, saved in our personal workspace and connected to a Python environment. In the next section, we will learn how to enter and execute Python code using notebook cells.</p>
+</section>
 </section>
 <section id="working-with-code-cells">
 <span id="sec-1-5-3"></span><h2>1.5.3 Working with Code Cells<a class="headerlink" href="#working-with-code-cells" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="01-04_JupyterLab.html#sec-1-4-3"><span class="std std-ref">Section 1.4.3</span></a></p>
+<p><a class="reference internal" href="01-04_JupyterLab.html#143-starting-and-stopping-jupyterlab"><span class="std std-ref">Section 1.4.3, Starting and Stopping JupyterLab</span></a></p>
 </section>
 <section id="working-with-markdown-cell">
 <span id="sec-1-5-4"></span><h2>1.5.4 Working with Markdown Cell<a class="headerlink" href="#working-with-markdown-cell" title="Link to this heading">#</a></h2>
@@ -512,8 +591,18 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-jupyter-notebook">1.5.1 What Is a Jupyter Notebook?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-first-notebook">1.5.2 Creating Your First Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-jupyter-notebook">1.5.1 What Is a Jupyter Notebook?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-scripts-ides-and-jupyter-notebooks">Python Scripts, IDEs, and Jupyter Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-is-a-jupyter-notebook-organized">How Is a Jupyter Notebook Organized?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-notebooks-and-kernels">JupyterLab, Notebooks, and Kernels</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-first-notebook">1.5.2 Creating Your First Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-notebook-in-jupyterlab">Creating a Notebook in JupyterLab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naming-your-notebook">Naming Your Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-your-kernel">Checking Your Kernel</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-code-cells">1.5.3 Working with Code Cells</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-markdown-cell">1.5.4 Working with Markdown Cell</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-notebook-execution">1.5.5 Understanding Notebook Execution</a></li>

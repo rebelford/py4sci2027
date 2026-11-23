@@ -60,8 +60,6 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/module1-setup/01-04_JupyterLab';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -756,13 +754,15 @@ In this example, we select <strong>Python (myenv)</strong>, which is the kernel 
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>module1
 </pre></div>
 </div>
-<p>We have now created three nested directories with a single command!
-bob&#64;MSI:~<span class="math notranslate nohighlight">\( mkdir -p my_work/notebooks/module1
-bob&#64;MSI:~\)</span> ls my_work
+<p>We have now created three nested directories with a single command!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bob@MSI:~$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>my_work/notebooks/module1
+bob@MSI:~$<span class="w"> </span>ls<span class="w"> </span>my_work
 notebooks
-bob&#64;MSI:~<span class="math notranslate nohighlight">\( ls my_work/notebooks
+bob@MSI:~$<span class="w"> </span>ls<span class="w"> </span>my_work/notebooks
 module1
-bob&#64;MSI:~\)</span></p>
+bob@MSI:~$
+</pre></div>
+</div>
 </section>
 <section id="creating-directories-using-the-jupyterlab-file-browser">
 <h4>Creating Directories Using the JupyterLab File Browser<a class="headerlink" href="#creating-directories-using-the-jupyterlab-file-browser" title="Link to this heading">#</a></h4>
