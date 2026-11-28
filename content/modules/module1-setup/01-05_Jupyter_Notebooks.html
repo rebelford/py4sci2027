@@ -60,6 +60,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/module1-setup/01-05_Jupyter_Notebooks';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -415,11 +417,66 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-your-kernel">Checking Your Kernel</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-code-cells">1.5.3 Working with Code Cells</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-markdown-cell">1.5.4 Working with Markdown Cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-notebook-execution">1.5.5 Understanding Notebook Execution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-managing-notebooks">1.5.6 Saving and Managing Notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-from-a-notebook">1.5.7 Working with Files from a Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-code-cells">1.5.3 Working with Code Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-executing-code-cells">Creating and Executing Code Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cell-toolbar">The Cell Toolbar</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-creating-and-executing-your-first-code-cell">Activity: Creating and Executing Your First Code Cell</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-and-re-executing-a-code-cell">Editing and Re-executing a Code Cell</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-markdown-cells">1.5.4 Working with Markdown Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-editing-markdown-cells">Creating and Editing Markdown Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-ways-to-render-a-markdown-cell">Two Ways to Render a Markdown Cell</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#command-mode-and-edit-mode">Command Mode and Edit Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-shortcuts-and-command-mode">Keyboard Shortcuts and Command Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-text-with-markdown">Formatting Text with Markdown</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-unicode-characters">Using Unicode Characters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-mathematical-equations-with-latex">Displaying Mathematical Equations with LaTeX</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-notebook-execution">1.5.5 Understanding Notebook Execution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interacting-with-a-running-code-cell">Interacting with a Running Code Cell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-multiple-code-cells">1.5.5.2 Working with Multiple Code Cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-execution-order-and-kernel-memory">1.5.5.3 Understanding Execution Order and Kernel Memory</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#restarting-the-kernel">Restarting the Kernel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interrupting-a-running-kernel">Interrupting a Running Kernel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-python-packages">1.5.6 Working with Python Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-previously-installed-packages">1.5.6.1 Using Previously Installed Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-additional-packages">1.5.6.2 Installing Additional Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-terminal">Accessing a Terminal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-a-package-into-an-existing-environment">Installing a Package into an Existing Environment</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Understanding Execution Order and Kernel Memory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restarting-and-interrupting-the-kernel">Restarting and Interrupting the Kernel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-python-packages-from-a-notebook">1.5.6 Working with Python Packages from a Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-standard-library-and-third-party-packages">Python’s Standard Library and Third-Party Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-scientific-data-from-pubchem">Obtaining Scientific Data from PubChem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-a-package-using-the-jupyterlab-terminal">Installing a Package Using the JupyterLab Terminal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-managing-notebooks">1.5.7 Saving and Managing Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-notebooks-and-their-output">Saving Notebooks and Their Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-notebooks-and-shutting-down-kernels">Closing Notebooks and Shutting Down Kernels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-and-notebook-execution">Reproducibility and Notebook Execution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-from-a-notebook">1.5.8 Working with Files from a Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-notebook-s-working-directory">Understanding the Notebook’s Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-files-using-relative-paths">Accessing Files Using Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-files">Creating Data Files</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -432,9 +489,9 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="jupyter-notebooks">
-<span id="sec-1-5"></span><h1>1.5 Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Link to this heading">#</a></h1>
+<h1>1.5 Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Link to this heading">#</a></h1>
 <section id="what-is-a-jupyter-notebook">
-<span id="sec-1-5-1"></span><h2>1.5.1 What Is a Jupyter Notebook?<a class="headerlink" href="#what-is-a-jupyter-notebook" title="Link to this heading">#</a></h2>
+<h2>1.5.1 What Is a Jupyter Notebook?<a class="headerlink" href="#what-is-a-jupyter-notebook" title="Link to this heading">#</a></h2>
 <p>We have installed Python, created Conda environments, and learned how to navigate files and directories using JupyterLab. We now have the tools needed to begin programming in Python. But how do we actually write and execute Python code? There are several ways to work with Python, and the tools we choose depend on what we are trying to accomplish. Two common approaches involve writing <strong>Python scripts (*.py files)</strong> and working with <strong>Jupyter notebooks (*.ipynb files)</strong>.</p>
 <section id="python-scripts-ides-and-jupyter-notebooks">
 <h3>Python Scripts, IDEs, and Jupyter Notebooks<a class="headerlink" href="#python-scripts-ides-and-jupyter-notebooks" title="Link to this heading">#</a></h3>
@@ -466,11 +523,10 @@
 <li><p><strong>A Python kernel</strong> is the process that executes code in a notebook using a particular Python environment.</p></li>
 </ul>
 <p>We also created two Conda environments in <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-03_Installing_Miniconda.html#sec-1-3-6">Section 1.3.6, Creating and Exploring Conda Environments</a>: <code class="docutils literal notranslate"><span class="pre">jlab</span></code>, which runs JupyterLab, and <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, which contains the Python packages we will use for scientific computing. <strong>Remember that the environment running JupyterLab does not have to be the same environment used to execute notebook code.</strong> We can launch JupyterLab from <code class="docutils literal notranslate"><span class="pre">jlab</span></code> while running Python code through a kernel associated with <code class="docutils literal notranslate"><span class="pre">myenv</span></code>.</p>
-<p>In the next section, we will put these ideas into practice by creating our first Jupyter notebook, selecting a kernel, and executing Python code.</p>
 </section>
 </section>
 <section id="creating-your-first-notebook">
-<span id="sec-1-5-2"></span><h2>1.5.2 Creating Your First Notebook<a class="headerlink" href="#creating-your-first-notebook" title="Link to this heading">#</a></h2>
+<h2>1.5.2 Creating Your First Notebook<a class="headerlink" href="#creating-your-first-notebook" title="Link to this heading">#</a></h2>
 <p>In <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-04_JupyterLab.html#working-with-files-and-directories">Section 1.4.6, Working with Files and Directories</a>, we created a personal workspace named <code class="docutils literal notranslate"><span class="pre">my_work</span></code> to organize our notebooks and scientific data. We will now create our first Jupyter notebook inside that workspace.</p>
 <section id="creating-a-notebook-in-jupyterlab">
 <h3>Creating a Notebook in JupyterLab<a class="headerlink" href="#creating-a-notebook-in-jupyterlab" title="Link to this heading">#</a></h3>
@@ -478,14 +534,14 @@
 <ol class="arabic simple">
 <li><p>Start JupyterLab if it is not already running (see <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-04_JupyterLab.html#starting-and-stopping-jupyterlab">Section 1.4.3, Starting and Stopping JupyterLab</a>), and locate the <strong>File Browser</strong> in the left sidebar.</p></li>
 <li><p>Navigate to <code class="docutils literal notranslate"><span class="pre">my_work/notebooks/module1</span></code>, the directory we created in the <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-04_JupyterLab.html#creating-directories-using-the-jupyterlab-file-browser">lesson1.4.6.1</a></p></li>
-<li><p>Right-click in an empty area of the File Browser and select <strong>New Notebook</strong>. (Mac users can use a two-finger click on the trackpad or Control-click.)</p></li>
+<li><p>Right-click in an empty area of the File Browser and select New Notebook. (Mac users can use a two-finger click on the trackpad or Control-click.)</p></li>
 <li><p>JupyterLab will open a new notebook and may ask you to select a kernel. Choose the Python kernel associated with our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> Conda environment.</p></li>
 </ol>
-<p>Notice that we navigated to our <code class="docutils literal notranslate"><span class="pre">module1</span></code> directory <strong>before</strong> creating the notebook. This means the notebook is created in that directory, rather than somewhere else in our file system.</p>
+<p>Notice that we navigated to our <code class="docutils literal notranslate"><span class="pre">module1</span></code> directory **before creating the notebook. This means the notebook is created in that directory, rather than somewhere else in our file system.</p>
 </section>
 <section id="naming-your-notebook">
 <h3>Naming Your Notebook<a class="headerlink" href="#naming-your-notebook" title="Link to this heading">#</a></h3>
-<p>JupyterLab initially gives a new notebook a default name such as <code class="docutils literal notranslate"><span class="pre">Untitled.ipynb</span></code>. We should rename it to something more descriptive. Right-click the notebook’s filename in the File Browser and select <strong>Rename</strong>. Change its name to:</p>
+<p>JupyterLab initially gives a new notebook a default name such as <code class="docutils literal notranslate"><span class="pre">Untitled.ipynb</span></code>. We should rename it to something more descriptive. Right-click the notebook’s filename in the File Browser and select Rename. Change its name to:</p>
 <p><code class="docutils literal notranslate"><span class="pre">my_first_notebook.ipynb</span></code></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> extension identifies the file as a Jupyter notebook. We should retain this extension when renaming notebooks. Our workspace now contains:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>my_work/
@@ -500,28 +556,1180 @@
 </section>
 <section id="checking-your-kernel">
 <h3>Checking Your Kernel<a class="headerlink" href="#checking-your-kernel" title="Link to this heading">#</a></h3>
-<p>Look at the upper-right area of your notebook in JupyterLab. You should see the name of the kernel associated with the notebook.</p>
-<p>Recall from <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-04_JupyterLab.html#understanding-servers-environments-and-kernels">Section 1.4.4, Understanding Servers, Environments, and Kernels</a> that the kernel determines which Python interpreter executes our code.</p>
-<p>For this course, we want to use the kernel associated with <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, which contains the Python packages we will use for scientific computing. If another kernel is selected, you can change it by clicking the kernel name and choosing the appropriate kernel.</p>
-<p>We now have our first notebook, saved in our personal workspace and connected to a Python environment. In the next section, we will learn how to enter and execute Python code using notebook cells.</p>
+<p>Look at the upper-right area of your notebook in JupyterLab. You should see the name of the kernel associated with the notebook. Recall from <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-04_JupyterLab.html#understanding-servers-environments-and-kernels">Section 1.4.4, Understanding Servers, Environments, and Kernels</a> that the kernel determines which Python interpreter executes our code. For this activity, we want to use the kernel associated with <code class="docutils literal notranslate"><span class="pre">myenv</span></code>.</p>
 </section>
 </section>
 <section id="working-with-code-cells">
-<span id="sec-1-5-3"></span><h2>1.5.3 Working with Code Cells<a class="headerlink" href="#working-with-code-cells" title="Link to this heading">#</a></h2>
-<p><a class="reference internal" href="01-04_JupyterLab.html#sec-1-4-3"><span class="std std-ref">Section 1.4.3</span></a></p>
-<p><a class="reference internal" href="01-04_JupyterLab.html#143-starting-and-stopping-jupyterlab"><span class="std std-ref">Section 1.4.3, Starting and Stopping JupyterLab</span></a></p>
+<h2>1.5.3 Working with Code Cells<a class="headerlink" href="#working-with-code-cells" title="Link to this heading">#</a></h2>
+<p>The objective of this section is not to teach you how to program in Python. We will begin learning Python programming in Module 2. Instead, our objective is to learn how to work with computational notebooks that contain a combination of Markdown cells and code cells. You will be provided with several examples of Python code that you may not yet fully understand. For now, focus on how you create, edit, and execute code cells, how the notebook displays the results, and how different cells interact with one another.</p>
+<p>As you work through these activities, you are encouraged to modify the code and observe what happens.</p>
+<section id="creating-and-executing-code-cells">
+<h3>Creating and Executing Code Cells<a class="headerlink" href="#creating-and-executing-code-cells" title="Link to this heading">#</a></h3>
+<p>When we create a new cell in a Jupyter notebook, it is a code cell by default. Unlike a Markdown cell, which contains text that is rendered for display, a code cell contains instructions that are sent to the notebook’s kernel for execution.</p>
+<section id="the-cell-toolbar">
+<h4>The Cell Toolbar<a class="headerlink" href="#the-cell-toolbar" title="Link to this heading">#</a></h4>
+<p>In addition to the notebook toolbar at the top of the notebook, individual cells have their own toolbar that provides convenient access to several common operations. These allow us to duplicate, move, insert, and delete cells, as illustrated in the following figure.</p>
+<p><img alt="image.png" src="../../../_images/attachment-d69729b4b299db3e.png" /></p>
+<p>Depending on the available space within a cell, the cell toolbar may not always be visible. Many of these operations can also be performed using the notebook toolbar, menus, or keyboard shortcuts.</p>
 </section>
-<section id="working-with-markdown-cell">
-<span id="sec-1-5-4"></span><h2>1.5.4 Working with Markdown Cell<a class="headerlink" href="#working-with-markdown-cell" title="Link to this heading">#</a></h2>
+<section id="activity-creating-and-executing-your-first-code-cell">
+<h4>Activity: Creating and Executing Your First Code Cell<a class="headerlink" href="#activity-creating-and-executing-your-first-code-cell" title="Link to this heading">#</a></h4>
+<p>In this activity, you will create a new code cell, enter a simple Python statement, and execute it.</p>
+<ol class="arabic simple">
+<li><p>Select this Markdown cell by clicking on it.</p></li>
+<li><p>Locate the <strong>New Cell Below</strong> button in the cell toolbar and click it. Alternatively, you can click the <code class="docutils literal notranslate"><span class="pre">+</span></code> button in the notebook toolbar at the top of the notebook.</p></li>
+<li><p>Notice that the new cell is a code cell by default.</p></li>
+<li><p>Copy the following Python code and paste it into your new code cell.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="mf">3.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>With your new code cell selected, press <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to execute the code.</p></li>
+</ol>
+<p>You should see the following output immediately below your code cell:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">6.0</span>
+</pre></div>
+</div>
+<p>Congratulations! You have just created and executed a Python code cell in a Jupyter notebook.</p>
+<p>Notice that the notebook now contains both a Markdown cell, which provides instructions and explains what we are doing, and a code cell, which performs a calculation. The result of the calculation is displayed directly below the code cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">+</span> <span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="editing-and-re-executing-a-code-cell">
+<h4>Editing and Re-executing a Code Cell<a class="headerlink" href="#editing-and-re-executing-a-code-cell" title="Link to this heading">#</a></h4>
+<p>One of the advantages of working with Jupyter notebooks is that we can modify and re-execute individual code cells without running the entire notebook. Return to the code cell you just created and change the Python code to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This time, instead of pressing <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code>, press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Enter</span></code>.</p>
+<p>Notice two things:</p>
+<ul class="simple">
+<li><p>The output of the code cell changes.</p></li>
+<li><p>The current cell remains selected.</p></li>
+</ul>
+<p>There are several ways to execute a cell in a Jupyter notebook.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Keyboard Shortcut</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code></p></td>
+<td><p>Execute the current cell and advance to the next cell.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Enter</span></code></p></td>
+<td><p>Execute the current cell without advancing to the next cell.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">Enter</span></code></p></td>
+<td><p>Execute the current cell and insert a new cell below it.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You can also execute a cell using the Run button in the notebook toolbar.</p>
+<p><strong>Activity: Experimenting with Code Cells</strong></p>
+<p>Return to your code cell and experiment with the following:</p>
+<ol class="arabic simple">
+<li><p>Change the numbers and execute the cell using <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Enter</span></code>.</p></li>
+<li><p>Change the multiplication operator (<code class="docutils literal notranslate"><span class="pre">*</span></code>) to an addition operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>) and execute the cell again.</p></li>
+<li><p>Execute the cell using <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> and observe which cell is selected.</p></li>
+</ol>
+<p>As you execute the cell, notice that the number in square brackets to the left of the code cell changes. This is called the execution counter, and we will discuss its significance in Section 1.5.5. For now, the important point is that we can modify and execute a code cell as many times as we wish, and everytime we execute the code the execution counter advances.</p>
+</section>
+</section>
+</section>
+<section id="working-with-markdown-cells">
+<h2>1.5.4 Working with Markdown Cells<a class="headerlink" href="#working-with-markdown-cells" title="Link to this heading">#</a></h2>
+<p>A scientific notebook should do more than perform calculations and display results. It should also communicate what we are doing, why we are doing it, and what the results mean. Markdown is a lightweight markup language that allows us to create formatted documents using plain text. Unlike a word processor, where we typically select text and apply formatting using menus or toolbar buttons, in Markdown we use special characters to indicate how the text should be formatted. In a Jupyter notebook, Markdown cells allow us to combine explanatory text, mathematical equations, images, hyperlinks, and other content with executable code cells.</p>
+<p>In this section, we will learn how to create and work with Markdown cells and introduce some formatting techniques that are particularly useful when documenting scientific work. More extensive reference material on Markdown, Unicode, and LaTeX will be provided in the appendices.</p>
+<section id="creating-and-editing-markdown-cells">
+<h3>Creating and Editing Markdown Cells<a class="headerlink" href="#creating-and-editing-markdown-cells" title="Link to this heading">#</a></h3>
+<p>As we learned in the previous section, when we insert a new cell into a notebook, it is a code cell by default. We can change the cell type using the dropdown menu in the notebook toolbar.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;">
+<strong>Creating your First Markdown Cell:</strong>
+<p><img alt="image.png" src="../../../_images/attachment-73255d5232512721.png" /></p>
+<ol class="arabic simple">
+<li><p>Insert a new (code) cell below this cell.</p></li>
+<li><p>Use the cell type dropdown menu in the notebook toolbar to change the new cell from <code class="docutils literal notranslate"><span class="pre">Code</span></code> to <code class="docutils literal notranslate"><span class="pre">Markdown</span></code>.</p></li>
+<li><p>Click inside the new cell and enter the following text:</p></li>
+</ol>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>My First Markdown Cell
+A notebook can contain both <span class="ge">*executable code*</span> and <span class="gs">**formatted text**</span>.
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to render the Markdown cell.</p></li>
+</ol>
+<div class="alert alert-block alert-success">   
+<details>
+<summary>What do you see?</summary>
+<p><img alt="image.png" src="../../../_images/attachment-74eda7d16d25af46.png" /></p>
+<p>Notice that the Markdown cell is rendered as formatted text, rather than displaying the raw Markdown syntax. The asterisks around "executable code" and "formatted text" indicate that these words should be displayed in italics and bold, respectively.</p>
+</p>
+</details>
+</div>
+</details>div>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">*executable</span> <span class="pre">code*</span></code>  and <code class="docutils literal notranslate"><span class="pre">**formatted</span> <span class="pre">text**</span></code> were interpreted as instructions for formatting itallics and bold text. Unlike executing a code cell, rendering a Markdown cell does not send Python instructions to the kernel. To modify the contents of a rendered Markdown cell, double-click inside the cell. This allows you to see and edit the original Markdown text. There are two ways to render the cell:</p>
+<section id="two-ways-to-render-a-markdown-cell">
+<h4>Two Ways to Render a Markdown Cell<a class="headerlink" href="#two-ways-to-render-a-markdown-cell" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Enter</span></code> renders the cell while staying in the cell.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to render the cell and advance to the next cell. If there is no next cell, a new code cell is created below the rendered Markdown cell.</p></li>
+</ul>
+<p>Try changing some of the text and rendering the cell again.</p>
+<p>My First Markdown Cell
+A notebook can contain both <em>executable code</em> and <strong>formatted text</strong></p>
+</section>
+</section>
+<section id="command-mode-and-edit-mode">
+<h3>Command Mode and Edit Mode<a class="headerlink" href="#command-mode-and-edit-mode" title="Link to this heading">#</a></h3>
+<p>Jupyter notebooks have two modes of operation, command mode and edit mode.</p>
+<ul class="simple">
+<li><p><strong>Command Mode:</strong> We work with the cells themselves. We can insert, delete, copy, move, or change the type of a cell.</p></li>
+<li><p><strong>Edit Mode:</strong> We work with the contents of a cell. We can enter and modify Python code or Markdown text.</p></li>
+</ul>
+<p>We can move between these two modes using the keyboard:</p>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Esc</span></code> to enter command mode.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to enter edit mode.</p></li>
+</ul>
+<p>When we are in command mode, individual keys can perform operations on cells rather than inserting characters into them.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Action in Command Mode</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">M</span></code></p></td>
+<td><p>Change the selected cell to Markdown</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Y</span></code></p></td>
+<td><p>Change the selected cell to code</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">A</span></code></p></td>
+<td><p>Insert a new cell above the selected cell</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">B</span></code></p></td>
+<td><p>Insert a new cell below the selected cell</p></td>
+</tr>
+<tr class="row-even"><td><p>Up Arrow</p></td>
+<td><p>Select the cell above</p></td>
+</tr>
+<tr class="row-odd"><td><p>Down Arrow</p></td>
+<td><p>Select the cell below</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">C</span></code></p></td>
+<td><p>Copy the selected cell</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">V</span></code></p></td>
+<td><p>Paste a copied cell below the selected cell</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note that you do not need to hold down the <code class="docutils literal notranslate"><span class="pre">Shift</span></code> key when using these letter shortcuts.</p>
+<p><strong>Activity: Creating a Markdown Cell Using Keyboard Shortcuts</strong></p>
+<p>Select this cell and perform the following operations:</p>
+<ol class="arabic simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Esc</span></code> to enter command mode.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">B</span></code> to insert a new cell below this cell.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">M</span></code> to change the new cell to Markdown.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Y</span></code> to change it back to a code cell.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">M</span></code> to change it back to Markdown.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to enter edit mode.</p></li>
+<li><p>Type some text into the cell.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Enter</span></code> to render the cell.</p></li>
+</ol>
+<p>As you change the cell type, observe the cell type dropdown menu in the notebook toolbar.</p>
+<p>With a little practice, you can create and change cell types without using your mouse.</p>
+</section>
+<section id="keyboard-shortcuts-and-command-mode">
+<h3>Keyboard Shortcuts and Command Mode<a class="headerlink" href="#keyboard-shortcuts-and-command-mode" title="Link to this heading">#</a></h3>
+<p>As you become more comfortable working with Jupyter notebooks, you may find that keyboard shortcuts provide a more efficient way of performing many of the operations we have been performing with the mouse. For example, pressing <code class="docutils literal notranslate"><span class="pre">Esc</span></code> followed by <code class="docutils literal notranslate"><span class="pre">A</span></code> inserts a new cell above the currently selected cell, while pressing <code class="docutils literal notranslate"><span class="pre">Esc</span></code> followed by <code class="docutils literal notranslate"><span class="pre">B</span></code> inserts a new cell below it. Following the convention used in the JupyterLab documentation, we use uppercase letters to identify keyboard keys. You do not need to hold down the <code class="docutils literal notranslate"><span class="pre">Shift</span></code> key unless it is explicitly indicated in the shortcut (lower case letters work as well).</p>
+<p>The following table illustrates some commonly used keyboard shortcuts for working with cells in a Jupyter notebook. Press the keys in sequence, not simultaneously.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Keyboard Shortcut</p></th>
+<th class="head"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span></code></p></td>
+<td><p>Insert a new cell above</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code></p></td>
+<td><p>Insert a new cell below</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>, <code class="docutils literal notranslate"><span class="pre">M</span></code></p></td>
+<td><p>Change the selected cell to Markdown</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code></p></td>
+<td><p>Change the selected cell to code</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code></p></td>
+<td><p>Copy the selected cell</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>, <code class="docutils literal notranslate"><span class="pre">V</span></code></p></td>
+<td><p>Paste a copied cell below</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>, <code class="docutils literal notranslate"><span class="pre">D</span></code>, <code class="docutils literal notranslate"><span class="pre">D</span></code></p></td>
+<td><p>Delete the selected cell</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>, Up Arrow</p></td>
+<td><p>Select the cell above</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Esc</span></code>, Down Arrow</p></td>
+<td><p>Select the cell below</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>What is really going on is that when you press <code class="docutils literal notranslate"><span class="pre">Esc</span></code>, you are entering the Jupyter notebook’s command mode. Jupyter notebooks have two modes of operation:</p>
+<ul class="simple">
+<li><p><strong>Edit Mode:</strong> We work with the contents of a cell, entering or modifying Python code or Markdown text. In this mode, a blinking text cursor indicates where text can be entered.</p></li>
+<li><p><strong>Command Mode:</strong> We work with the cells themselves, performing operations such as inserting, deleting, copying, and changing cell types. Notice that when we enter command mode, the text cursor disappears from the cell.</p></li>
+</ul>
+<p>We can move between these two modes by pressing <code class="docutils literal notranslate"><span class="pre">Esc</span></code> to enter command mode and <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to return to edit mode.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Creating a Markdown Cell Using Keyboard Shortcuts</strong></p>
+<p>Select this cell and press the following keys in sequence:</p>
+<ol>
+<li><code>Esc</code> — Enter command mode.</li>
+<li><code>B</code> — Insert a new cell below.</li>
+<li><code>M</code> — Change the new cell to Markdown.</li>
+<li><code>Enter</code> — Enter edit mode.</li>
+</ol>
+<p>Type some text into your new Markdown cell and press 
+<code>Ctrl + Enter</code> to render it.</p>
+<p>Now try creating a code cell using keyboard shortcuts.
+Can you do this without using your mouse?</p>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<p>Press <code>Esc</code>, <code>B</code>, <code>Y</code>, 
+and <code>Enter</code>.</p>
+<p>Because a newly inserted cell is a code cell by default, 
+the <code>Y</code> is not necessary in this example.</p>
+</details>
+</div>
+</div></section>
+<section id="formatting-text-with-markdown">
+<h3>Formatting Text with Markdown<a class="headerlink" href="#formatting-text-with-markdown" title="Link to this heading">#</a></h3>
+<p>Now that you have been working with Markdown cells in edit mode, you may have noticed that Markdown uses a variety of special characters, such as <code class="docutils literal notranslate"><span class="pre">#</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, and <code class="docutils literal notranslate"><span class="pre">**</span></code>, to indicate how text should be formatted. These formatting conventions are part of what we call <strong>Markdown syntax</strong>.</p>
+<p>The following table introduces some of the most commonly used Markdown syntax. We will use these formatting techniques throughout the course.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Markdown Syntax</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Heading</span></code></p></td>
+<td><p>Level 1 heading</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">##</span> <span class="pre">Heading</span></code></p></td>
+<td><p>Level 2 heading</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">###</span> <span class="pre">Heading</span></code></p></td>
+<td><p>Level 3 heading</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">**text**</span></code></p></td>
+<td><p>Bold text</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*text*</span></code></p></td>
+<td><p>Italic text</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">`code`</span></code></p></td>
+<td><p>Inline code</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">item</span></code></p></td>
+<td><p>Unordered (bulleted) list item</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">1.</span> <span class="pre">item</span></code></p></td>
+<td><p>Ordered (numbered) list item</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[text](URL)</span></code></p></td>
+<td><p>Hyperlink</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Headings are particularly useful in Jupyter notebooks because they not only organize the contents of a notebook but are also used by JupyterLab to generate its table of contents.</p>
+<p>We can also display multiple lines of code within a Markdown cell by placing three backticks before and after the code. This is called a <strong>fenced code block</strong>. Specifying the programming language after the opening backticks allows the code to be displayed with syntax highlighting, as we have been doing with the Python code examples in this notebook.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Formatting Scientific Text</strong></p>
+<p>In this activity, we will familiarize ourselves with some of the most commonly used Markdown formatting techniques.</p>
+<ol class="arabic simple">
+<li><p>Create a new Markdown cell below this cell using keyboard shortcuts.</p></li>
+<li><p>Copy the following Markdown text into your new cell.</p></li>
+<li><p>Render the cell and observe how the Markdown syntax is interpreted.</p></li>
+</ol>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">#### Scientific Data Collection</span>
+
+When collecting scientific data, we need to document:
+
+<span class="k">-</span><span class="w"> </span>The quantity being measured
+<span class="k">-</span><span class="w"> </span>The units of measurement
+<span class="k">-</span><span class="w"> </span>The experimental conditions
+<span class="k">-</span><span class="w"> </span>The source of the data
+
+<span class="gs">**Python**</span> can be used to acquire and analyze scientific data.
+
+It is important that our results are <span class="ge">*reproducible*</span>.
+
+The <span class="sb">`print()`</span> function can display information in a notebook.
+
+<span class="sb">```python</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Temperature&quot;</span><span class="p">)</span>
+<span class="sb">```</span>
+
+An example of an online scientific database is [<span class="nt">PubChem</span>](<span class="na">https://pubchem.ncbi.nlm.nih.gov/</span>).
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Return to edit mode and experiment with changing the Markdown syntax. Try changing the heading level, converting the bulleted list to a numbered list, and changing which words are displayed in bold or italics.</p></li>
+<li><p>Render the cell again and observe the results.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<p>Your Markdown cell should initially look like the following. How it changed during the remainder of the activity was up to you.</p>
+<p><img alt="image.png" src="../../../_images/attachment-f80676685a1fe348.png" /></p>
+<p>Notice that the word "Temperature" and its surrounding quotation marks are displayed in red in the Python code example. This is an example of <strong>syntax highlighting</strong>, where different components of a programming language are displayed in different colors to make the code easier to read. By placing the word <code>python</code> after the opening three backticks of our fenced code block, we are telling the Markdown renderer that the enclosed text is Python code. In this example, "Temperature" is what we call a <strong>string</strong>, which is a type of data used to represent text.</p>
+<p>We will learn about strings, variables, functions, and other components of the Python language in Module 2. For now, notice that we can display Python code with syntax highlighting in a Markdown cell without actually executing it.</p>
+</details>
+</div>
+</div>
+<p>Notice that the Python code displayed in your Markdown cell is not executed. It is simply part of the documentation. This allows us to include examples of Python code alongside explanations of how the code works.</p>
+<p>You do not need to memorize all the Markdown syntax at this point. As you work with Jupyter notebooks throughout the course, these formatting techniques will become increasingly familiar. More extensive reference material on Markdown will be provided in the appendices.</p>
+</section>
+<section id="using-unicode-characters">
+<h3>Using Unicode Characters<a class="headerlink" href="#using-unicode-characters" title="Link to this heading">#</a></h3>
+<p>Scientists often use Greek letters, mathematical symbols, subscripts, and superscripts when communicating scientific information. Many of these characters are not found on a standard computer keyboard, but we can incorporate them into our notebooks using Unicode. <strong>Unicode</strong> is an international standard that assigns a unique numerical identifier, called a code point, to each character it defines. This allows computers to represent and exchange text containing characters from different languages, as well as mathematical and scientific symbols.</p>
+<p>Unicode code points are conventionally written using <code class="docutils literal notranslate"><span class="pre">U+</span></code> followed by four to six hexadecimal digits (the numbers 0–9 and the letters A–F). For example, the subscript character ₂ has the Unicode code point <code class="docutils literal notranslate"><span class="pre">U+2082</span></code>. In Python, we can represent this character within a text string using <code class="docutils literal notranslate"><span class="pre">\u2082</span></code>. This is called a <strong>Unicode escape sequence</strong>.</p>
+<p>Unicode is not part of Markdown syntax. Whereas Markdown uses special characters to indicate how text should be formatted, Unicode defines the characters themselves. For example, the subscript in H₂O is a Unicode character, not an instruction to Markdown to format the number 2 as a subscript.</p>
+<p>Because Jupyter notebooks support Unicode, we can copy and paste these characters directly into Markdown cells and into text strings within Python code cells.</p>
+<p><strong>Unicode Subscript and Superscript Characters</strong></p>
+<p>The following table provides the Unicode characters for the numeric subscripts and superscripts along with their corresponding Python escape sequences.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>9</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Subscript</p></td>
+<td><p>₀</p></td>
+<td><p>₁</p></td>
+<td><p>₂</p></td>
+<td><p>₃</p></td>
+<td><p>₄</p></td>
+<td><p>₅</p></td>
+<td><p>₆</p></td>
+<td><p>₇</p></td>
+<td><p>₈</p></td>
+<td><p>₉</p></td>
+</tr>
+<tr class="row-odd"><td><p>Python</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2080</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2081</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2082</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2083</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2084</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2085</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2086</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2087</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2088</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2089</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Superscript</p></td>
+<td><p>⁰</p></td>
+<td><p>¹</p></td>
+<td><p>²</p></td>
+<td><p>³</p></td>
+<td><p>⁴</p></td>
+<td><p>⁵</p></td>
+<td><p>⁶</p></td>
+<td><p>⁷</p></td>
+<td><p>⁸</p></td>
+<td><p>⁹</p></td>
+</tr>
+<tr class="row-odd"><td><p>Python</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2070</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u00B9</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u00B2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u00B3</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2074</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2075</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2076</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2077</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2078</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">\u2079</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>When working in a Markdown cell, simply copy and paste the character itself, not its Python escape sequence. When working with text strings in Python, we can use either representation. For example, the following two Python statements produce the same output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H₂O&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H</span><span class="se">\u2082</span><span class="s2">O&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H₂O
+H₂O
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Other Unicode Characters and Their Scientific Applications</strong></p>
+<p>The following table illustrates some additional Unicode characters and examples of their use in scientific communication.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Greek letters</p></td>
+<td><p>α β γ Δ λ μ π Ω</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mathematical symbols</p></td>
+<td><p>± × ÷ ≠ ≈ ≤ ≥ ∞</p></td>
+</tr>
+<tr class="row-even"><td><p>Arrows</p></td>
+<td><p>← ↑ → ↓ ⇌ ↔ ⇒</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scientific units</p></td>
+<td><p>°C μm Å m/s²</p></td>
+</tr>
+<tr class="row-even"><td><p>Chemical formulas and ions</p></td>
+<td><p>H₂O CO₂ NH₄⁺ SO₄²⁻</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You do not need to memorize the Unicode code points associated with these characters. There are numerous online resources for finding Unicode characters, and a Unicode reference will be provided in the appendix. We can also use an artificial intelligence (AI) assistant, such as ChatGPT, to quickly generate text containing Unicode characters. For example, we could ask an AI assistant to write a chemical formula using Unicode subscripts and superscripts, and then copy and paste the result into our notebook. As we progress through this course and begin using AI as a coding assistant, we will discover that it is often more important to understand what we want to accomplish and what technologies are available to accomplish it than to memorize the details of their implementation.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Using Unicode Characters</strong></p>
+<p>In this activity, we will explore how Unicode characters can be used in both Markdown and code cells.</p>
+<ol class="arabic simple">
+<li><p>Create a new Markdown cell below this cell using keyboard shortcuts.</p></li>
+<li><p>Copy the following text into your new cell and render it.</p></li>
+</ol>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>The temperature was 25 °C.
+The CO₂ concentration was 420 ± 5 ppm.
+The wavelength (λ) was 550 nm.
+The acceleration due to gravity was 9.81 m/s².
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Use an AI assistant, such as ChatGPT, to generate additional examples of text containing Unicode characters. You might try some of the following prompts:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Write the chemical formula for the sulfate ion using Unicode subscripts and superscripts.</p></li>
+<li><p>Express the units of density as grams per cubic centimeter using Unicode characters.</p></li>
+<li><p>Write a sentence describing an electrical resistance of 100 ohms using the Greek letter omega.</p></li>
+<li><p>Give me five Unicode symbols commonly used in my scientific discipline.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Copy some of the AI-generated text into your Markdown cell and render it. Check that the characters correctly represent the scientific information you requested.</p></li>
+<li><p>Now create a code cell below your Markdown cell and execute the following Python code.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The temperature was 25 °C.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The CO₂ concentration was 420 ± 5 ppm.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The acceleration due to gravity was 9.81 m/s².&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>Modify the Python code to display some of the Unicode characters you obtained from the AI assistant.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>What do you observe?</summary>
+<p>Notice that the same Unicode characters can be displayed in both a rendered Markdown cell and the output of a Python code cell.</p>
+<p>Some possible responses to the AI prompts are:</p>
+<ul class="simple">
+<li><p>Sulfate ion: SO₄²⁻</p></li>
+<li><p>Units of density: g/cm³</p></li>
+<li><p>Electrical resistance: The resistance was 100 Ω.</p></li>
+</ul>
+<p>Unlike Markdown formatting instructions, Unicode characters do not need to be interpreted by a Markdown renderer to be displayed. They are characters that can be incorporated directly into text, including the strings we pass to Python’s <code class="docutils literal notranslate"><span class="pre">print()</span></code> function.</p>
+</details>
+</div>
+</div>
+<p>Unicode characters are particularly useful when we want to include scientific symbols in explanatory text, program output, graph labels, and data files. We will encounter many of these applications as we progress through the course. Although Unicode provides many useful scientific characters, it has limitations when it comes to representing more complex mathematical expressions. In the next section, we will introduce LaTeX, which allows us to display mathematical equations within our Markdown cells.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The temperature was 25 °C.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The CO₂ concentration was 420 ± 5 ppm.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The acceleration due to gravity was 9.81 m/s².&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The temperature was 25 °C.
+The CO₂ concentration was 420 ± 5 ppm.
+The acceleration due to gravity was 9.81 m/s².
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="displaying-mathematical-equations-with-latex">
+<h3>Displaying Mathematical Equations with LaTeX<a class="headerlink" href="#displaying-mathematical-equations-with-latex" title="Link to this heading">#</a></h3>
+<p>In the previous section, we learned how to use Unicode characters to incorporate scientific symbols, subscripts, and superscripts into our notebooks. Although Unicode is very useful for scientific communication, it has limitations when it comes to representing more complex mathematical expressions, such as fractions, integrals, and equations containing multiple levels of subscripts and superscripts. <strong>LaTeX</strong> is a document preparation and typesetting system widely used by scientists, mathematicians, and engineers. Jupyter notebooks use a mathematical rendering system called MathJax that allows us to use LaTeX mathematical notation within Markdown cells.</p>
+<p>There are two common ways to display mathematical expressions within a Markdown cell:</p>
+<ul class="simple">
+<li><p><strong>Inline mathematics:</strong> Place the mathematical expression between single dollar signs (<code class="docutils literal notranslate"><span class="pre">$</span></code>). The expression is displayed within the surrounding text.</p></li>
+<li><p><strong>Display mathematics:</strong> Place the mathematical expression between double dollar signs (<code class="docutils literal notranslate"><span class="pre">$$</span></code>). The expression is displayed on a separate line.</p></li>
+</ul>
+<p>For example, if we enter the following Markdown text:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Einstein&#39;s equation $E=mc^2$ relates mass and energy.
+</pre></div>
+</div>
+<p>It is rendered as:</p>
+<p>Einstein’s equation <span class="math notranslate nohighlight">\(E=mc^2\)</span> relates mass and energy.</p>
+<p>If instead we enter:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>Einstein&#39;s equation relates mass and energy:
+
+$$
+E=mc^2
+$$
+</pre></div>
+</div>
+<p>It is rendered as:</p>
+<p>Einstein’s equation relates mass and energy:</p>
+<div class="math notranslate nohighlight">
+\[
+E=mc^2
+\]</div>
+<p>LaTeX uses special characters and commands to describe mathematical expressions. The following table illustrates some commonly used LaTeX mathematical notation.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>LaTeX Syntax</p></th>
+<th class="head"><p>Rendered Expression</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x^2</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(x^2\)</span></p></td>
+<td><p>Superscript</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">x_1</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(x_1\)</span></p></td>
+<td><p>Subscript</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">e^{-kt}</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(e^{-kt}\)</span></p></td>
+<td><p>Grouped superscript</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\frac{a}{b}</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{a}{b}\)</span></p></td>
+<td><p>Fraction</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\sqrt{x}</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sqrt{x}\)</span></p></td>
+<td><p>Square root</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\lambda</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\lambda\)</span></p></td>
+<td><p>Lowercase Greek letter lambda</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\Delta</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\Delta\)</span></p></td>
+<td><p>Uppercase Greek letter delta</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\times</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\times\)</span></p></td>
+<td><p>Multiplication symbol</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\sum_{i=1}^{n}</span> <span class="pre">x_i</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sum_{i=1}^{n} x_i\)</span></p></td>
+<td><p>Summation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\int_a^b</span> <span class="pre">f(x)\,dx</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(\int_a^b f(x)\,dx\)</span></p></td>
+<td><p>Definite integral</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Notice that curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> are used to group characters and expressions. For example, <code class="docutils literal notranslate"><span class="pre">e^{-kt}</span></code> indicates that the entire expression <code class="docutils literal notranslate"><span class="pre">-kt</span></code> is in the exponent. As with Unicode, you are not expected to memorize these commands. A more extensive LaTeX reference will be provided in the appendix. We can also use an AI assistant, such as ChatGPT, to generate LaTeX notation for mathematical expressions that we wish to incorporate into our notebooks.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Displaying Mathematical Equations with LaTeX</strong></p>
+<p>In this activity, we will explore how LaTeX can be used to document mathematical expressions in a scientific notebook.</p>
+<ol class="arabic simple">
+<li><p>Create a new Markdown cell below this cell using keyboard shortcuts.</p></li>
+<li><p>Copy the following Markdown text into your new cell and render it.</p></li>
+</ol>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">#### Exponential Decay</span>
+
+The quantity remaining at time $t$ is described by the exponential decay equation:
+$$
+N(t) = N_0 e^{-kt}
+$$
+where:
+<span class="k">-</span><span class="w"> </span>$N_0$ is the initial quantity.
+<span class="k">-</span><span class="w"> </span>$N(t)$ is the quantity remaining at time $t$.
+<span class="k">-</span><span class="w"> </span>$k$ is the decay constant.
+<span class="k">-</span><span class="w"> </span>$t$ is the elapsed time.
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Return to edit mode and experiment with changing the mathematical expressions. Try removing the curly braces around <code class="docutils literal notranslate"><span class="pre">-kt</span></code> in the exponential term. Render the cell and observe what happens.</p></li>
+<li><p>Restore the original equation.</p></li>
+<li><p>Use an AI assistant, such as ChatGPT, to generate LaTeX notation for additional scientific equations. You might try some of the following prompts:</p>
+<ul class="simple">
+<li><p>Generate the LaTeX notation for the ideal gas law that I can paste into a Jupyter Markdown cell.</p></li>
+<li><p>Write the equation relating the wavelength, frequency, and speed of light using LaTeX display mathematics.</p></li>
+<li><p>Generate LaTeX notation for the quadratic formula that I can use in a Jupyter notebook.</p></li>
+<li><p>Generate LaTeX notation for an equation commonly used in my scientific discipline, and define each of its variables.</p></li>
+</ul>
+</li>
+<li><p>Copy the AI-generated Markdown and LaTeX notation into your Markdown cell and render it. Check that the equations correctly represent the mathematical relationships you requested.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<p>Your original Markdown cell should look like the following:</p>
+<p>INSERT SCREENSHOT HERE</p>
+<p>When you removed the curly braces around the exponent, you changed how LaTeX interpreted the expression.</p>
+<p>With curly braces:</p>
+<div class="math notranslate nohighlight">
+\[
+N(t) = N_0 e^{-kt}
+\]</div>
+<p>Without curly braces:</p>
+<div class="math notranslate nohighlight">
+\[
+N(t) = N_0 e^-kt
+\]</div>
+<p>Notice that without the curly braces, only the minus sign is included in the superscript. This illustrates the importance of grouping characters when using LaTeX notation.</p>
+<p>Some possible results from the AI prompts are:</p>
+<p><strong>Ideal gas law:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+PV = nRT
+\]</div>
+<p><strong>Relationship between wavelength and frequency:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\lambda = \frac{c}{\nu}
+\]</div>
+<p><strong>Quadratic formula:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\]</div>
+<p>Although an AI assistant can quickly generate the LaTeX notation needed to display these equations, it is our responsibility to ensure that the mathematical expressions are correct.</p>
+</details>
+</div>
+</div>
+<p>Unicode and LaTeX are complementary technologies that allow us to communicate scientific information within our notebooks. Unicode is particularly useful for incorporating scientific characters directly into text, while LaTeX is particularly useful for representing structured mathematical expressions. As we progress through this course, we will use Markdown, Unicode, and LaTeX to document the scientific concepts and mathematical relationships underlying the computations we perform in our Python code cells.</p>
+</section>
 </section>
 <section id="understanding-notebook-execution">
-<span id="sec-1-5-5"></span><h2>1.5.5 Understanding Notebook Execution<a class="headerlink" href="#understanding-notebook-execution" title="Link to this heading">#</a></h2>
+<h2>1.5.5 Understanding Notebook Execution<a class="headerlink" href="#understanding-notebook-execution" title="Link to this heading">#</a></h2>
+<p>In the previous sections, we learned how to create, edit, and execute code cells and how to use Markdown cells to document our work. We will now explore what happens when we execute code in a Jupyter notebook and how the different code cells in a notebook can interact with one another. In our introductory notebook on Understanding Your Computer, we discussed the distinction between <a class="reference internal" href="#01-01_Understanding_your_Computer_.html#memory-and-storage"><span class="xref myst">memory and persistent storage</span></a> and the distinction between <a class="reference internal" href="#01-01_Understanding_your_Computer_.html#programs-and-processes"><span class="xref myst">programs and processes</span></a>. These concepts are particularly important when working with computational notebooks.</p>
+<p>When we execute a code cell, the instructions contained in that cell are sent to the notebook’s kernel. In the case of a Python kernel, a Python interpreter executes those instructions and returns any resulting output to the notebook. Variables and other objects created during execution are held in the kernel’s working memory (RAM), where they can be accessed by subsequently executed code cells. We will refer to the collection of variables, objects, and other information maintained by the running kernel as its <strong>computational state</strong>. Unlike a conventional Python script that is normally executed from beginning to end, a Jupyter notebook allows us to execute individual code cells in any order and to execute the same cell multiple times. Consequently, the computational state of a notebook depends on which cells have been executed and the order in which they were executed, not simply on their arrangement within the notebook.</p>
+<p>In the following activities, we will explore these concepts using some Python code that you may not yet fully understand. Remember that our objective at this point is to learn how to work with computational notebooks. We will begin learning how to write Python code in Module 2.</p>
+<section id="interacting-with-a-running-code-cell">
+<h3>Interacting with a Running Code Cell<a class="headerlink" href="#interacting-with-a-running-code-cell" title="Link to this heading">#</a></h3>
+<p>So far, the code cells we have executed have completed their calculations almost immediately. However, some programs require additional information from the user while they are running, and others may take considerable time to complete their calculations.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Interacting with a Running Code Cell</strong></p>
+<ol class="arabic simple">
+<li><p>Create a new code cell below this cell.</p></li>
+<li><p>Copy the following Python code into your new cell.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello,&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Execute the cell using <code class="docutils literal notranslate"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></code>, but do not immediately enter your name.</p></li>
+<li><p>Observe what is displayed below the code cell and what appears in the square brackets to the left of the cell.</p></li>
+<li><p>Enter your name and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
+<li><p>Observe how the output and the execution indicator change.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>What do you observe?</summary>
+<p>When the program requests your name, it pauses and waits for you to provide the requested information. While the cell is executing, an asterisk appears between the square brackets to the left of the cell.</p>
+<pre>[*]</pre>
+<p>This indicates that the cell is being executed. Once you enter your name, the program completes its execution, displays a greeting, and the asterisk is replaced by a number. This number is called the <strong>execution counter</strong>, which indicates the order in which code cells have been executed since the kernel was started.</p>
+</details>
+</div>
+</div>
+<p>When a kernel is executing code, we say that it is <strong>busy</strong>. When it is not executing code, we say that it is <strong>idle</strong>. A kernel that is waiting for user input is still busy, even though it may not appear to be doing anything. In this example, the program was waiting for us to provide information before it could complete its execution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your name: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello,&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, Bob
+</pre></div>
+</div>
+</div>
+</div>
+<div class="alert alert-block alert-info";
+    margin: 20px 0;">
+<p><strong>Can you explain why the cell did not move onto the next cell when you hit <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">enter</span></code>, and can you figure out the keyboard shortcut to do so?</strong></p>
+<details>
+<summary>Explaination</summary>
+<p>When Python encounters an input() statement, the execution of the Python code pauses while the kernel process waits for information from the user. During this time, the kernel remains busy, and the computational state is retained in memory. JupyterLab directs keyboard input to the running program rather than to the notebook's cell controls. When you press Enter to submit the requested information, Python resumes execution and completes the remaining instructions in the cell, but JupyterLab may not automatically advance to the next cell as you would normally expect when using Shift + Enter. Once execution is complete, you can press Esc to return to command mode and then ↓ (Down Arrow) to select the next cell without executing it.</p>
+</details>
+</div>
+</div>
+</section>
+<section id="working-with-multiple-code-cells">
+<h3>1.5.5.2 Working with Multiple Code Cells<a class="headerlink" href="#working-with-multiple-code-cells" title="Link to this heading">#</a></h3>
+<p>One of the features that distinguishes computational notebooks from traditional Python scripts is that we can divide our code into individual cells and execute those cells independently of one another.</p>
+<p>Although the Python code is contained in separate cells, it is executed by the same kernel. The information stored in memory when we execute one code cell becomes part of the kernel’s computational state and can be accessed by subsequently executed code cells.</p>
+<p>As an example, let us perform a calculation using the exponential decay equation we encountered when learning about LaTeX.</p>
+<div class="math notranslate nohighlight">
+\[
+N(t) = N_0 e^{-kt}
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N_0\)</span> is the initial quantity.</p></li>
+<li><p><span class="math notranslate nohighlight">\(N(t)\)</span> is the quantity remaining at time <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(k\)</span> is the decay constant.</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> is the elapsed time.</p></li>
+</ul>
+<p>In this example, we will use an initial quantity of 100 and a decay constant of 0.05 h⁻¹. We will allow the user to specify the elapsed time in hours.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Performing a Calculation Using Multiple Code Cells</strong></p>
+<p>Create three code cells below this Markdown cell and copy each of the following blocks of Python code into a separate code cell.</p>
+<p><strong>Code Cell 1:</strong> Import the Python math module.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</pre></div>
+</div>
+<p><strong>Code Cell 2:</strong> Define the initial quantity and decay constant, and request the elapsed time from the user.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">N0</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">t</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the elapsed time in hours: &quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Code Cell 3:</strong> Calculate and display the quantity remaining.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="n">N0</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The quantity remaining is </span><span class="si">{</span><span class="n">N</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Execute the three code cells in the order in which they appear.</p></li>
+<li><p>When prompted, enter an elapsed time of 10 hours.</p></li>
+<li><p>Observe the output and execution counter of each code cell.</p></li>
+<li><p>Identify which code cells produce visible output and which do not.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<ul>
+    <li>The first code cell does not produce any visible output. It imports the Python math module, making additional mathematical functions available to subsequently executed code cells.</li>
+<li>The second code cell requests the elapsed time from the user and stores the values of the initial quantity, decay constant, and elapsed time in memory.</li>
+<li> The third code cell uses information from both of the preceding cells to perform a calculation, stores the result in memory, and displays the following output:</li>
+<pre>The quantity remaining is 60.65</pre>
+<li>Although the Python instructions are distributed across three separate code cells, they are executed by the same kernel and share the same computational state. Each code cell also has an execution counter indicating when it was executed relative to the other cells.</li>
+</details>
+</div>
+</div>
+<p>Notice that not all code cells produce visible output. A code cell may perform operations that change the kernel’s computational state without displaying anything in the notebook. The absence of visible output does not mean that nothing happened when the cell was executed. We will learn more about importing modules, defining variables, and performing mathematical calculations in Module 2. For now, the important point is that code cells within a notebook share the computational state maintained by the kernel.</p>
+<p>Keep these three code cells in your notebook, as we will continue working with them in the next section.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N0</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">t</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the elapsed time in hours: &quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="n">N0</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The quantity remaining is </span><span class="si">{</span><span class="n">N</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The quantity remaining is 60.65
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="understanding-execution-order-and-kernel-memory">
+<h3>1.5.5.3 Understanding Execution Order and Kernel Memory<a class="headerlink" href="#understanding-execution-order-and-kernel-memory" title="Link to this heading">#</a></h3>
+<p>In the previous activity, we executed three code cells in the order in which they appeared in the notebook. However, because the kernel maintains its computational state in memory, we do not necessarily need to execute code cells in the order in which they appear, nor do we need to execute every code cell each time we perform a calculation.</p>
+<p>It is important to distinguish between the information currently stored in the kernel’s memory and the output currently displayed in the notebook. Changing the value of a variable in memory does not automatically update the output of a previously executed code cell.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Execution Order and Computational State</strong></p>
+<p>Return to the three code cells from the previous activity.</p>
+<ol class="arabic simple">
+<li><p>Execute Code Cell 2 again, but this time enter an elapsed time of 20 hours.</p></li>
+<li><p>Observe the output currently displayed below Code Cell 3 before executing it.</p></li>
+<li><p>Execute Code Cell 3.</p></li>
+<li><p>Observe the new result and the execution counters associated with the three code cells.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<p>When we execute Code Cell 2, the value of the elapsed time stored in the kernel's memory changes from 10 to 20 hours. However, the output displayed below Code Cell 3 does not change until we execute that cell again.</p>
+<p>After executing Code Cell 3, we obtain:</p>
+<pre>The quantity remaining is 36.79</pre>
+<p>Notice that the execution counters reflect the most recent execution of each cell, not its position within the notebook. We did not need to execute Code Cell 1 again because the math module was already available to the running Python process.</p>
+</details>
+</div>
+</div>
+<section id="restarting-the-kernel">
+<h4>Restarting the Kernel<a class="headerlink" href="#restarting-the-kernel" title="Link to this heading">#</a></h4>
+<p>Restarting the kernel terminates the existing kernel process and starts a new one. In doing so, we lose the computational state maintained in memory by the previous kernel. However, restarting the kernel does not delete the code or Markdown cells in our notebook.</p>
+<p>Let us investigate what happens when we restart the kernel and attempt to perform our calculation again.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Restarting the Kernel</strong></p>
+<ol class="arabic simple">
+<li><p>From the JupyterLab menu, select <strong>Kernel → Restart Kernel</strong> and confirm that you want to restart the kernel.</p></li>
+<li><p>Execute Code Cell 3 without executing either of the preceding code cells.</p></li>
+<li><p>Observe the error message.</p></li>
+<li><p>Execute Code Cell 2, entering an elapsed time of 20 hours.</p></li>
+<li><p>Execute Code Cell 3 again and observe the new error message.</p></li>
+<li><p>Execute Code Cell 1 and then Code Cell 3.</p></li>
+<li><p>Observe the result and the execution counters.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<p>When we first execute Code Cell 3 after restarting the kernel, Python generates the following error:</p>
+<pre>NameError: name 'N0' is not defined</pre>
+<p>When we restarted the kernel, we lost the computational state of the previous Python process, including the variables we had defined.</p>
+<p>After executing Code Cell 2, the variables needed for the calculation are once again defined. However, when we execute Code Cell 3, Python generates a different error:</p>
+<pre>NameError: name 'math' is not defined</pre>
+<p>Although the math module is part of our Python installation, we have not yet imported it into our new Python session.</p>
+<p>Once we execute Code Cell 1 and then Code Cell 3, our calculation is successful:</p>
+<pre>The quantity remaining is 36.79</pre>
+<p>Notice that we were able to perform the calculation even though we executed Code Cell 2 before Code Cell 1.</p>
+</details>
+</div>
+</div>
+<p>The Python <code class="docutils literal notranslate"><span class="pre">math</span></code> module is part of the <strong>Python standard library</strong>, a collection of modules distributed with Python. Although these modules are available in our Python environment, many must be explicitly imported before we can use them. Restarting the kernel does not remove these modules from our Python environment, but we must import them again if we want to use them in our new Python session.</p>
+</section>
+<section id="interrupting-a-running-kernel">
+<h4>Interrupting a Running Kernel<a class="headerlink" href="#interrupting-a-running-kernel" title="Link to this heading">#</a></h4>
+<p>There may be times when we want to stop the execution of a code cell without losing the computational state maintained by the kernel. For example, a calculation may be taking longer than expected, or a program may be waiting for input that we do not wish to provide.</p>
+<p>In JupyterLab, we can select <strong>Kernel → Interrupt Kernel</strong> to attempt to stop the current execution without restarting the kernel. Unlike restarting the kernel, interrupting the kernel does not normally clear its computational state. However, any changes made to the computational state before the interruption may remain in memory.</p>
+<p>As we continue working with computational notebooks, it is important to remember that the order in which we execute code cells determines the computational state of our kernel, and that this state may not be consistent with the code or output currently displayed in our notebook.</p>
+</section>
+</section>
+</section>
+<section id="working-with-python-packages">
+<h2>1.5.6 Working with Python Packages<a class="headerlink" href="#working-with-python-packages" title="Link to this heading">#</a></h2>
+<p>In the previous section, we used the Python <code class="docutils literal notranslate"><span class="pre">math</span></code> module to perform an exponential decay calculation. The <code class="docutils literal notranslate"><span class="pre">math</span></code> module is part of the Python standard library and is available in a standard Python installation. However, much of the power of Python for scientific computing comes from the numerous third-party packages that have been developed to extend its capabilities.</p>
+<p>Recall that when we created our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> Conda environment in Section 1.3, we installed two scientific Python packages:</p>
+<ul class="simple">
+<li><p><strong>NumPy</strong>: A package for numerical computing and working with arrays of numerical data.</p></li>
+<li><p><strong>Matplotlib</strong>: A package for creating graphs and other visual representations of data.</p></li>
+</ul>
+<p>We will now use these packages to generate numerical data and create a graph.</p>
+<section id="using-previously-installed-packages">
+<h3>1.5.6.1 Using Previously Installed Packages<a class="headerlink" href="#using-previously-installed-packages" title="Link to this heading">#</a></h3>
+<p>Before proceeding, verify that your notebook is using the <code class="docutils literal notranslate"><span class="pre">myenv</span></code> kernel by looking at the kernel indicator in the upper-right corner of your notebook. If necessary, change the kernel to <code class="docutils literal notranslate"><span class="pre">myenv</span></code>.</p>
+<p>Remember that although we are running JupyterLab from our <code class="docutils literal notranslate"><span class="pre">jlab</span></code> environment, the Python code in our notebook is being executed using the Python interpreter and packages installed in our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> environment.</p>
+<p>In the following activity, we will generate and plot data for an exponential decay function similar to the one we used in the previous section.</p>
+<div class="math notranslate nohighlight">
+\[
+y = Ae^{-mx}
+\]</div>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Generating and Plotting Scientific Data</strong></p>
+<ol class="arabic simple">
+<li><p>Verify that your notebook is using the <code class="docutils literal notranslate"><span class="pre">myenv</span></code> kernel.</p></li>
+<li><p>Create a new code cell below this Markdown cell.</p></li>
+<li><p>Copy the following Python code into your new cell.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Define the parameters for the exponential decay function</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">44.56</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">1.356</span>
+
+<span class="c1"># Display the values of the parameters</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pre-exponential factor A: </span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decay parameter m: </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Generate and plot the exponential curve</span>
+<span class="n">x_values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)]</span>
+<span class="n">y_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">m</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_values</span><span class="p">]</span>
+
+<span class="n">exp_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y_values</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">exp_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">exp_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">fr</span><span class="s1">&#39;Plot of $y=</span><span class="si">{</span><span class="n">A</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">e^</span><span class="se">{{</span><span class="s1">-</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">x</span><span class="se">}}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X values from </span><span class="si">{</span><span class="n">x_values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">x_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Y values from </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">y_values</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">y_values</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">exp_array</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Execute the code cell and observe its output.</p></li>
+<li><p>Change the value of <code class="docutils literal notranslate"><span class="pre">A</span></code> and execute the cell again.</p></li>
+<li><p>Change the value of <code class="docutils literal notranslate"><span class="pre">m</span></code> and execute the cell again.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>What do you observe?</summary>
+<p>The code cell produces several types of output, including text, a graph, and an array of numerical data.</p>
+<p>Changing the values of A and m changes both the numerical data and the graph generated from those data. Notice that the title of the graph also changes to reflect the new values.</p>
+<p>NumPy is used to perform numerical operations and organize the resulting data into an array, while Matplotlib is used to create a graphical representation of those data.</p>
+</details>
+</div>
+</div>
+<p>At this point, you are not expected to understand all of the Python instructions used in this activity. We will learn how to generate, manipulate, analyze, and visualize numerical data in Module 2.</p>
+<p>The important point here is that we were able to use NumPy and Matplotlib because they were already installed in the Python environment associated with our notebook’s kernel. As with the math module in the previous section, we needed to import them before we could use them in our Python code.</p>
+<p>What happens if we want to use a Python package that is not already installed in our environment?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Define the parameters for the exponential decay function</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">44.56</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">1.356</span>
+
+<span class="c1"># Display the values of the parameters</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pre-exponential factor A: </span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decay parameter m: </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Generate and plot the exponential curve</span>
+<span class="n">x_values</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">)]</span>
+<span class="n">y_values</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">m</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_values</span><span class="p">]</span>
+
+<span class="n">exp_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y_values</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">exp_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">exp_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">fr</span><span class="s1">&#39;Plot of $y=</span><span class="si">{</span><span class="n">A</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">e^</span><span class="se">{{</span><span class="s1">-</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">x</span><span class="se">}}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;X values from </span><span class="si">{</span><span class="n">x_values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">x_values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Y values from </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">y_values</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">y_values</span><span class="p">)</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">exp_array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pre-exponential factor A: 44.56
+Decay parameter m: 1.356
+</pre></div>
+</div>
+<img alt="../../../_images/c989ffd64c20703540effab1561dfacd26e1e1ee988da2e66f628040ee51829f.png" src="../../../_images/c989ffd64c20703540effab1561dfacd26e1e1ee988da2e66f628040ee51829f.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4.00000000e-01, 2.59050154e+01],
+       [8.00000000e-01, 1.50599153e+01],
+       [1.20000000e+00, 8.75510182e+00],
+       [1.60000000e+00, 5.08979012e+00],
+       [2.00000000e+00, 2.95895627e+00],
+       [2.40000000e+00, 1.72019318e+00],
+       [2.80000000e+00, 1.00003660e+00],
+       [3.20000000e+00, 5.81372609e-01],
+       [3.60000000e+00, 3.37981741e-01],
+       [4.00000000e+00, 1.96486136e-01],
+       [4.40000000e+00, 1.14227477e-01],
+       [4.80000000e+00, 6.64062962e-02],
+       [5.20000000e+00, 3.86053889e-02],
+       [5.60000000e+00, 2.24432943e-02],
+       [6.00000000e+00, 1.30474391e-02],
+       [6.40000000e+00, 7.58514610e-03],
+       [6.80000000e+00, 4.40963480e-03],
+       [7.20000000e+00, 2.56354707e-03],
+       [7.60000000e+00, 1.49032151e-03],
+       [8.00000000e+00, 8.66400397e-04],
+       [8.40000000e+00, 5.03683026e-04],
+       [8.80000000e+00, 2.92816799e-04],
+       [9.20000000e+00, 1.70229436e-04],
+       [9.60000000e+00, 9.89631099e-05],
+       [1.00000000e+01, 5.75323359e-05],
+       [1.04000000e+01, 3.34465002e-05],
+       [1.08000000e+01, 1.94441675e-05],
+       [1.12000000e+01, 1.13038927e-05],
+       [1.16000000e+01, 6.57153310e-06],
+       [1.20000000e+01, 3.82036953e-06]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="installing-additional-packages">
+<h3>1.5.6.2 Installing Additional Packages<a class="headerlink" href="#installing-additional-packages" title="Link to this heading">#</a></h3>
+<p>There are thousands of Python packages available that extend the capabilities of Python beyond those provided by the standard library. In the previous activity, we were able to import NumPy and Matplotlib because we had already installed them in our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> environment.</p>
+<p>What happens if we attempt to import a package that has not been installed in our Python environment?</p>
+<p>The Python <code class="docutils literal notranslate"><span class="pre">requests</span></code> package allows us to communicate with web resources and retrieve information over the Internet. We will be using this package to acquire scientific data from online resources throughout this course.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Importing a Package</strong></p>
+<ol class="arabic simple">
+<li><p>Verify that your notebook is using the <code class="docutils literal notranslate"><span class="pre">myenv</span></code> kernel.</p></li>
+<li><p>Create a new code cell below this Markdown cell.</p></li>
+<li><p>Copy and execute the following Python code.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>If Python generates an error message, read the message and try to identify the problem.</p></li>
+<li><p>How does this error differ from the error we encountered when attempting to use the <code class="docutils literal notranslate"><span class="pre">math</span></code> module after restarting our kernel?</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<p>If the requests package is not installed in your Python environment, you should encounter the following error:</p>
+<pre>ModuleNotFoundError: No module named 'requests'</pre>
+<p>When we restarted our kernel in the previous section, we encountered a NameError because the math module had not been imported into our new Python session. However, the math module was available in our Python environment.</p>
+<p>In this example, Python generates a ModuleNotFoundError because it cannot find the requests module in our current Python environment. Before we can import it, we need to install it.</p>
+<p>If you did not encounter an error, the requests package is already available in your Python environment, possibly because it was installed as a dependency of another package.</p>
+</details>
+</div>
+</div>
+<section id="accessing-a-terminal">
+<h4>Accessing a Terminal<a class="headerlink" href="#accessing-a-terminal" title="Link to this heading">#</a></h4>
+<p>Recall from Section 1.3 that we used a terminal and the Conda package manager to create our Python environments and install packages. We can use the same approach to install additional packages into an existing environment.</p>
+<p>There are two ways we can access a terminal while working in JupyterLab:</p>
+<ul class="simple">
+<li><p><strong>Operating system terminal:</strong> Open a new Ubuntu terminal if you are using Windows with WSL, or open a new Terminal window if you are using macOS.</p></li>
+<li><p><strong>JupyterLab terminal:</strong> Open a Launcher in JupyterLab and select Terminal from the Other category.</p></li>
+</ul>
+<p>Both provide access to a command-line interface through which we can execute Unix and Conda commands. We do not need to shut down JupyterLab or close our notebook to install additional packages.</p>
+</section>
+<section id="installing-a-package-into-an-existing-environment">
+<h4>Installing a Package into an Existing Environment<a class="headerlink" href="#installing-a-package-into-an-existing-environment" title="Link to this heading">#</a></h4>
+<p>Before installing a package, it is important to identify the Python environment into which we want to install it. Remember that we are running the JupyterLab server from our <code class="docutils literal notranslate"><span class="pre">jlab</span></code> environment, but our notebook is using the Python interpreter in our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> environment.</p>
+</section>
+</section>
+<section id="id1">
+<h3>Understanding Execution Order and Kernel Memory<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+</section>
+<section id="restarting-and-interrupting-the-kernel">
+<h3>Restarting and Interrupting the Kernel<a class="headerlink" href="#restarting-and-interrupting-the-kernel" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="working-with-python-packages-from-a-notebook">
+<h2>1.5.6 Working with Python Packages from a Notebook<a class="headerlink" href="#working-with-python-packages-from-a-notebook" title="Link to this heading">#</a></h2>
+<section id="python-s-standard-library-and-third-party-packages">
+<h3>Python’s Standard Library and Third-Party Packages<a class="headerlink" href="#python-s-standard-library-and-third-party-packages" title="Link to this heading">#</a></h3>
+</section>
+<section id="obtaining-scientific-data-from-pubchem">
+<h3>Obtaining Scientific Data from PubChem<a class="headerlink" href="#obtaining-scientific-data-from-pubchem" title="Link to this heading">#</a></h3>
+</section>
+<section id="installing-a-package-using-the-jupyterlab-terminal">
+<h3>Installing a Package Using the JupyterLab Terminal<a class="headerlink" href="#installing-a-package-using-the-jupyterlab-terminal" title="Link to this heading">#</a></h3>
+</section>
 </section>
 <section id="saving-and-managing-notebooks">
-<span id="sec-1-5-6"></span><h2>1.5.6 Saving and Managing Notebooks<a class="headerlink" href="#saving-and-managing-notebooks" title="Link to this heading">#</a></h2>
+<h2>1.5.7 Saving and Managing Notebooks<a class="headerlink" href="#saving-and-managing-notebooks" title="Link to this heading">#</a></h2>
+<section id="saving-notebooks-and-their-output">
+<h3>Saving Notebooks and Their Output<a class="headerlink" href="#saving-notebooks-and-their-output" title="Link to this heading">#</a></h3>
+</section>
+<section id="closing-notebooks-and-shutting-down-kernels">
+<h3>Closing Notebooks and Shutting Down Kernels<a class="headerlink" href="#closing-notebooks-and-shutting-down-kernels" title="Link to this heading">#</a></h3>
+</section>
+<section id="reproducibility-and-notebook-execution">
+<h3>Reproducibility and Notebook Execution<a class="headerlink" href="#reproducibility-and-notebook-execution" title="Link to this heading">#</a></h3>
+</section>
 </section>
 <section id="working-with-files-from-a-notebook">
-<span id="sec-1-5-7"></span><h2>1.5.7 Working with Files from a Notebook<a class="headerlink" href="#working-with-files-from-a-notebook" title="Link to this heading">#</a></h2>
+<h2>1.5.8 Working with Files from a Notebook<a class="headerlink" href="#working-with-files-from-a-notebook" title="Link to this heading">#</a></h2>
+<section id="understanding-the-notebook-s-working-directory">
+<h3>Understanding the Notebook’s Working Directory<a class="headerlink" href="#understanding-the-notebook-s-working-directory" title="Link to this heading">#</a></h3>
+</section>
+<section id="accessing-files-using-relative-paths">
+<h3>Accessing Files Using Relative Paths<a class="headerlink" href="#accessing-files-using-relative-paths" title="Link to this heading">#</a></h3>
+</section>
+<section id="creating-data-files">
+<h3>Creating Data Files<a class="headerlink" href="#creating-data-files" title="Link to this heading">#</a></h3>
+</section>
 </section>
 </section>
 
@@ -534,16 +1742,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "cinf26"
+            mode: "myenv"
         },
         kernelOptions: {
-            name: "cinf26",
+            name: "myenv",
             path: "./content/modules/module1-setup"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'cinf26'</script>
+    <script>kernelName = 'myenv'</script>
 
                 </article>
               
@@ -603,11 +1811,66 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-your-kernel">Checking Your Kernel</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-code-cells">1.5.3 Working with Code Cells</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-markdown-cell">1.5.4 Working with Markdown Cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-notebook-execution">1.5.5 Understanding Notebook Execution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-managing-notebooks">1.5.6 Saving and Managing Notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-from-a-notebook">1.5.7 Working with Files from a Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-code-cells">1.5.3 Working with Code Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-executing-code-cells">Creating and Executing Code Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-cell-toolbar">The Cell Toolbar</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-creating-and-executing-your-first-code-cell">Activity: Creating and Executing Your First Code Cell</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-and-re-executing-a-code-cell">Editing and Re-executing a Code Cell</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-markdown-cells">1.5.4 Working with Markdown Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-editing-markdown-cells">Creating and Editing Markdown Cells</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#two-ways-to-render-a-markdown-cell">Two Ways to Render a Markdown Cell</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#command-mode-and-edit-mode">Command Mode and Edit Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keyboard-shortcuts-and-command-mode">Keyboard Shortcuts and Command Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting-text-with-markdown">Formatting Text with Markdown</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-unicode-characters">Using Unicode Characters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-mathematical-equations-with-latex">Displaying Mathematical Equations with LaTeX</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-notebook-execution">1.5.5 Understanding Notebook Execution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interacting-with-a-running-code-cell">Interacting with a Running Code Cell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-multiple-code-cells">1.5.5.2 Working with Multiple Code Cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-execution-order-and-kernel-memory">1.5.5.3 Understanding Execution Order and Kernel Memory</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#restarting-the-kernel">Restarting the Kernel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interrupting-a-running-kernel">Interrupting a Running Kernel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-python-packages">1.5.6 Working with Python Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-previously-installed-packages">1.5.6.1 Using Previously Installed Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-additional-packages">1.5.6.2 Installing Additional Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-terminal">Accessing a Terminal</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-a-package-into-an-existing-environment">Installing a Package into an Existing Environment</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Understanding Execution Order and Kernel Memory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restarting-and-interrupting-the-kernel">Restarting and Interrupting the Kernel</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-python-packages-from-a-notebook">1.5.6 Working with Python Packages from a Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-standard-library-and-third-party-packages">Python’s Standard Library and Third-Party Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-scientific-data-from-pubchem">Obtaining Scientific Data from PubChem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-a-package-using-the-jupyterlab-terminal">Installing a Package Using the JupyterLab Terminal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-managing-notebooks">1.5.7 Saving and Managing Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-notebooks-and-their-output">Saving Notebooks and Their Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-notebooks-and-shutting-down-kernels">Closing Notebooks and Shutting Down Kernels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-and-notebook-execution">Reproducibility and Notebook Execution</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-from-a-notebook">1.5.8 Working with Files from a Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-notebook-s-working-directory">Understanding the Notebook’s Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-files-using-relative-paths">Accessing Files Using Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-files">Creating Data Files</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
