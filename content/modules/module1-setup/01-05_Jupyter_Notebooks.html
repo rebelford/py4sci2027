@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/modules/module1-setup/01-05_Jupyter_Notebooks';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="1.6 GitHub" href="01-06_GitHub.html" />
+    <link rel="next" title="1.6 Git, GitHub, and Managing Scientific Projects" href="01-06_GitHub_Managing_and_Sharing_Projects.html" />
     <link rel="prev" title="1.4 JupyterLab" href="01-04_JupyterLab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -166,7 +166,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Introduction to Scientific Python
+                    Introduction to Python for Scientists
                 </a>
             </li>
         </ul>
@@ -178,8 +178,8 @@
 <li class="toctree-l2"><a class="reference internal" href="01-03_Installing_Miniconda.html">1.3 Installing Miniconda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01-04_JupyterLab.html">1.4 JupyterLab</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5 Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01-06_GitHub.html">1.6 GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01-07_Managing_and_Sharing_Projects.html">1.7 Managing and Sharing Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-06_GitHub_Managing_and_Sharing_Projects.html">1.6 Git, GitHub, and Managing Scientific Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-07_JupyterLab_Extensions_and_Customization.html">1.7 JupyterLab Extensions and Customization</a></li>
 </ul>
 </details></li>
 </ul>
@@ -450,31 +450,25 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-python-packages">1.5.6 Working with Python Packages</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-previously-installed-packages">1.5.6.1 Using Previously Installed Packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-additional-packages">1.5.6.2 Installing Additional Packages</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-terminal">Accessing a Terminal</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-a-package-into-an-existing-environment">Installing a Package into an Existing Environment</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Understanding Execution Order and Kernel Memory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restarting-and-interrupting-the-kernel">Restarting and Interrupting the Kernel</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-python-packages-from-a-notebook">1.5.6 Working with Python Packages from a Notebook</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-standard-library-and-third-party-packages">Python’s Standard Library and Third-Party Packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-scientific-data-from-pubchem">Obtaining Scientific Data from PubChem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-a-package-using-the-jupyterlab-terminal">Installing a Package Using the JupyterLab Terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-additional-packages">1.5.6.2 Installing Additional Packages</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-managing-notebooks">1.5.7 Saving and Managing Notebooks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-notebooks-and-their-output">Saving Notebooks and Their Output</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-notebooks-and-shutting-down-kernels">Closing Notebooks and Shutting Down Kernels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-and-notebook-execution">Reproducibility and Notebook Execution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-notebooks-and-their-output">1.5.7.1 Saving Notebooks and Their Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-notebooks-and-shutting-down-kernels">1.5.7.2 Closing Notebooks and Shutting Down Kernels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-and-notebook-execution">1.5.7.3 Reproducibility and Notebook Execution</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-from-a-notebook">1.5.8 Working with Files from a Notebook</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-notebook-s-working-directory">Understanding the Notebook’s Working Directory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-files-using-relative-paths">Accessing Files Using Relative Paths</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-files">Creating Data Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-notebook-s-working-directory">1.5.8.1 Understanding the Notebook’s Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-files-using-relative-paths">1.5.8.2 Accessing Files Using Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-files">1.5.8.3 Creating Data Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.5.8 Working with Files from a Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Understanding the Notebook’s Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Accessing Files Using Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Creating Data Files</a></li>
 </ul>
 </li>
 </ul>
@@ -1276,7 +1270,7 @@ x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
 </section>
 <section id="understanding-notebook-execution">
 <h2>1.5.5 Understanding Notebook Execution<a class="headerlink" href="#understanding-notebook-execution" title="Link to this heading">#</a></h2>
-<p>In the previous sections, we learned how to create, edit, and execute code cells and how to use Markdown cells to document our work. We will now explore what happens when we execute code in a Jupyter notebook and how the different code cells in a notebook can interact with one another. In our introductory notebook on Understanding Your Computer, we discussed the distinction between <a class="reference internal" href="#01-01_Understanding_your_Computer_.html#memory-and-storage"><span class="xref myst">memory and persistent storage</span></a> and the distinction between <a class="reference internal" href="#01-01_Understanding_your_Computer_.html#programs-and-processes"><span class="xref myst">programs and processes</span></a>. These concepts are particularly important when working with computational notebooks.</p>
+<p>In the previous sections, we learned how to create, edit, and execute code cells and how to use Markdown cells to document our work. We will now explore what happens when we execute code in a Jupyter notebook and how the different code cells in a notebook can interact with one another. In our introductory notebook on Understanding Your Computer, we discussed the distinction between <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-01_Understanding_your_Computer_.html#memory-and-storage">memory and persistent storage</a> and the distinction between <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-01_Understanding_your_Computer_.html#programs-and-processes">programs and processes</a>. These concepts are particularly important when working with computational notebooks.</p>
 <p>When we execute a code cell, the instructions contained in that cell are sent to the notebook’s kernel. In the case of a Python kernel, a Python interpreter executes those instructions and returns any resulting output to the notebook. Variables and other objects created during execution are held in the kernel’s working memory (RAM), where they can be accessed by subsequently executed code cells. We will refer to the collection of variables, objects, and other information maintained by the running kernel as its <strong>computational state</strong>. Unlike a conventional Python script that is normally executed from beginning to end, a Jupyter notebook allows us to execute individual code cells in any order and to execute the same cell multiple times. Consequently, the computational state of a notebook depends on which cells have been executed and the order in which they were executed, not simply on their arrangement within the notebook.</p>
 <p>In the following activities, we will explore these concepts using some Python code that you may not yet fully understand. Remember that our objective at this point is to learn how to work with computational notebooks. We will begin learning how to write Python code in Module 2.</p>
 <section id="interacting-with-a-running-code-cell">
@@ -1641,94 +1635,329 @@ Decay parameter m: 1.356
 </section>
 <section id="installing-additional-packages">
 <h3>1.5.6.2 Installing Additional Packages<a class="headerlink" href="#installing-additional-packages" title="Link to this heading">#</a></h3>
-<p>There are thousands of Python packages available that extend the capabilities of Python beyond those provided by the standard library. In the previous activity, we were able to import NumPy and Matplotlib because we had already installed them in our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> environment.</p>
-<p>What happens if we attempt to import a package that has not been installed in our Python environment?</p>
-<p>The Python <code class="docutils literal notranslate"><span class="pre">requests</span></code> package allows us to communicate with web resources and retrieve information over the Internet. We will be using this package to acquire scientific data from online resources throughout this course.</p>
+<p>There are thousands of Python packages available that extend the capabilities of Python beyond those provided by the standard library. In <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-03_Installing_Miniconda.html#creating-and-exploring-conda-environments">1.3.6 Creating and Exploring Conda Environments</a> we created <code class="docutils literal notranslate"><span class="pre">myenv</span></code> that had NumPy and Matplotlib indtalled, and so were able to important them into the previous code cell. The following script asks for you to input the name of a chemical, it then goes to PubChem and returns the molar mass of the chemical.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="n">chemical</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the name of a chemical: &quot;</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/</span><span class="si">{</span><span class="n">chemical</span><span class="si">}</span><span class="s2">/property/MolecularWeight/txt&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">molar_mass</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The molar mass of </span><span class="si">{</span><span class="n">chemical</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">molar_mass</span><span class="si">}</span><span class="s2"> g/mol.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you run it and have not installed the requests package in your environment you will get the error shown in the following image.</p>
+<p><img alt="image.png" src="../../../_images/attachment-b2aa93e466887510.png" /></p>
+<p>In [sectioin 1.3.6 Creating and Exploring Conda Environments](https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-03_Installing_Miniconda.html#creating-and-exploring-conda-environments you opened the terminal and installed the packages and we need to do that for the requests package, but instead of opening the terminal in our OS we will open it from within Jupyter Lab. We can do this by clicking File/new/terminal as in the image below</p>
+<p><img alt="image.png" src="../../../_images/attachment-834de39fce33fd41.png" /></p>
+<p>Now, you need to remember that we are using Conda and not pip, and my advice is to open an AI and give it a prompt like</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Please give me the conda command for installing the requests package, preferably using Conda-Forge
+</pre></div>
+</div>
+<p>Note, when you open the terminal it does not activate an environment and the first thing I did in the image below was activate  myenv, and then I pasted the following code in and installed requests</p>
+<p><img alt="image.png" src="../../../_images/attachment-5d99a0eaf3b76896.png" />
+You can now confirm the installation</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>list<span class="w"> </span>requests
+</pre></div>
+</div>
+<p><img alt="image.png" src="../../../_images/attachment-d32d3b00bbd0d2b6.png" /></p>
+<p>And you should now be able to run your script of determining the molar mass of a compound.</p>
+<p><img alt="image.png" src="../../../_images/attachment-672ee3952ad8e379.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="n">chemical</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the name of a chemical: &quot;</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/</span><span class="si">{</span><span class="n">chemical</span><span class="si">}</span><span class="s2">/property/MolecularWeight/txt&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">molar_mass</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The molar mass of </span><span class="si">{</span><span class="n">chemical</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">molar_mass</span><span class="si">}</span><span class="s2"> g/mol.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The molar mass of aspirin is 180.16 g/mol.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="saving-and-managing-notebooks">
+<h2>1.5.7 Saving and Managing Notebooks<a class="headerlink" href="#saving-and-managing-notebooks" title="Link to this heading">#</a></h2>
+<p>A computational notebook serves both as a document that records our work and as an interface to a running computational process. As we have seen, the computational state maintained by the kernel and the information displayed in our notebook are not necessarily the same. We will now explore what happens when we save and close a notebook, shut down its kernel, and reopen the notebook at a later time.</p>
+<section id="saving-notebooks-and-their-output">
+<h3>1.5.7.1 Saving Notebooks and Their Output<a class="headerlink" href="#saving-notebooks-and-their-output" title="Link to this heading">#</a></h3>
+<p>When we save a Jupyter notebook, we save its code cells, Markdown cells, cell outputs, and associated metadata in an <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file in persistent storage. This includes textual output, numerical results, and graphs. However, saving a notebook does not save the computational state maintained in the kernel’s memory.</p>
+<p>JupyterLab periodically saves our notebooks through a feature called <strong>autosave</strong>. We can also manually save a notebook using <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">S</span></code> (<code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">S</span></code> on macOS) or by selecting the Save Notebook icon in the notebook’s toolbar.</p>
 <div style="background-color: #f5f5f5;
             border: 1px solid #d0d0d0;
             border-radius: 5px;
             padding: 15px;
             margin: 20px 0;">
-<p><strong>Activity: Importing a Package</strong></p>
+<p><strong>Activity: Saving Your Notebook</strong></p>
 <ol class="arabic simple">
-<li><p>Verify that your notebook is using the <code class="docutils literal notranslate"><span class="pre">myenv</span></code> kernel.</p></li>
-<li><p>Create a new code cell below this Markdown cell.</p></li>
-<li><p>Copy and execute the following Python code.</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>If Python generates an error message, read the message and try to identify the problem.</p></li>
-<li><p>How does this error differ from the error we encountered when attempting to use the <code class="docutils literal notranslate"><span class="pre">math</span></code> module after restarting our kernel?</p></li>
+<li><p>Locate the code cell in the previous section that generated an exponential decay graph.</p></li>
+<li><p>Execute the cell if its output is not currently displayed.</p></li>
+<li><p>Save your notebook.</p></li>
+<li><p>Close the notebook by clicking the X on its tab.</p></li>
+<li><p>Reopen the notebook using the JupyterLab File Browser.</p></li>
+<li><p>Locate the graph. Is it necessary to execute the code cell again to view the graph?</p></li>
 </ol>
 <div class="alert alert-block alert-success">
 <details>
 <summary>Show Answer</summary>
-<p>If the requests package is not installed in your Python environment, you should encounter the following error:</p>
-<pre>ModuleNotFoundError: No module named 'requests'</pre>
-<p>When we restarted our kernel in the previous section, we encountered a NameError because the math module had not been imported into our new Python session. However, the math module was available in our Python environment.</p>
-<p>In this example, Python generates a ModuleNotFoundError because it cannot find the requests module in our current Python environment. Before we can import it, we need to install it.</p>
-<p>If you did not encounter an error, the requests package is already available in your Python environment, possibly because it was installed as a dependency of another package.</p>
+<p>The graph is saved as part of the notebook file and can be viewed without executing the code that generated it. The same is true of the other saved cell outputs.</p>
 </details>
 </div>
 </div>
-<section id="accessing-a-terminal">
-<h4>Accessing a Terminal<a class="headerlink" href="#accessing-a-terminal" title="Link to this heading">#</a></h4>
-<p>Recall from Section 1.3 that we used a terminal and the Conda package manager to create our Python environments and install packages. We can use the same approach to install additional packages into an existing environment.</p>
-<p>There are two ways we can access a terminal while working in JupyterLab:</p>
-<ul class="simple">
-<li><p><strong>Operating system terminal:</strong> Open a new Ubuntu terminal if you are using Windows with WSL, or open a new Terminal window if you are using macOS.</p></li>
-<li><p><strong>JupyterLab terminal:</strong> Open a Launcher in JupyterLab and select Terminal from the Other category.</p></li>
-</ul>
-<p>Both provide access to a command-line interface through which we can execute Unix and Conda commands. We do not need to shut down JupyterLab or close our notebook to install additional packages.</p>
-</section>
-<section id="installing-a-package-into-an-existing-environment">
-<h4>Installing a Package into an Existing Environment<a class="headerlink" href="#installing-a-package-into-an-existing-environment" title="Link to this heading">#</a></h4>
-<p>Before installing a package, it is important to identify the Python environment into which we want to install it. Remember that we are running the JupyterLab server from our <code class="docutils literal notranslate"><span class="pre">jlab</span></code> environment, but our notebook is using the Python interpreter in our <code class="docutils literal notranslate"><span class="pre">myenv</span></code> environment.</p>
-</section>
-</section>
-<section id="id1">
-<h3>Understanding Execution Order and Kernel Memory<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-</section>
-<section id="restarting-and-interrupting-the-kernel">
-<h3>Restarting and Interrupting the Kernel<a class="headerlink" href="#restarting-and-interrupting-the-kernel" title="Link to this heading">#</a></h3>
-</section>
-</section>
-<section id="working-with-python-packages-from-a-notebook">
-<h2>1.5.6 Working with Python Packages from a Notebook<a class="headerlink" href="#working-with-python-packages-from-a-notebook" title="Link to this heading">#</a></h2>
-<section id="python-s-standard-library-and-third-party-packages">
-<h3>Python’s Standard Library and Third-Party Packages<a class="headerlink" href="#python-s-standard-library-and-third-party-packages" title="Link to this heading">#</a></h3>
-</section>
-<section id="obtaining-scientific-data-from-pubchem">
-<h3>Obtaining Scientific Data from PubChem<a class="headerlink" href="#obtaining-scientific-data-from-pubchem" title="Link to this heading">#</a></h3>
-</section>
-<section id="installing-a-package-using-the-jupyterlab-terminal">
-<h3>Installing a Package Using the JupyterLab Terminal<a class="headerlink" href="#installing-a-package-using-the-jupyterlab-terminal" title="Link to this heading">#</a></h3>
-</section>
-</section>
-<section id="saving-and-managing-notebooks">
-<h2>1.5.7 Saving and Managing Notebooks<a class="headerlink" href="#saving-and-managing-notebooks" title="Link to this heading">#</a></h2>
-<section id="saving-notebooks-and-their-output">
-<h3>Saving Notebooks and Their Output<a class="headerlink" href="#saving-notebooks-and-their-output" title="Link to this heading">#</a></h3>
 </section>
 <section id="closing-notebooks-and-shutting-down-kernels">
-<h3>Closing Notebooks and Shutting Down Kernels<a class="headerlink" href="#closing-notebooks-and-shutting-down-kernels" title="Link to this heading">#</a></h3>
+<h3>1.5.7.2 Closing Notebooks and Shutting Down Kernels<a class="headerlink" href="#closing-notebooks-and-shutting-down-kernels" title="Link to this heading">#</a></h3>
+<p>Closing a notebook does not necessarily shut down its kernel. The kernel is a separate process that may continue running and maintaining its computational state in memory even when the notebook is no longer open.</p>
+<p>JupyterLab provides a <strong>Running Terminals and Kernels</strong> panel in the left sidebar that allows us to view and manage these running processes.</p>
+<p><img alt="image.png" src="../../../_images/attachment-d823d968a2199df9.png" /></p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Shutting Down a Kernel</strong></p>
+<ol class="arabic simple">
+<li><p>Save and close your notebook again.</p></li>
+<li><p>Open the Running Terminals and Kernels panel in the left sidebar.</p></li>
+<li><p>Locate the kernel associated with your notebook and shut it down.</p></li>
+<li><p>Reopen your notebook using the File Browser. Select the <code class="docutils literal notranslate"><span class="pre">myenv</span></code> kernel if prompted.</p></li>
+<li><p>Observe whether the previously saved outputs are still displayed.</p></li>
+<li><p>Create a new code cell and execute the following instruction without first executing any of the previous code cells.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Explain why you can still see the graph that was generated using the variable <code class="docutils literal notranslate"><span class="pre">A</span></code>, even though Python may no longer recognize that variable.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<p>When we shut down the kernel, we terminated the Python process and lost its computational state. The variable A is no longer defined in our new Python session.</p>
+<p>However, the graph was saved as part of the notebook file in persistent storage. We can therefore view the graph even though the computational state used to generate it no longer exists.</p>
+</details>
+</div>
+</div>
+<p>When you have finished working with a notebook, it is good practice to save the notebook and shut down its kernel. This releases computing resources that are no longer needed.</p>
 </section>
 <section id="reproducibility-and-notebook-execution">
-<h3>Reproducibility and Notebook Execution<a class="headerlink" href="#reproducibility-and-notebook-execution" title="Link to this heading">#</a></h3>
+<h3>1.5.7.3 Reproducibility and Notebook Execution<a class="headerlink" href="#reproducibility-and-notebook-execution" title="Link to this heading">#</a></h3>
+<p>Reproducibility is an important aspect of scientific computing. When we share a computational notebook with another scientist, we generally want that person to be able to execute the notebook and reproduce our results.</p>
+<p>As we discovered in Section 1.5.5, the computational state of a notebook depends on the order in which its code cells have been executed. It is therefore possible to create a notebook that displays results that cannot be reproduced by executing its code cells in the order in which they appear.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Testing Notebook Execution</strong></p>
+<ol class="arabic simple">
+<li><p>Delete the code cell containing <code class="docutils literal notranslate"><span class="pre">print(A)</span></code> that we created in the previous activity.</p></li>
+<li><p>Review the code cells we created throughout this notebook.</p></li>
+<li><p>From the Kernel menu, select <strong>Restart Kernel and Run All Cells</strong>.</p></li>
+<li><p>Provide the requested information whenever a code cell prompts you for input.</p></li>
+<li><p>Observe whether the notebook successfully executes from beginning to end.</p></li>
+<li><p>Identify any errors and try to explain why they occurred.</p></li>
+<li><p>Save your notebook.</p></li>
+</ol>
+</div>
+<p>Restarting the kernel and executing all cells in sequence is a useful first step in testing the reproducibility of a computational notebook. However, reproducibility may also depend on access to external data, installed Python packages, software versions, and other aspects of our computing environment. We will explore these issues further as we progress through this course.</p>
+<p>As a general practice, before sharing or submitting a completed computational notebook, restart its kernel, execute its cells in sequence, verify its results, and save the notebook.</p>
 </section>
 </section>
 <section id="working-with-files-from-a-notebook">
 <h2>1.5.8 Working with Files from a Notebook<a class="headerlink" href="#working-with-files-from-a-notebook" title="Link to this heading">#</a></h2>
+<p>In Section 1.4.6, we learned how to create and manage files and directories using both the Unix terminal and the JupyterLab File Browser. We will now explore how we can interact with the file system directly from a computational notebook.</p>
+<p>One of the fundamental tasks in scientific computing is moving information between working memory and persistent storage. We may want to read experimental data from a file into our computer’s memory, perform calculations on those data, and then save the results to another file. Python provides numerous ways to perform these operations.</p>
 <section id="understanding-the-notebook-s-working-directory">
-<h3>Understanding the Notebook’s Working Directory<a class="headerlink" href="#understanding-the-notebook-s-working-directory" title="Link to this heading">#</a></h3>
+<h3>1.5.8.1 Understanding the Notebook’s Working Directory<a class="headerlink" href="#understanding-the-notebook-s-working-directory" title="Link to this heading">#</a></h3>
+<p>Recall that when we work in a Unix terminal, we can use the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command to determine our present working directory. A running Python process also has a <strong>current working directory</strong>, which serves as the starting point for interpreting relative file paths.</p>
+<p>By default, when we open a notebook and start its kernel in JupyterLab, its working directory is normally the directory containing the notebook. This is not necessarily the directory from which we launched the JupyterLab server.</p>
+<p>Python provides a module called <code class="docutils literal notranslate"><span class="pre">os</span></code>, which is part of the Python standard library and allows us to interact with the operating system.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Identifying Your Working Directory</strong></p>
+<ol class="arabic simple">
+<li><p>Create a new code cell below this Markdown cell.</p></li>
+<li><p>Copy and execute the following Python code.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Examine the path displayed in the output.</p></li>
+<li><p>Compare this path with the location of your notebook in the JupyterLab File Browser.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<p>The os.getcwd() function returns the current working directory of the running Python process. If you created your notebook in the directory we established in Section 1.4.6, your path should end with:</p>
+<pre>my_work/notebooks/module1</pre>
+<p>The complete path will depend on your operating system and username.</p>
+</details>
+</div>
+</div>
+<p>The Python <code class="docutils literal notranslate"><span class="pre">os.getcwd()</span></code> function performs a similar task to the Unix <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command, although one is a Python function and the other is a shell command. Both allow us to determine the current working directory of the process from which they are executed.</p>
 </section>
 <section id="accessing-files-using-relative-paths">
-<h3>Accessing Files Using Relative Paths<a class="headerlink" href="#accessing-files-using-relative-paths" title="Link to this heading">#</a></h3>
+<h3>1.5.8.2 Accessing Files Using Relative Paths<a class="headerlink" href="#accessing-files-using-relative-paths" title="Link to this heading">#</a></h3>
+<p>Recall from our earlier discussions of files and directories that there are two ways to specify the location of a file:</p>
+<ul class="simple">
+<li><p>An <strong>absolute path</strong> specifies the location of a file starting from the root of the file system.</p></li>
+<li><p>A <strong>relative path</strong> specifies the location of a file relative to the current working directory.</p></li>
+</ul>
+<p>When we created our personal workspace in Section 1.4.6, we established separate directories for our notebooks and data.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>my_work/
+├── notebooks/
+│   └── module1/
+└── data/
+    └── module1/
+</pre></div>
+</div>
+<p>Our current notebook is located in <code class="docutils literal notranslate"><span class="pre">notebooks/module1</span></code>, but we want to store our data in <code class="docutils literal notranslate"><span class="pre">data/module1</span></code>.</p>
+<p>Recall that <code class="docutils literal notranslate"><span class="pre">..</span></code> represents the parent directory. We can therefore navigate from our notebook’s working directory to our data directory using the relative path:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>../../data/module1
+</pre></div>
+</div>
+<p>The first <code class="docutils literal notranslate"><span class="pre">..</span></code> takes us from <code class="docutils literal notranslate"><span class="pre">module1</span></code> to <code class="docutils literal notranslate"><span class="pre">notebooks</span></code>, and the second <code class="docutils literal notranslate"><span class="pre">..</span></code> takes us from <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> to <code class="docutils literal notranslate"><span class="pre">my_work</span></code>. From there, we can navigate to <code class="docutils literal notranslate"><span class="pre">data/module1</span></code>.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Accessing Directories from a Notebook</strong></p>
+<p>Create a new code cell and execute the following Python code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;../..&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;../../data/module1&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Compare the output of each instruction with the directory structure displayed in your JupyterLab File Browser.</p>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<p>The os.listdir() function returns a list of the files and directories located at the specified path.</p>
+<ul>
+<li><code>.</code> refers to the current working directory.</li>
+<li><code>..</code> refers to its parent directory.</li>
+<li><code>../..</code> takes us up two levels in the directory structure.</li>
+<li><code>../../data/module1</code> refers to our Module 1 data directory.</li>
+</ul>
+<p>If your data directory does not yet contain any files, the last instruction will return an empty list, represented by square brackets: <code>[]</code>.</p>
+</details>
+</div>
+</div>
+<p>Notice that these instructions allow us to access the contents of other directories without changing our current working directory.</p>
+<p>An advantage of using relative paths is that they do not depend on a particular username or the absolute location of our workspace. If we move our entire workspace to another computer and preserve its directory structure, the same relative paths can still be used.</p>
 </section>
 <section id="creating-data-files">
-<h3>Creating Data Files<a class="headerlink" href="#creating-data-files" title="Link to this heading">#</a></h3>
+<h3>1.5.8.3 Creating Data Files<a class="headerlink" href="#creating-data-files" title="Link to this heading">#</a></h3>
+<p>In Section 1.5.6, we used NumPy to generate an array of numerical data and Matplotlib to create a graphical representation of those data. The numerical data were stored in a variable called <code class="docutils literal notranslate"><span class="pre">exp_array</span></code> in the kernel’s memory.</p>
+<p>Although we can save the notebook and its displayed output, we may also want to save our numerical data in a separate file so that they can be accessed by other notebooks, programs, or scientists.</p>
+<p>One commonly used file format for exchanging tabular data is the <strong>CSV (Comma-Separated Values)</strong> format. A CSV file is a plain-text file in which each line represents a row of data and commas separate the values within each row. CSV files can be opened by many different types of software, including spreadsheet programs, text editors, and scientific computing applications.</p>
+<p>NumPy provides functions that allow us to save numerical arrays to text files and read numerical data from those files.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Saving Numerical Data to a File</strong></p>
+<ol class="arabic simple">
+<li><p>Return to the code cell in Section 1.5.6 where we generated the exponential decay graph and execute it again. This ensures that NumPy has been imported and that <code class="docutils literal notranslate"><span class="pre">exp_array</span></code> exists in the kernel’s memory.</p></li>
+<li><p>Return to this section and create a new code cell.</p></li>
+<li><p>Copy and execute the following Python code.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s2">&quot;../../data/module1/exponential_decay.csv&quot;</span><span class="p">,</span>
+           <span class="n">exp_array</span><span class="p">,</span>
+           <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span>
+           <span class="n">header</span><span class="o">=</span><span class="s2">&quot;x,y&quot;</span><span class="p">,</span>
+           <span class="n">comments</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.6f</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Use the JupyterLab File Browser to navigate to your <code class="docutils literal notranslate"><span class="pre">data/module1</span></code> directory.</p></li>
+<li><p>Locate and open the file <code class="docutils literal notranslate"><span class="pre">exponential_decay.csv</span></code>.</p></li>
+<li><p>Examine its contents and compare them with the numerical data displayed in your notebook.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<p>The NumPy savetxt() function takes the numerical data stored in memory and writes them to a text file in persistent storage.</p>
+<p>The file contains two columns of numerical data separated by commas, with the column headings x and y on the first line.</p>
+<p>We have now created a data file that exists independently of our notebook and its running kernel.</p>
+</details>
+</div>
+</div>
+<p>Once we have saved our data to a file, we can read those data back into Python, even after the original kernel has been shut down.</p>
+<div style="background-color: #f5f5f5;
+            border: 1px solid #d0d0d0;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;">
+<p><strong>Activity: Reading Numerical Data from a File</strong></p>
+<ol class="arabic simple">
+<li><p>Restart your notebook’s kernel.</p></li>
+<li><p>Create a new code cell and execute the following Python code.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">saved_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
+    <span class="s2">&quot;../../data/module1/exponential_decay.csv&quot;</span><span class="p">,</span>
+    <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span>
+    <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">saved_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Compare the numerical data displayed in the notebook with the contents of your CSV file.</p></li>
+<li><p>Create another code cell and execute the following code.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">saved_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">saved_data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Exponential Decay Data from CSV File&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Compare this graph with the graph we generated in Section 1.5.6.</p></li>
+</ol>
+<div class="alert alert-block alert-success">
+<details>
+<summary>Show Answer</summary>
+<p>Although restarting the kernel removed our original numerical array from memory, the data we saved to the CSV file remained in persistent storage.</p>
+<p>The NumPy loadtxt() function reads the numerical data from the file and creates a new array in memory. We can then use Matplotlib to generate a graph from those data without repeating the original exponential decay calculations.</p>
+</details>
+</div>
+</div>
+<p>We have now used Python to move numerical data between working memory and persistent storage. We have also used relative paths to access files outside the directory containing our notebook.</p>
+<p>As we progress through this course, we will use these same concepts to acquire, store, analyze, and visualize real scientific data, including data obtained from experimental measurements, environmental sensors, and online scientific resources.</p>
+</section>
+</section>
+<section id="id1">
+<h2>1.5.8 Working with Files from a Notebook<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>Understanding the Notebook’s Working Directory<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+</section>
+<section id="id3">
+<h3>Accessing Files Using Relative Paths<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+</section>
+<section id="id4">
+<h3>Creating Data Files<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 </section>
 </section>
 </section>
@@ -1773,11 +2002,11 @@ Decay parameter m: 1.356
       </div>
     </a>
     <a class="right-next"
-       href="01-06_GitHub.html"
+       href="01-06_GitHub_Managing_and_Sharing_Projects.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.6 GitHub</p>
+        <p class="prev-next-title">1.6 Git, GitHub, and Managing Scientific Projects</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1844,31 +2073,25 @@ Decay parameter m: 1.356
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-python-packages">1.5.6 Working with Python Packages</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-previously-installed-packages">1.5.6.1 Using Previously Installed Packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-additional-packages">1.5.6.2 Installing Additional Packages</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-terminal">Accessing a Terminal</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-a-package-into-an-existing-environment">Installing a Package into an Existing Environment</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Understanding Execution Order and Kernel Memory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restarting-and-interrupting-the-kernel">Restarting and Interrupting the Kernel</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-python-packages-from-a-notebook">1.5.6 Working with Python Packages from a Notebook</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-standard-library-and-third-party-packages">Python’s Standard Library and Third-Party Packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-scientific-data-from-pubchem">Obtaining Scientific Data from PubChem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-a-package-using-the-jupyterlab-terminal">Installing a Package Using the JupyterLab Terminal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-additional-packages">1.5.6.2 Installing Additional Packages</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-and-managing-notebooks">1.5.7 Saving and Managing Notebooks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-notebooks-and-their-output">Saving Notebooks and Their Output</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-notebooks-and-shutting-down-kernels">Closing Notebooks and Shutting Down Kernels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-and-notebook-execution">Reproducibility and Notebook Execution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-notebooks-and-their-output">1.5.7.1 Saving Notebooks and Their Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closing-notebooks-and-shutting-down-kernels">1.5.7.2 Closing Notebooks and Shutting Down Kernels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reproducibility-and-notebook-execution">1.5.7.3 Reproducibility and Notebook Execution</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-files-from-a-notebook">1.5.8 Working with Files from a Notebook</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-notebook-s-working-directory">Understanding the Notebook’s Working Directory</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-files-using-relative-paths">Accessing Files Using Relative Paths</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-files">Creating Data Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understanding-the-notebook-s-working-directory">1.5.8.1 Understanding the Notebook’s Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-files-using-relative-paths">1.5.8.2 Accessing Files Using Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-data-files">1.5.8.3 Creating Data Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.5.8 Working with Files from a Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Understanding the Notebook’s Working Directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Accessing Files Using Relative Paths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Creating Data Files</a></li>
 </ul>
 </li>
 </ul>

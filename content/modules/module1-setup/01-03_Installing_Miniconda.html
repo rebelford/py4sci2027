@@ -164,7 +164,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Introduction to Scientific Python
+                    Introduction to Python for Scientists
                 </a>
             </li>
         </ul>
@@ -176,8 +176,8 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3 Installing Miniconda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01-04_JupyterLab.html">1.4 JupyterLab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01-05_Jupyter_Notebooks.html">1.5 Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01-06_GitHub.html">1.6 GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01-07_Managing_and_Sharing_Projects.html">1.7 Managing and Sharing Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-06_GitHub_Managing_and_Sharing_Projects.html">1.6 Git, GitHub, and Managing Scientific Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-07_JupyterLab_Extensions_and_Customization.html">1.7 JupyterLab Extensions and Customization</a></li>
 </ul>
 </details></li>
 </ul>
@@ -415,7 +415,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniconda-and-the-command-line-interface">Miniconda and the Command-Line Interface</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-1-3-4">1.3.4 Installing Miniconda</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.3.4 Installing Miniconda</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-users-installing-miniconda-in-wsl-ubuntu">Windows Users: Installing Miniconda in WSL Ubuntu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-users-installing-miniconda">macOS Users: Installing Miniconda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-the-installation">Verifying the Installation</a></li>
@@ -462,9 +462,9 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installing-miniconda">
-<span id="sec-1-3"></span><h1>1.3 Installing Miniconda<a class="headerlink" href="#installing-miniconda" title="Link to this heading">#</a></h1>
+<h1>1.3 Installing Miniconda<a class="headerlink" href="#installing-miniconda" title="Link to this heading">#</a></h1>
 <section id="why-do-we-need-package-managers">
-<span id="sec-1-3-1"></span><h2>1.3.1 Why Do We Need Package Managers?<a class="headerlink" href="#why-do-we-need-package-managers" title="Link to this heading">#</a></h2>
+<h2>1.3.1 Why Do We Need Package Managers?<a class="headerlink" href="#why-do-we-need-package-managers" title="Link to this heading">#</a></h2>
 <p>As discussed in Section 1.8, much of Python’s functionality comes from packages developed by the scientific and programming communities. These packages must be downloaded, installed, and maintained on our computers.</p>
 <p>Python packages are distributed through online repositories, including the <a class="reference external" href="https://pypi.org/">Python Package Index (PyPI)</a> and <a class="reference external" href="https://conda-forge.org/">conda-forge</a>. PyPI is the primary repository for packages installed using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, while conda-forge is a community-maintained repository of packages installed using <code class="docutils literal notranslate"><span class="pre">conda</span></code>. We will learn more about these tools later in this notebook.</p>
 <p>Installing packages, however, is not always straightforward. Many packages depend on other packages, which are called <strong>dependencies</strong>. For example, <strong><a class="reference external" href="https://numpy.org/">NumPy</a></strong> (Numerical Python) provides tools for numerical calculations and working with arrays of data. It is a foundational package used by many other scientific Python packages, including <strong><a class="reference external" href="https://matplotlib.org/">Matplotlib</a></strong>, which creates graphs and visualizations, and <strong><a class="reference external" href="https://pandas.pydata.org/">pandas</a></strong>, which organizes and analyzes tabular data. Both depend on NumPy for numerical operations. Furthermore, different packages may require specific versions of Python or their dependencies. A <strong>package manager</strong> helps us install software, identify dependencies, and find compatible versions.</p>
@@ -474,7 +474,7 @@
 <p>In this course, we will use Miniconda, which provides the conda package and environment manager. Conda allows us to install and manage Python and its scientific packages independently of the operating system’s Python installation. We will learn to create separate environments for our scientific computing projects, allowing us to install, update, and maintain packages without interfering with other projects or the operating system.</p>
 </section>
 <section id="python-package-and-environment-management-pip-venv-and-conda">
-<span id="sec-1-3-2"></span><h2>1.3.2 Python Package and Environment Management: pip, venv, and Conda<a class="headerlink" href="#python-package-and-environment-management-pip-venv-and-conda" title="Link to this heading">#</a></h2>
+<h2>1.3.2 Python Package and Environment Management: pip, venv, and Conda<a class="headerlink" href="#python-package-and-environment-management-pip-venv-and-conda" title="Link to this heading">#</a></h2>
 <p>There are several tools for installing Python packages and managing the environments in which they run. Three that you are likely to encounter are <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">venv</span></code>, and <code class="docutils literal notranslate"><span class="pre">conda</span></code>. Although their functions overlap, they serve different purposes.</p>
 <section id="pip-installing-python-packages">
 <h3>pip: Installing Python Packages<a class="headerlink" href="#pip-installing-python-packages" title="Link to this heading">#</a></h3>
@@ -510,7 +510,7 @@
 </section>
 </section>
 <section id="the-conda-ecosystem">
-<span id="sec-1-3-3"></span><h2>1.3.3 The Conda Ecosystem<a class="headerlink" href="#the-conda-ecosystem" title="Link to this heading">#</a></h2>
+<h2>1.3.3 The Conda Ecosystem<a class="headerlink" href="#the-conda-ecosystem" title="Link to this heading">#</a></h2>
 <p>Conda is an open-source package and environment manager widely used in scientific computing. It is developed and maintained through contributions from an international community of developers and organizations. The broader Conda ecosystem includes software distributions, graphical interfaces, and community-maintained package repositories that help scientists install and manage the software needed for their research.</p>
 <ul class="simple">
 <li><p><strong><a class="reference external" href="https://docs.conda.io/">Conda</a>:</strong> The package and environment manager used to install software, resolve dependencies, and create isolated computing environments.</p></li>
@@ -539,8 +539,8 @@
 <p>In the next section, we will install Miniconda and begin working with Conda from the terminal.</p>
 </section>
 </section>
-<section id="sec-1-3-4">
-<span id="id1"></span><h2>1.3.4 Installing Miniconda<a class="headerlink" href="#sec-1-3-4" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2>1.3.4 Installing Miniconda<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>We will install Miniconda directly from the terminal, using the operating system environment configured in Notebook 1.2. Windows users will install it inside Ubuntu through Windows Subsystem for Linux (WSL), while macOS users will install it directly in macOS.</p>
 <p>The installation involves four basic steps:</p>
 <ol class="arabic simple">
@@ -651,7 +651,7 @@
 </section>
 </section>
 <section id="understanding-the-conda-base-environment">
-<span id="sec-1-3-5"></span><h2>1.3.5 Understanding the Conda Base Environment<a class="headerlink" href="#understanding-the-conda-base-environment" title="Link to this heading">#</a></h2>
+<h2>1.3.5 Understanding the Conda Base Environment<a class="headerlink" href="#understanding-the-conda-base-environment" title="Link to this heading">#</a></h2>
 <p>When we installed Miniconda, it created a special environment called <strong><code class="docutils literal notranslate"><span class="pre">base</span></code></strong>, which contains Conda itself, a Python interpreter, and the supporting software needed for Conda to operate. The <code class="docutils literal notranslate"><span class="pre">base</span></code> environment is primarily used to maintain Conda and manage other environments. Although we can install scientific packages directly into <code class="docutils literal notranslate"><span class="pre">base</span></code>, doing so can introduce dependency conflicts and make Conda more difficult to maintain. <strong>Our practice will be to keep <code class="docutils literal notranslate"><span class="pre">base</span></code> relatively clean and create separate environments for our scientific projects, including the Jupyter Lab environment.</strong></p>
 <section id="activating-and-deactivating-environments">
 <h3>Activating and Deactivating Environments<a class="headerlink" href="#activating-and-deactivating-environments" title="Link to this heading">#</a></h3>
@@ -719,7 +719,7 @@
 </section>
 </section>
 <section id="creating-and-exploring-conda-environments">
-<span id="sec-1-3-6"></span><h2>1.3.6 Creating and Exploring Conda Environments<a class="headerlink" href="#creating-and-exploring-conda-environments" title="Link to this heading">#</a></h2>
+<h2>1.3.6 Creating and Exploring Conda Environments<a class="headerlink" href="#creating-and-exploring-conda-environments" title="Link to this heading">#</a></h2>
 <p>Now that we have installed Miniconda and learned how to activate and deactivate environments, we are ready to create our first scientific Python environment.</p>
 <p>We will name this environment <strong><code class="docutils literal notranslate"><span class="pre">py4sci</span></code></strong>, and it will contain the Python interpreter and many of the scientific packages we will use throughout this course.</p>
 <p>After creating the environment, we will explore how Conda organizes and manages environments using commands entered in the terminal.</p>
@@ -827,14 +827,14 @@
 </section>
 </section>
 <section id="exploring-our-conda-environments">
-<span id="sec-1-3-6-3"></span><h3>1.3.6.3 Exploring Our Conda Environments<a class="headerlink" href="#exploring-our-conda-environments" title="Link to this heading">#</a></h3>
+<h3>1.3.6.3 Exploring Our Conda Environments<a class="headerlink" href="#exploring-our-conda-environments" title="Link to this heading">#</a></h3>
 <p>We have now created three Conda environments: <code class="docutils literal notranslate"><span class="pre">base</span></code>, <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, and <code class="docutils literal notranslate"><span class="pre">jlab</span></code>. Each serves a different purpose and contains its own collection of software.</p>
 <p>In the following guided activities, we will explore these environments and learn how to inspect the software installed in each one.</p>
 <p><strong>Keep the Conda Command Reference in the appendix open in a separate browser tab.</strong> Use it to identify the commands needed to complete each activity. You may also find it helpful to keep your terminal open alongside the notebook.</p>
 <p>Each activity includes questions with expandable answers. Try to answer the questions by running the appropriate Conda commands before revealing the explanations.</p>
 <p>The goal is not to memorize commands, but to become comfortable finding and using the tools needed to investigate your computing environment.</p>
 <section id="activity-1-exploring-conda-environments">
-<span id="sec-1-3-6-3-activity-1"></span><h4>Activity 1: Exploring Conda Environments<a class="headerlink" href="#activity-1-exploring-conda-environments" title="Link to this heading">#</a></h4>
+<h4>Activity 1: Exploring Conda Environments<a class="headerlink" href="#activity-1-exploring-conda-environments" title="Link to this heading">#</a></h4>
 <div class="alert alert-block alert-info">
 <p><strong>Activity 1: Exploring Conda Environments</strong></p>
 <div class="alert alert-block alert-success">
@@ -864,7 +864,7 @@
 </div>
 </section>
 <section id="activity-2-exploring-installed-packages">
-<span id="sec-1-3-6-3-activity-2"></span><h4>Activity 2: Exploring Installed Packages<a class="headerlink" href="#activity-2-exploring-installed-packages" title="Link to this heading">#</a></h4>
+<h4>Activity 2: Exploring Installed Packages<a class="headerlink" href="#activity-2-exploring-installed-packages" title="Link to this heading">#</a></h4>
 <div class="alert alert-block alert-info">
 <p><strong>Activity 2: Exploring Installed Packages</strong></p>
 <div class="alert alert-block alert-success">
@@ -906,7 +906,7 @@
 </div>
 </section>
 <section id="activity-3-identifying-python-interpreter">
-<span id="sec-1-3-6-3-activity-3"></span><h4>Activity 3: Identifying Python Interpreter<a class="headerlink" href="#activity-3-identifying-python-interpreter" title="Link to this heading">#</a></h4>
+<h4>Activity 3: Identifying Python Interpreter<a class="headerlink" href="#activity-3-identifying-python-interpreter" title="Link to this heading">#</a></h4>
 <div class="alert alert-block alert-info">
 <p><strong>Activity 3: Identifying Python Interpreters</strong></p>
 <div class="alert alert-block alert-success">
@@ -959,7 +959,7 @@ which python3</code></pre>
 </div>
 </section>
 <section id="activity-4-getting-help-with-conda">
-<span id="sec-1-3-6-3-activity-4"></span><h4>Activity 4: Getting Help with Conda<a class="headerlink" href="#activity-4-getting-help-with-conda" title="Link to this heading">#</a></h4>
+<h4>Activity 4: Getting Help with Conda<a class="headerlink" href="#activity-4-getting-help-with-conda" title="Link to this heading">#</a></h4>
 <div class="alert alert-block alert-info">
 <p><strong>Activity 4: Getting Help with Conda</strong></p>
 <div class="alert alert-block alert-success">
@@ -1009,7 +1009,7 @@ which python3</code></pre>
 </div>
 </section>
 <section id="activity-5-switching-between-conda-environments">
-<span id="sec-1-3-6-3-activity-5"></span><h4>Activity 5: Switching Between Conda Environments<a class="headerlink" href="#activity-5-switching-between-conda-environments" title="Link to this heading">#</a></h4>
+<h4>Activity 5: Switching Between Conda Environments<a class="headerlink" href="#activity-5-switching-between-conda-environments" title="Link to this heading">#</a></h4>
 <div class="alert alert-block alert-info">
 <p><strong>Activity 5: Switching Between Conda Environments</strong></p>
 <div class="alert alert-block alert-success">
@@ -1063,7 +1063,7 @@ conda deactivate</code></pre>
 </section>
 </section>
 <section id="working-with-pip-venv-and-conda">
-<span id="sec-1-3-7"></span><h2>1.3.7 Working with pip, venv, and Conda<a class="headerlink" href="#working-with-pip-venv-and-conda" title="Link to this heading">#</a></h2>
+<h2>1.3.7 Working with pip, venv, and Conda<a class="headerlink" href="#working-with-pip-venv-and-conda" title="Link to this heading">#</a></h2>
 <p>Earlier in this notebook, we introduced three tools for managing Python packages and environments: <code class="docutils literal notranslate"><span class="pre">pip</span></code>, <code class="docutils literal notranslate"><span class="pre">venv</span></code>, and <code class="docutils literal notranslate"><span class="pre">conda</span></code>. We have now used Conda to create and manage our own Python environments, but you will frequently encounter scientific software that provides installation instructions using <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">venv</span></code> instead. For example, when downloading scientific software or following instructions from GitHub or PyPI, you may encounter commands such as:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 pip<span class="w"> </span>install<span class="w"> </span>numpy
@@ -1185,7 +1185,7 @@ pip<span class="w"> </span>install<span class="w"> </span>numpy
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniconda-and-the-command-line-interface">Miniconda and the Command-Line Interface</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sec-1-3-4">1.3.4 Installing Miniconda</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.3.4 Installing Miniconda</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-users-installing-miniconda-in-wsl-ubuntu">Windows Users: Installing Miniconda in WSL Ubuntu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos-users-installing-miniconda">macOS Users: Installing Miniconda</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-the-installation">Verifying the Installation</a></li>

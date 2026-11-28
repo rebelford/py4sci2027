@@ -164,7 +164,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../intro.html">
-                    Introduction to Scientific Python
+                    Introduction to Python for Scientists
                 </a>
             </li>
         </ul>
@@ -176,8 +176,8 @@
 <li class="toctree-l2"><a class="reference internal" href="01-03_Installing_Miniconda.html">1.3 Installing Miniconda</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4 JupyterLab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01-05_Jupyter_Notebooks.html">1.5 Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01-06_GitHub.html">1.6 GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="01-07_Managing_and_Sharing_Projects.html">1.7 Managing and Sharing Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-06_GitHub_Managing_and_Sharing_Projects.html">1.6 Git, GitHub, and Managing Scientific Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01-07_JupyterLab_Extensions_and_Customization.html">1.7 JupyterLab Extensions and Customization</a></li>
 </ul>
 </details></li>
 </ul>
@@ -446,9 +446,9 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="jupyterlab">
-<span id="sec-1-4"></span><h1>1.4 JupyterLab<a class="headerlink" href="#jupyterlab" title="Link to this heading">#</a></h1>
+<h1>1.4 JupyterLab<a class="headerlink" href="#jupyterlab" title="Link to this heading">#</a></h1>
 <section id="project-jupyter-and-the-jupyter-ecosystem">
-<span id="sec-1-4-1"></span><h2>1.4.1 Project Jupyter and the Jupyter Ecosystem<a class="headerlink" href="#project-jupyter-and-the-jupyter-ecosystem" title="Link to this heading">#</a></h2>
+<h2>1.4.1 Project Jupyter and the Jupyter Ecosystem<a class="headerlink" href="#project-jupyter-and-the-jupyter-ecosystem" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://jupyter.org/">Project Jupyter</a> is an open-source initiative that develops software and tools for interactive computing, scientific research, and education. The name <em>Jupyter</em> originated from three programming languages: <strong>Julia, Python, and R</strong>. Although we will focus on Python in this course, Jupyter supports many programming languages.</p>
 <p>One of the central ideas behind Project Jupyter is that scientific computing involves more than simply writing and executing code. Scientists also need to document their methods, analyze data, visualize results, and communicate their findings. The Jupyter ecosystem provides tools that help integrate these activities into a common workflow.</p>
 <p>Several related Jupyter tools serve different purposes:</p>
@@ -489,7 +489,7 @@
 </section>
 </section>
 <section id="what-is-jupyterlab">
-<span id="sec-1-4-2"></span><h2>1.4.2 What Is JupyterLab?<a class="headerlink" href="#what-is-jupyterlab" title="Link to this heading">#</a></h2>
+<h2>1.4.2 What Is JupyterLab?<a class="headerlink" href="#what-is-jupyterlab" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://jupyterlab.readthedocs.io/">JupyterLab</a> is a browser-based interactive computing environment that provides a graphical interface for working with Jupyter notebooks, Python scripts, data files, and terminals. Unlike the published Jupyter Book, which is primarily used to read course materials, JupyterLab allows us to create, edit, execute, and organize our own scientific computing projects.</p>
 <p>One of the primary activities in JupyterLab is working with <strong>Jupyter notebooks</strong>. A notebook consists of individual <strong>cells</strong>, which can contain three types of content:</p>
 <ul class="simple">
@@ -502,7 +502,7 @@
 <p>In the next section, we will activate the <code class="docutils literal notranslate"><span class="pre">jlab</span></code> Conda environment we created earlier and launch JupyterLab for the first time.</p>
 </section>
 <section id="starting-and-stopping-jupyterlab">
-<span id="sec-1-4-3"></span><h2>1.4.3 Starting and Stopping JupyterLab<a class="headerlink" href="#starting-and-stopping-jupyterlab" title="Link to this heading">#</a></h2>
+<h2>1.4.3 Starting and Stopping JupyterLab<a class="headerlink" href="#starting-and-stopping-jupyterlab" title="Link to this heading">#</a></h2>
 <p>In <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-03_Installing_Miniconda.html#sec-1-3-6-2">Section 1.3.6.2, Creating a JupyterLab Environment</a>, we created a Conda environment called <code class="docutils literal notranslate"><span class="pre">jlab</span></code> and installed JupyterLab. We will now activate that environment and launch JupyterLab for the first time.</p>
 <section id="starting-jupyterlab">
 <h3>Starting JupyterLab<a class="headerlink" href="#starting-jupyterlab" title="Link to this heading">#</a></h3>
@@ -561,7 +561,7 @@ jupyter<span class="w"> </span>lab
 </section>
 </section>
 <section id="understanding-servers-environments-and-kernels">
-<span id="sec-1-4-4"></span><h2>1.4.4 Understanding Servers, Environments, and Kernels<a class="headerlink" href="#understanding-servers-environments-and-kernels" title="Link to this heading">#</a></h2>
+<h2>1.4.4 Understanding Servers, Environments, and Kernels<a class="headerlink" href="#understanding-servers-environments-and-kernels" title="Link to this heading">#</a></h2>
 <p>In the previous section, we launched JupyterLab from our <code class="docutils literal notranslate"><span class="pre">jlab</span></code> Conda environment. However, in <a class="reference external" href="https://rebelford.github.io/py4sci2027/content/modules/module1-setup/01-03_Installing_Miniconda.html#sec-1-3-6">Section 1.3.6, Creating and Exploring Conda Environments</a>, we created two environments with different purposes:</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">jlab</span></code></strong> contains JupyterLab and the software needed to run its interface.</p></li>
@@ -630,7 +630,7 @@ In this example, we select <strong>Python (myenv)</strong>, which is the kernel 
 </section>
 </section>
 <section id="anatomy-of-jupyterlab">
-<span id="sec-1-4-5"></span><h2>1.4.5 Anatomy of JupyterLab<a class="headerlink" href="#anatomy-of-jupyterlab" title="Link to this heading">#</a></h2>
+<h2>1.4.5 Anatomy of JupyterLab<a class="headerlink" href="#anatomy-of-jupyterlab" title="Link to this heading">#</a></h2>
 <p>Now that we have launched JupyterLab and learned how it connects notebooks to different Python environments, let’s explore its graphical interface.</p>
 <p>JupyterLab provides a flexible workspace for working with notebooks, Python scripts, data files, terminals, and other scientific computing resources. Like many desktop applications, it contains menus, toolbars, sidebars, and a main work area where multiple documents can be opened and arranged.</p>
 <p>The following image illustrates the major components of the JupyterLab interface.</p>
@@ -653,10 +653,10 @@ In this example, we select <strong>Python (myenv)</strong>, which is the kernel 
 <p>The important thing is to become comfortable navigating JupyterLab and knowing where to look when you need a particular tool.</p>
 </section>
 <section id="working-with-files-and-directories">
-<span id="sec-1-4-6"></span><h2>1.4.6 Working with Files and Directories<a class="headerlink" href="#working-with-files-and-directories" title="Link to this heading">#</a></h2>
+<h2>1.4.6 Working with Files and Directories<a class="headerlink" href="#working-with-files-and-directories" title="Link to this heading">#</a></h2>
 <p>In Section 1.1, we introduced files, directories, and file paths, and discussed how operating systems organize information in a hierarchical file system. In Section 1.2, we learned some basic terminal commands for navigating directories. Since then, we have installed Miniconda, created a Conda environment named <code class="docutils literal notranslate"><span class="pre">myenv</span></code>, and installed JupyterLab. But where is all this software located on our computer, and how does it relate to the files we will create as we learn Python?</p>
 <section id="python-environments-and-your-personal-workspace">
-<span id="sec-1-4-6-1"></span><h3>1.4.6.1 Python Environments and Your Personal Workspace<a class="headerlink" href="#python-environments-and-your-personal-workspace" title="Link to this heading">#</a></h3>
+<h3>1.4.6.1 Python Environments and Your Personal Workspace<a class="headerlink" href="#python-environments-and-your-personal-workspace" title="Link to this heading">#</a></h3>
 <p>Recall that a <strong>Python environment</strong> provides a particular Python interpreter along with a collection of installed packages and dependencies. Our computer may now have several different Python interpreters:</p>
 <ol class="arabic simple">
 <li><p><strong>System Python:</strong> A Python interpreter provided or managed by the operating system.</p></li>
@@ -715,7 +715,7 @@ In this example, we select <strong>Python (myenv)</strong>, which is the kernel 
 </section>
 </section>
 <section id="creating-our-personal-workspace">
-<span id="sec-1-4-6-2"></span><h3>1.4.6.2 Creating Our Personal Workspace<a class="headerlink" href="#creating-our-personal-workspace" title="Link to this heading">#</a></h3>
+<h3>1.4.6.2 Creating Our Personal Workspace<a class="headerlink" href="#creating-our-personal-workspace" title="Link to this heading">#</a></h3>
 <p>We will now create the directory structure described in the previous section. We will use two different approaches: first, the command-line interface (CLI), and then the graphical file browser in JupyterLab.</p>
 <p>Both interfaces interact with the same file system, but they provide different ways of working with files and directories.</p>
 <section id="creating-directories-using-the-command-line">

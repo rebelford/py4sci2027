@@ -1,4 +1,4 @@
-# Introduction to Scientific Python
+# Introduction to Python for Scientists
 
 Python is a free, open-source programming language that has become an important tool in scientific research. Its strength comes not only from the language itself, but also from an extensive ecosystem of packages that allow researchers to analyze data, perform calculations, create visualizations, and interact with scientific instruments. Python supports object-oriented programming, allowing data and associated operations to be organized into reusable objects.
 
