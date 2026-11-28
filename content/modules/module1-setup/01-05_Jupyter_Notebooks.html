@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -1320,10 +1320,10 @@ x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
 </div>
 </div>
 <div class="alert alert-block alert-info";
-    margin: 20px 0;">
+    style="margin: 20px 0;">
 <p><strong>Can you explain why the cell did not move onto the next cell when you hit <code class="docutils literal notranslate"><span class="pre">shift</span> <span class="pre">enter</span></code>, and can you figure out the keyboard shortcut to do so?</strong></p>
 <details>
-<summary>Explaination</summary>
+<summary>Explanation</summary>
 <p>When Python encounters an input() statement, the execution of the Python code pauses while the kernel process waits for information from the user. During this time, the kernel remains busy, and the computational state is retained in memory. JupyterLab directs keyboard input to the running program rather than to the notebook's cell controls. When you press Enter to submit the requested information, Python resumes execution and completes the remaining instructions in the cell, but JupyterLab may not automatically advance to the next cell as you would normally expect when using Shift + Enter. Once execution is complete, you can press Esc to return to command mode and then ↓ (Down Arrow) to select the next cell without executing it.</p>
 </details>
 </div>
@@ -1383,6 +1383,7 @@ N(t) = N_0 e^{-kt}
 <li> The third code cell uses information from both of the preceding cells to perform a calculation, stores the result in memory, and displays the following output:</li>
 <pre>The quantity remaining is 60.65</pre>
 <li>Although the Python instructions are distributed across three separate code cells, they are executed by the same kernel and share the same computational state. Each code cell also has an execution counter indicating when it was executed relative to the other cells.</li>
+</ul>
 </details>
 </div>
 </div>
