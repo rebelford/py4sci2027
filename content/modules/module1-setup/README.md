@@ -40,21 +40,17 @@ Explore the relationships among the JupyterLab server, notebook files, kernels, 
 
 **Goal:** Run scientific Python code in a controlled, interactive computing environment.
 
-### 1.5 GitHub
+### 1.5 Jupyter Notebooks
 
-Learn to organize scientific computing projects using directory structures, relative and absolute file paths, and consistent file-naming conventions.
-
-Explore how data are loaded into memory, processed, and saved, and why documenting software dependencies is essential for reproducible research.
-
-**Goal:** Organize, document, and preserve computational work so it can be reproduced.
-
-### 1.6 Managing and Sharing Projects
+### 1.6 GitHub: Managing and Sharing Projects
 
 Introduce version control and learn how Git records changes to files and how GitHub facilitates collaboration and sharing.
 
 Explore repositories, commits, and the relationship between local files and remote repositories. Practice managing a scientific computing project with Git and GitHub.
 
 **Goal:** Develop reproducible and shareable scientific computing workflows.
+
+### 1.7 AI and JupyterLab Extensions
 
 ## Getting Started
 
